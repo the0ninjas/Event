@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Event.Models
+namespace EventManagementSystem.Utilities
 {
-    internal class UserModel
+    public class Context
     {
+
     }
 }
