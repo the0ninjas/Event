@@ -1,6 +1,6 @@
 ﻿namespace EventManagementSystem.Screens
 {
-    partial class SignUp
+    partial class EventCreationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Sign Up";
+            components = new System.ComponentModel.Container();
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Text = "Event Creation Form";
         }
 
         #endregion
