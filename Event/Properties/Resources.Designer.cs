@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Event.Properties {
+namespace EventManagementSystem.Properties {
     using System;
     
     
