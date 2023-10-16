@@ -1,6 +1,6 @@
-﻿namespace Event.Screens
+﻿namespace EventManagementSystem.Screens
 {
-    partial class Login
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,130 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
-            materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            label1 = new Label();
+            groupBox1 = new GroupBox();
+            label2 = new Label();
+            label3 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            button1 = new Button();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // materialLabel1
+            // label1
             // 
-            materialLabel1.AutoSize = true;
-            materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            materialLabel1.Location = new Point(305, 305);
-            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(751, 41);
-            materialLabel1.TabIndex = 0;
-            materialLabel1.Text = "Find Your Time, Find Your Team: Play on Demand!";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 12.8571434F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(250, 200);
+            label1.Name = "label1";
+            label1.Size = new Size(715, 41);
+            label1.TabIndex = 0;
+            label1.Text = "Find Your Time, Find Your Team: Play on Demand!";
             // 
-            // materialLabel2
+            // groupBox1
             // 
-            materialLabel2.AutoSize = true;
-            materialLabel2.Depth = 0;
-            materialLabel2.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel2.Location = new Point(455, 415);
-            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel2.Name = "materialLabel2";
-            materialLabel2.Size = new Size(50, 24);
-            materialLabel2.TabIndex = 1;
-            materialLabel2.Text = "Email";
+            groupBox1.BackColor = Color.MintCream;
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Location = new Point(333, 273);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(561, 348);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
             // 
-            // materialLabel4
+            // label2
             // 
-            materialLabel4.AutoSize = true;
-            materialLabel4.Depth = 0;
-            materialLabel4.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            materialLabel4.Location = new Point(455, 520);
-            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel4.Name = "materialLabel4";
-            materialLabel4.Size = new Size(89, 24);
-            materialLabel4.TabIndex = 2;
-            materialLabel4.Text = "Password";
+            label2.AutoSize = true;
+            label2.Location = new Point(73, 55);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 30);
+            label2.TabIndex = 0;
+            label2.Text = "Email";
             // 
-            // materialTextBox1
+            // label3
             // 
-            materialTextBox1.AnimateReadOnly = false;
-            materialTextBox1.BorderStyle = BorderStyle.None;
-            materialTextBox1.Depth = 0;
-            materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox1.LeadingIcon = null;
-            materialTextBox1.Location = new Point(455, 455);
-            materialTextBox1.MaxLength = 50;
-            materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox1.Multiline = false;
-            materialTextBox1.Name = "materialTextBox1";
-            materialTextBox1.Size = new Size(417, 50);
-            materialTextBox1.TabIndex = 3;
-            materialTextBox1.Text = "Email";
-            materialTextBox1.TrailingIcon = null;
+            label3.AutoSize = true;
+            label3.Location = new Point(73, 155);
+            label3.Name = "label3";
+            label3.Size = new Size(99, 30);
+            label3.TabIndex = 1;
+            label3.Text = "Password";
             // 
-            // materialTextBox2
+            // textBox1
             // 
-            materialTextBox2.AnimateReadOnly = false;
-            materialTextBox2.BorderStyle = BorderStyle.None;
-            materialTextBox2.Depth = 0;
-            materialTextBox2.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox2.LeadingIcon = null;
-            materialTextBox2.Location = new Point(455, 560);
-            materialTextBox2.MaxLength = 50;
-            materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox2.Multiline = false;
-            materialTextBox2.Name = "materialTextBox2";
-            materialTextBox2.Size = new Size(417, 50);
-            materialTextBox2.TabIndex = 4;
-            materialTextBox2.Text = "Password";
-            materialTextBox2.TrailingIcon = null;
+            textBox1.ForeColor = SystemColors.ScrollBar;
+            textBox1.Location = new Point(73, 105);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(414, 35);
+            textBox1.TabIndex = 2;
+            textBox1.Text = "Enter your email address";
             // 
-            // materialButton1
+            // textBox2
             // 
-            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
-            materialButton1.Depth = 0;
-            materialButton1.HighEmphasis = true;
-            materialButton1.Icon = null;
-            materialButton1.Location = new Point(625, 650);
-            materialButton1.Margin = new Padding(4, 6, 4, 6);
-            materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialButton1.Name = "materialButton1";
-            materialButton1.NoAccentTextColor = Color.Empty;
-            materialButton1.Size = new Size(73, 36);
-            materialButton1.TabIndex = 5;
-            materialButton1.Text = "Sign in";
-            materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            materialButton1.UseAccentColor = false;
-            materialButton1.UseVisualStyleBackColor = true;
+            textBox2.ForeColor = SystemColors.ScrollBar;
+            textBox2.Location = new Point(73, 205);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(414, 35);
+            textBox2.TabIndex = 3;
+            textBox2.Text = "Enter your password";
             // 
-            // Login
+            // button1
+            // 
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(217, 277);
+            button1.Name = "button1";
+            button1.Size = new Size(131, 40);
+            button1.TabIndex = 4;
+            button1.Text = "Sign In";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // Form2
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1330, 933);
-            Controls.Add(materialButton1);
-            Controls.Add(materialTextBox2);
-            Controls.Add(materialTextBox1);
-            Controls.Add(materialLabel4);
-            Controls.Add(materialLabel2);
-            Controls.Add(materialLabel1);
-            Name = "Login";
+            BackgroundImage = Properties.Resources.meric_tuna_Gy5v76fswgo_unsplash;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1205, 793);
+            Controls.Add(groupBox1);
+            Controls.Add(label1);
+            Name = "Form2";
             Text = "Form2";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+
+        private Label label1;
+        private GroupBox groupBox1;
+        private TextBox textBox1;
+        private Label label3;
+        private Label label2;
+        private TextBox textBox2;
+        private Button button1;
     }
 }
