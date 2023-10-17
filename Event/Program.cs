@@ -22,7 +22,11 @@ namespace EventManagementSystem
             // creates database if it does not exist
             connectionFactory.Database.EnsureCreated();
 
+<<<<<<< HEAD
             Application.Run(new Event.Screens.LoginPage.logIn());
+=======
+            Application.Run(new SignUp());
+>>>>>>> 89c30e8b55ca63f7477e805d595133c28192dd74
         }
     }
 }

@@ -119,8 +119,13 @@
             ClientSize = new Size(1205, 793);
             Controls.Add(groupBox1);
             Controls.Add(label1);
+<<<<<<< HEAD
             Name = "Form2";
             Text = "Form2";
+=======
+            Name = "Login";
+            Text = "Login";
+>>>>>>> 89c30e8b55ca63f7477e805d595133c28192dd74
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
