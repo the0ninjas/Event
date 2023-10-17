@@ -16,7 +16,7 @@ namespace EventManagementSystem.Screens
     public partial class Login : Form
 >>>>>>> 89c30e8b55ca63f7477e805d595133c28192dd74
     {
-        public logIn()
+        public Login()
         {
             InitializeComponent();
         }
