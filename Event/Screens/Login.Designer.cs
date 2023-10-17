@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             label1 = new Label();
             groupBox1 = new GroupBox();
             button1 = new Button();
@@ -123,18 +122,13 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.remi_jacquaint_WQEP0mrTD8Y_unsplash;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(956, 1126);
             Controls.Add(groupBox1);
             Controls.Add(label1);
-<<<<<<< HEAD
-            Name = "Form2";
-            Text = "Form2";
-=======
             Name = "Login";
             Text = "Login";
->>>>>>> 89c30e8b55ca63f7477e805d595133c28192dd74
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

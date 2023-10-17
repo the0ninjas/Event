@@ -63,9 +63,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap meric_tuna_Gy5v76fswgo_unsplash {
+        internal static System.Drawing.Bitmap remi_jacquaint_WQEP0mrTD8Y_unsplash {
             get {
-                object obj = ResourceManager.GetObject("meric-tuna-Gy5v76fswgo-unsplash", resourceCulture);
+                object obj = ResourceManager.GetObject("remi-jacquaint-WQEP0mrTD8Y-unsplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
