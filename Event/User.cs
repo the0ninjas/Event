@@ -10,8 +10,13 @@ namespace EventManagementSystem
     internal class User
     {
         public string Username { get; set; }
+        public int UserId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+        public int PhoneNumber { get; set; }
+        public string Location { get; set; }
         public List<Event> CreatedEvents { get; set; }
         public List<Event> JoinedEvents { get; set; }
         public List<Notification> Notifications { get; set; }

@@ -2,7 +2,7 @@ using EventManagementSystem.Screens;
 using EventManagementSystem.Utilities;
 using Microsoft.EntityFrameworkCore;
 
-namespace EventManagementSystem
+namespace EventManagementSystem.Models
 {
     public static class Program
     {
