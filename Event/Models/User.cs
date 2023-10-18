@@ -1,11 +1,10 @@
-﻿using EventManagementSystem.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventManagementSystem
+namespace EventManagementSystem.Models
 {
     internal class User
     {
