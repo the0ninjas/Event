@@ -59,6 +59,8 @@ namespace EventManagementSystem.Screens
         {
             SignUp signup = new SignUp();
             signup.Show();
+            TopPage toppage = new TopPage();
+            toppage.Show();
         }
     }
 }
