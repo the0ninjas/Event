@@ -28,195 +28,193 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            headingLabel = new Label();
+            subHeadingLabel = new Label();
+            firstNameLabel = new Label();
+            lastNameLabel = new Label();
+            emailLabel = new Label();
+            phoneNumberLabel = new Label();
+            locationLabel = new Label();
+            passwordLabel = new Label();
+            firstNameTextBox = new TextBox();
+            lastNameTextBox = new TextBox();
+            emailTextBox = new TextBox();
+            phoneNumberTextBox = new TextBox();
+            passwordTextBox = new TextBox();
+            signUpButton = new Button();
+            cancelButton = new Button();
+            locationComboBox = new ComboBox();
             SuspendLayout();
             // 
-            // label1
+            // headingLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 15.000001F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(212, 103);
-            label1.Name = "label1";
-            label1.Size = new Size(158, 48);
-            label1.TabIndex = 0;
-            label1.Text = "Sign Up";
+            headingLabel.AutoSize = true;
+            headingLabel.Font = new Font("Segoe UI Black", 15.000001F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            headingLabel.Location = new Point(212, 103);
+            headingLabel.Name = "headingLabel";
+            headingLabel.Size = new Size(158, 48);
+            headingLabel.TabIndex = 0;
+            headingLabel.Text = "Sign Up";
             // 
-            // label2
+            // subHeadingLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(201, 180);
-            label2.Name = "label2";
-            label2.Size = new Size(544, 38);
-            label2.TabIndex = 1;
-            label2.Text = "Register now and play your way, today!";
+            subHeadingLabel.AutoSize = true;
+            subHeadingLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            subHeadingLabel.Location = new Point(201, 180);
+            subHeadingLabel.Name = "subHeadingLabel";
+            subHeadingLabel.Size = new Size(544, 38);
+            subHeadingLabel.TabIndex = 1;
+            subHeadingLabel.Text = "Register now and play your way, today!";
             // 
-            // label3
+            // firstNameLabel
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(212, 288);
-            label3.Name = "label3";
-            label3.Size = new Size(132, 32);
-            label3.TabIndex = 2;
-            label3.Text = "First Name";
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            firstNameLabel.Location = new Point(212, 288);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new Size(132, 32);
+            firstNameLabel.TabIndex = 2;
+            firstNameLabel.Text = "First Name";
             // 
-            // label4
+            // lastNameLabel
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(212, 388);
-            label4.Name = "label4";
-            label4.Size = new Size(130, 32);
-            label4.TabIndex = 3;
-            label4.Text = "Last Name";
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            lastNameLabel.Location = new Point(212, 388);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new Size(130, 32);
+            lastNameLabel.TabIndex = 3;
+            lastNameLabel.Text = "Last Name";
             // 
-            // label5
+            // emailLabel
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(212, 488);
-            label5.Name = "label5";
-            label5.Size = new Size(72, 32);
-            label5.TabIndex = 4;
-            label5.Text = "Email";
+            emailLabel.AutoSize = true;
+            emailLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            emailLabel.Location = new Point(212, 488);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new Size(72, 32);
+            emailLabel.TabIndex = 4;
+            emailLabel.Text = "Email";
             // 
-            // label6
+            // phoneNumberLabel
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(212, 588);
-            label6.Name = "label6";
-            label6.Size = new Size(179, 32);
-            label6.TabIndex = 5;
-            label6.Text = "Phone Number";
+            phoneNumberLabel.AutoSize = true;
+            phoneNumberLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            phoneNumberLabel.Location = new Point(212, 588);
+            phoneNumberLabel.Name = "phoneNumberLabel";
+            phoneNumberLabel.Size = new Size(179, 32);
+            phoneNumberLabel.TabIndex = 5;
+            phoneNumberLabel.Text = "Phone Number";
             // 
-            // label7
+            // locationLabel
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(212, 688);
-            label7.Name = "label7";
-            label7.Size = new Size(107, 32);
-            label7.TabIndex = 6;
-            label7.Text = "Location";
+            locationLabel.AutoSize = true;
+            locationLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            locationLabel.Location = new Point(212, 688);
+            locationLabel.Name = "locationLabel";
+            locationLabel.Size = new Size(107, 32);
+            locationLabel.TabIndex = 6;
+            locationLabel.Text = "Location";
             // 
-            // label8
+            // passwordLabel
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(212, 788);
-            label8.Name = "label8";
-            label8.Size = new Size(115, 32);
-            label8.TabIndex = 7;
-            label8.Text = "Password";
+            passwordLabel.AutoSize = true;
+            passwordLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            passwordLabel.Location = new Point(212, 788);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(115, 32);
+            passwordLabel.TabIndex = 7;
+            passwordLabel.Text = "Password";
             // 
-            // textBox1
+            // firstNameTextBox
             // 
-            textBox1.ForeColor = SystemColors.ScrollBar;
-            textBox1.Location = new Point(212, 338);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(521, 35);
-            textBox1.TabIndex = 8;
-            textBox1.Text = "Enter your first name";
-            textBox1.Enter += textBox1_Enter;
-            textBox1.Leave += textBox1_Leave;
+            firstNameTextBox.ForeColor = SystemColors.ScrollBar;
+            firstNameTextBox.Location = new Point(212, 338);
+            firstNameTextBox.Name = "firstNameTextBox";
+            firstNameTextBox.Size = new Size(521, 35);
+            firstNameTextBox.TabIndex = 8;
+            firstNameTextBox.Text = "Enter your first name";
+            firstNameTextBox.Enter += firstNameTextBox_Enter;
+            firstNameTextBox.Leave += firstNameTextBox_Leave;
             // 
-            // textBox2
+            // lastNameTextBox
             // 
-            textBox2.ForeColor = SystemColors.ScrollBar;
-            textBox2.Location = new Point(212, 438);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(521, 35);
-            textBox2.TabIndex = 9;
-            textBox2.Text = "Enter your last name";
-            textBox2.Enter += textBox2_Enter;
-            textBox2.Leave += textBox2_Leave;
+            lastNameTextBox.ForeColor = SystemColors.ScrollBar;
+            lastNameTextBox.Location = new Point(212, 438);
+            lastNameTextBox.Name = "lastNameTextBox";
+            lastNameTextBox.Size = new Size(521, 35);
+            lastNameTextBox.TabIndex = 9;
+            lastNameTextBox.Text = "Enter your last name";
+            lastNameTextBox.Enter += lastNameTextBox_Enter;
+            lastNameTextBox.Leave += lastNameTextBox_Leave;
             // 
-            // textBox3
+            // emailTextBox
             // 
-            textBox3.ForeColor = SystemColors.ScrollBar;
-            textBox3.Location = new Point(212, 538);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(521, 35);
-            textBox3.TabIndex = 10;
-            textBox3.Text = "Enter your email address";
-            textBox3.Enter += textBox3_Enter;
-            textBox3.Leave += textBox3_Leave;
+            emailTextBox.ForeColor = SystemColors.ScrollBar;
+            emailTextBox.Location = new Point(212, 538);
+            emailTextBox.Name = "emailTextBox";
+            emailTextBox.Size = new Size(521, 35);
+            emailTextBox.TabIndex = 10;
+            emailTextBox.Text = "Enter your email address";
+            emailTextBox.Enter += emailTextBox_Enter;
+            emailTextBox.Leave += emailTextBox_Leave;
             // 
-            // textBox4
+            // phoneNumberTextBox
             // 
-            textBox4.ForeColor = SystemColors.ScrollBar;
-            textBox4.Location = new Point(212, 638);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(521, 35);
-            textBox4.TabIndex = 11;
-            textBox4.Text = "Enter your phone number";
-            textBox4.Enter += textBox4_Enter;
-            textBox4.Leave += textBox4_Leave;
+            phoneNumberTextBox.ForeColor = SystemColors.ScrollBar;
+            phoneNumberTextBox.Location = new Point(212, 638);
+            phoneNumberTextBox.Name = "phoneNumberTextBox";
+            phoneNumberTextBox.Size = new Size(521, 35);
+            phoneNumberTextBox.TabIndex = 11;
+            phoneNumberTextBox.Text = "Enter your phone number";
+            phoneNumberTextBox.Enter += phoneNumberTextBox_Enter;
+            phoneNumberTextBox.Leave += phoneNumberTextBox_Leave;
             // 
-            // textBox5
+            // passwordTextBox
             // 
-            textBox5.AutoCompleteCustomSource.AddRange(new string[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
-            textBox5.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            textBox5.ForeColor = SystemColors.ScrollBar;
-            textBox5.Location = new Point(212, 738);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(521, 35);
-            textBox5.TabIndex = 12;
-            textBox5.Text = "Select your location";
-            textBox5.Enter += textBox5_Enter;
-            textBox5.Leave += textBox5_Leave;
+            passwordTextBox.ForeColor = SystemColors.ScrollBar;
+            passwordTextBox.Location = new Point(212, 838);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(521, 35);
+            passwordTextBox.TabIndex = 13;
+            passwordTextBox.Text = "Enter your password";
+            passwordTextBox.Enter += passwordTextBox_Enter;
+            passwordTextBox.Leave += passwordTextBox_Leave;
             // 
-            // textBox6
+            // signUpButton
             // 
-            textBox6.ForeColor = SystemColors.ScrollBar;
-            textBox6.Location = new Point(212, 838);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(521, 35);
-            textBox6.TabIndex = 13;
-            textBox6.Text = "Enter your password";
-            textBox6.Enter += textBox6_Enter;
-            textBox6.Leave += textBox6_Leave;
+            signUpButton.BackColor = Color.DarkSeaGreen;
+            signUpButton.FlatStyle = FlatStyle.Popup;
+            signUpButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            signUpButton.Location = new Point(212, 938);
+            signUpButton.Name = "signUpButton";
+            signUpButton.Size = new Size(521, 40);
+            signUpButton.TabIndex = 14;
+            signUpButton.Text = "Sign Up";
+            signUpButton.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // cancelButton
             // 
-            button1.BackColor = Color.DarkSeaGreen;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(212, 938);
-            button1.Name = "button1";
-            button1.Size = new Size(521, 40);
-            button1.TabIndex = 14;
-            button1.Text = "Sign Up";
-            button1.UseVisualStyleBackColor = false;
+            cancelButton.BackColor = Color.LavenderBlush;
+            cancelButton.FlatStyle = FlatStyle.Popup;
+            cancelButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cancelButton.Location = new Point(212, 1000);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(521, 40);
+            cancelButton.TabIndex = 15;
+            cancelButton.Text = "Cancel";
+            cancelButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // locationComboBox
             // 
-            button2.BackColor = Color.LavenderBlush;
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(212, 1000);
-            button2.Name = "button2";
-            button2.Size = new Size(521, 40);
-            button2.TabIndex = 15;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = false;
+            locationComboBox.ForeColor = SystemColors.ScrollBar;
+            locationComboBox.FormattingEnabled = true;
+            locationComboBox.Items.AddRange(new object[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
+            locationComboBox.Location = new Point(212, 738);
+            locationComboBox.Name = "locationComboBox";
+            locationComboBox.Size = new Size(521, 38);
+            locationComboBox.TabIndex = 16;
+            locationComboBox.Text = "Select your location";
             // 
             // SignUp
             // 
@@ -224,22 +222,22 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
             ClientSize = new Size(956, 1126);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(locationComboBox);
+            Controls.Add(cancelButton);
+            Controls.Add(signUpButton);
+            Controls.Add(passwordTextBox);
+            Controls.Add(phoneNumberTextBox);
+            Controls.Add(emailTextBox);
+            Controls.Add(lastNameTextBox);
+            Controls.Add(firstNameTextBox);
+            Controls.Add(passwordLabel);
+            Controls.Add(locationLabel);
+            Controls.Add(phoneNumberLabel);
+            Controls.Add(emailLabel);
+            Controls.Add(lastNameLabel);
+            Controls.Add(firstNameLabel);
+            Controls.Add(subHeadingLabel);
+            Controls.Add(headingLabel);
             Name = "SignUp";
             Text = "Sign Up";
             ResumeLayout(false);
@@ -248,21 +246,21 @@
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private Button button1;
-        private Button button2;
+        private Label headingLabel;
+        private Label subHeadingLabel;
+        private Label firstNameLabel;
+        private Label lastNameLabel;
+        private Label emailLabel;
+        private Label phoneNumberLabel;
+        private Label locationLabel;
+        private Label passwordLabel;
+        private TextBox firstNameTextBox;
+        private TextBox lastNameTextBox;
+        private TextBox emailTextBox;
+        private TextBox phoneNumberTextBox;
+        private TextBox passwordTextBox;
+        private Button signUpButton;
+        private Button cancelButton;
+        private ComboBox locationComboBox;
     }
 }

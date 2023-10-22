@@ -22,8 +22,8 @@ namespace EventManagementSystem.Screens
         {
             if (openSideMenuBar)
             {
-                sideMenuBar.Width -= 10;
-                if (sideMenuBar.Width == sideMenuBar.MinimumSize.Width)
+                sideBarFlowLayoutPanel.Width -= 10;
+                if (sideBarFlowLayoutPanel.Width == sideBarFlowLayoutPanel.MinimumSize.Width)
                 {
                     openSideMenuBar = false;
                     timerForSidebar.Stop();
@@ -31,8 +31,8 @@ namespace EventManagementSystem.Screens
             }
             else
             {
-                sideMenuBar.Width += 10;
-                if (sideMenuBar.Width == sideMenuBar.MaximumSize.Width)
+                sideBarFlowLayoutPanel.Width += 10;
+                if (sideBarFlowLayoutPanel.Width == sideBarFlowLayoutPanel.MaximumSize.Width)
                 {
                     openSideMenuBar = true;
                     timerForSidebar.Stop();

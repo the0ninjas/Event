@@ -17,113 +17,113 @@ namespace EventManagementSystem.Screens
             InitializeComponent();
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
+        private void firstNameTextBox_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Enter your first name")
+            if (firstNameTextBox.Text == "Enter your first name")
             {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
+                firstNameTextBox.Text = "";
+                firstNameTextBox.ForeColor = Color.Black;
             }
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void firstNameTextBox_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (firstNameTextBox.Text == "")
             {
-                textBox1.Text = "Enter your first name";
-                textBox1.ForeColor = SystemColors.ScrollBar;
+                firstNameTextBox.Text = "Enter your first name";
+                firstNameTextBox.ForeColor = SystemColors.ScrollBar;
             }
         }
 
-        private void textBox2_Enter(object sender, EventArgs e)
+        private void lastNameTextBox_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == "Enter your last name")
+            if (lastNameTextBox.Text == "Enter your last name")
             {
-                textBox2.Text = "";
-                textBox2.ForeColor = Color.Black;
+                lastNameTextBox.Text = "";
+                lastNameTextBox.ForeColor = Color.Black;
             }
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void lastNameTextBox_Leave(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (lastNameTextBox.Text == "")
             {
-                textBox2.Text = "Enter your last name";
-                textBox2.ForeColor = SystemColors.ScrollBar;
+                lastNameTextBox.Text = "Enter your last name";
+                lastNameTextBox.ForeColor = SystemColors.ScrollBar;
             }
         }
 
-        private void textBox3_Enter(object sender, EventArgs e)
+        private void emailTextBox_Enter(object sender, EventArgs e)
         {
-            if (textBox3.Text == "Enter your email address")
+            if (emailTextBox.Text == "Enter your email address")
             {
-                textBox3.Text = "";
-                textBox3.ForeColor = Color.Black;
+                emailTextBox.Text = "";
+                emailTextBox.ForeColor = Color.Black;
             }
         }
 
-        private void textBox3_Leave(object sender, EventArgs e)
+        private void emailTextBox_Leave(object sender, EventArgs e)
         {
-            if (textBox3.Text == "")
+            if (emailTextBox.Text == "")
             {
-                textBox3.Text = "Enter your email address";
-                textBox3.ForeColor = SystemColors.ScrollBar;
+                emailTextBox.Text = "Enter your email address";
+                emailTextBox.ForeColor = SystemColors.ScrollBar;
             }
         }
 
-        private void textBox4_Enter(object sender, EventArgs e)
+        private void phoneNumberTextBox_Enter(object sender, EventArgs e)
         {
-            if (textBox4.Text == "Enter your phone number")
+            if (phoneNumberTextBox.Text == "Enter your phone number")
             {
-                textBox4.Text = "";
-                textBox4.ForeColor = Color.Black;
+                phoneNumberTextBox.Text = "";
+                phoneNumberTextBox.ForeColor = Color.Black;
             }
         }
 
-        private void textBox4_Leave(object sender, EventArgs e)
+        private void phoneNumberTextBox_Leave(object sender, EventArgs e)
         {
-            if (textBox4.Text == "")
+            if (phoneNumberTextBox.Text == "")
             {
-                textBox4.Text = "Enter your phone number";
-                textBox4.ForeColor = SystemColors.ScrollBar;
+                phoneNumberTextBox.Text = "Enter your phone number";
+                phoneNumberTextBox.ForeColor = SystemColors.ScrollBar;
             }
         }
 
-        private void textBox5_Enter(object sender, EventArgs e)
+        private void locationComboBox_Enter(object sender, EventArgs e)
         {
-            if (textBox5.Text == "Select your location")
+            if (locationComboBox.Text == "Select your location")
             {
-                textBox5.Text = "";
-                textBox5.ForeColor = Color.Black;
+                locationComboBox.Text = "";
+                locationComboBox.ForeColor = Color.Black;
             }
         }
 
-        private void textBox5_Leave(object sender, EventArgs e)
+        private void locationComboBox_Leave(object sender, EventArgs e)
         {
-            if (textBox5.Text == "")
+            if (locationComboBox.Text == "")
             {
-                textBox5.Text = "Select your location";
-                textBox5.ForeColor = SystemColors.ScrollBar;
+                locationComboBox.Text = "Select your location";
+                locationComboBox.ForeColor = SystemColors.ScrollBar;
             }
         }
 
-        private void textBox6_Enter(object sender, EventArgs e)
+        private void passwordTextBox_Enter(object sender, EventArgs e)
         {
-            if (textBox6.Text == "Enter your password")
+            if (passwordTextBox.Text == "Enter your password")
             {
-                textBox6.Text = "";
-                textBox6.ForeColor = Color.Black;
-                textBox6.PasswordChar = '*';
+                passwordTextBox.Text = "";
+                passwordTextBox.ForeColor = Color.Black;
+                passwordTextBox.PasswordChar = '*';
             }
         }
 
-        private void textBox6_Leave(object sender, EventArgs e)
+        private void passwordTextBox_Leave(object sender, EventArgs e)
         {
-            if (textBox6.Text == "")
+            if (passwordTextBox.Text == "")
             {
-                textBox6.Text = "Enter your password";
-                textBox6.ForeColor = SystemColors.ScrollBar;
-                textBox6.PasswordChar = '\0';
+                passwordTextBox.Text = "Enter your password";
+                passwordTextBox.ForeColor = SystemColors.ScrollBar;
+                passwordTextBox.PasswordChar = '\0';
             }
         }
     }
