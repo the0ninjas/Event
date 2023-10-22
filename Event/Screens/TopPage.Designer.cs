@@ -65,10 +65,10 @@
             sideBarFlowLayoutPanel.Controls.Add(panel7);
             sideBarFlowLayoutPanel.Dock = DockStyle.Left;
             sideBarFlowLayoutPanel.Location = new Point(0, 0);
-            sideBarFlowLayoutPanel.MaximumSize = new Size(330, 879);
+            sideBarFlowLayoutPanel.MaximumSize = new Size(330, 1250);
             sideBarFlowLayoutPanel.MinimumSize = new Size(89, 879);
             sideBarFlowLayoutPanel.Name = "sideBarFlowLayoutPanel";
-            sideBarFlowLayoutPanel.Size = new Size(330, 879);
+            sideBarFlowLayoutPanel.Size = new Size(330, 1186);
             sideBarFlowLayoutPanel.TabIndex = 0;
             // 
             // menuPanel
@@ -221,7 +221,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1497, 879);
+            ClientSize = new Size(1976, 1186);
             Controls.Add(sideBarFlowLayoutPanel);
             Name = "TopPage";
             Text = "Top Page";

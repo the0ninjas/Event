@@ -35,6 +35,7 @@
             emailTextBox = new TextBox();
             passwordLabel = new Label();
             emailLabel = new Label();
+            signUpButton = new Button();
             loginGroupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             // loginGroupBox
             // 
             loginGroupBox.BackColor = Color.MintCream;
+            loginGroupBox.Controls.Add(signUpButton);
             loginGroupBox.Controls.Add(signInButton);
             loginGroupBox.Controls.Add(passwordTextBox);
             loginGroupBox.Controls.Add(emailTextBox);
@@ -59,7 +61,7 @@
             loginGroupBox.Controls.Add(emailLabel);
             loginGroupBox.Location = new Point(202, 274);
             loginGroupBox.Name = "loginGroupBox";
-            loginGroupBox.Size = new Size(561, 348);
+            loginGroupBox.Size = new Size(561, 453);
             loginGroupBox.TabIndex = 1;
             loginGroupBox.TabStop = false;
             // 
@@ -68,7 +70,7 @@
             signInButton.BackColor = Color.DarkSeaGreen;
             signInButton.FlatStyle = FlatStyle.Popup;
             signInButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            signInButton.Location = new Point(218, 278);
+            signInButton.Location = new Point(207, 283);
             signInButton.Name = "signInButton";
             signInButton.Size = new Size(130, 40);
             signInButton.TabIndex = 4;
@@ -118,6 +120,18 @@
             emailLabel.TabIndex = 0;
             emailLabel.Text = "Email";
             // 
+            // signUpButton
+            // 
+            signUpButton.BackColor = Color.DarkSeaGreen;
+            signUpButton.FlatStyle = FlatStyle.Popup;
+            signUpButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            signUpButton.Location = new Point(207, 363);
+            signUpButton.Name = "signUpButton";
+            signUpButton.Size = new Size(130, 40);
+            signUpButton.TabIndex = 5;
+            signUpButton.Text = "Sign Up";
+            signUpButton.UseVisualStyleBackColor = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -144,5 +158,6 @@
         private Label emailLabel;
         private TextBox passwordTextBox;
         private Button signInButton;
+        private Button signUpButton;
     }
 }
