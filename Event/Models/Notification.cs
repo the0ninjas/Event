@@ -8,6 +8,7 @@ namespace EventManagementSystem.Models
 {
     public class Notification
     {
+        public int notificationId {  get; set; }
         public string Message { get; set; }
         public DateTime Timestamp { get; set; }
         public bool IsRead { get; set; }
