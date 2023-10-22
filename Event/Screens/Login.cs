@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EventManagementSystem.Screens
 {
@@ -58,34 +59,33 @@ namespace EventManagementSystem.Screens
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            SignUp signup = new SignUp();
-            signup.Show();
-            TopPage toppage = new TopPage();
-            toppage.Show();
+            using (var context = new ConnectionFactory())
+            {
+                string email = emailTextBox.Text;
+                string password = passwordTextBox.Text;
+
+                //Check if the user with the given username and password exists
+                var user = context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+
+                if (user != null)
+                {
+                    // Successful login
+                    MessageBox.Show("Login successful!");
+                    // You can now navigate to another form or perform other actions.
+                }
+                else
+                {
+                    // Invalid credentials
+                    MessageBox.Show("Login failed. Please check your username and password.");
+                }
+            }
         }
 
-        //private void textBox1_TextChanged(object sender, EventArgs e)
-        //{
-        //    using (var context = new ConnectionFactory())
-        //    {
-        //        string username = textBox1.Text;
-        //        string password = textBox2.Text;
+        private void signUpButton_Click(object sender, EventArgs e)
+        {
+            SignUp signUp = new SignUp();
 
-        // Check if the user with the given username and password exists
-        //var user = context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
-
-        //if (user != null)
-        //{
-        //    // Successful login
-        //    MessageBox.Show("Login successful!");
-        //    // You can now navigate to another form or perform other actions.
-        //}
-        //else
-        //{
-        //    // Invalid credentials
-        //    MessageBox.Show("Login failed. Please check your username and password.");
-        //}
-        //}
-        //}
+            signUp.Show();
+        }
     }
 }

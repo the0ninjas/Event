@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EventManagementSystem.Utilities;
+using EventManagementSystem.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace EventManagementSystem.Screens
 {
@@ -125,6 +128,55 @@ namespace EventManagementSystem.Screens
                 passwordTextBox.ForeColor = SystemColors.ScrollBar;
                 passwordTextBox.PasswordChar = '\0';
             }
+        }
+
+        private void signUpButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string firstName = firstNameTextBox.Text;
+                string lastName = lastNameTextBox.Text;
+                string password = passwordTextBox.Text;
+                string email = emailTextBox.Text;
+                int phoneNumber = int.Parse(phoneNumberTextBox.Text);
+                string location = locationComboBox.SelectedItem.ToString();
+
+                if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
+                    string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email) ||
+                    string.IsNullOrWhiteSpace(location))
+                {
+                    throw new Exception("Please provide all required information.");
+                }
+
+                using (var context = new ConnectionFactory())
+                {
+                    var newUser = new User
+                    {
+                        FirstName = firstName,
+                        LastName = lastName,
+                        Password = password,
+                        Email = email,
+                        PhoneNumber = phoneNumber,
+                        Location = location
+                    };
+
+                    context.Users.Add(newUser);
+                    context.SaveChanges();
+                }
+
+                this.Close();
+            }
+
+            catch (Exception ex)
+            {
+                // Display an error message to prompt for correct input
+                MessageBox.Show($"Sign-up failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

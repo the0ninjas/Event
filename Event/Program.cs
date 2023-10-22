@@ -1,4 +1,5 @@
 using EventManagementSystem.Screens;
+using EventManagementSystem.Models;
 using EventManagementSystem.Utilities;
 using Microsoft.EntityFrameworkCore;
 
