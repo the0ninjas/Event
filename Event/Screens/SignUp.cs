@@ -132,32 +132,46 @@ namespace EventManagementSystem.Screens
 
         private void signUpButton_Click(object sender, EventArgs e)
         {
-            string firstName = firstNameTextBox.Text;
-            string lastName = lastNameTextBox.Text;
-            string password = passwordTextBox.Text;
-            string email = emailTextBox.Text;
-            int phoneNumber = int.Parse(phoneNumberTextBox.Text);
-            string location = locationComboBox.SelectedItem.ToString();
-
-
-            using (var context = new ConnectionFactory())
+            try
             {
-                var newUser = new User
-                {
-                    FirstName = firstName,
-                    LastName = lastName,
-                    Password = password,
-                    Email = email,
-                    PhoneNumber = phoneNumber,
-                    Location = location
-                };
+                string firstName = firstNameTextBox.Text;
+                string lastName = lastNameTextBox.Text;
+                string password = passwordTextBox.Text;
+                string email = emailTextBox.Text;
+                int phoneNumber = int.Parse(phoneNumberTextBox.Text);
+                string location = locationComboBox.SelectedItem.ToString();
 
-                context.Users.Add(newUser);
-                context.SaveChanges();
+                if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
+                    string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email) ||
+                    string.IsNullOrWhiteSpace(location))
+                {
+                    throw new Exception("Please provide all required information.");
+                }
+
+                using (var context = new ConnectionFactory())
+                {
+                    var newUser = new User
+                    {
+                        FirstName = firstName,
+                        LastName = lastName,
+                        Password = password,
+                        Email = email,
+                        PhoneNumber = phoneNumber,
+                        Location = location
+                    };
+
+                    context.Users.Add(newUser);
+                    context.SaveChanges();
+                }
+
+                this.Close();
             }
 
-            this.Close();
-
+            catch (Exception ex)
+            {
+                // Display an error message to prompt for correct input
+                MessageBox.Show($"Sign-up failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
