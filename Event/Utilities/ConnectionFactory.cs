@@ -24,6 +24,7 @@ namespace EventManagementSystem.Utilities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Copmposite primary key of EventId and UserId
             modelBuilder.Entity<Attendee>()
                 .HasKey(eu => new { eu.EventId, eu.UserId });
         }
