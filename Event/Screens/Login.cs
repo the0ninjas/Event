@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventManagementSystem.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,6 +60,30 @@ namespace EventManagementSystem.Screens
         {
             SignUp signup = new SignUp();
             signup.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (var context = new ConnectionFactory())
+            {
+                string username = textBox1.Text;
+                string password = textBox2.Text;
+
+                // Check if the user with the given username and password exists
+                var user = context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+
+                if (user != null)
+                {
+                    // Successful login
+                    MessageBox.Show("Login successful!");
+                    // You can now navigate to another form or perform other actions.
+                }
+                else
+                {
+                    // Invalid credentials
+                    MessageBox.Show("Login failed. Please check your username and password.");
+                }
+            }
         }
     }
 }
