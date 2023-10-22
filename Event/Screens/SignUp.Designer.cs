@@ -50,9 +50,10 @@
             // 
             headingLabel.AutoSize = true;
             headingLabel.Font = new Font("Segoe UI Black", 15.000001F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            headingLabel.Location = new Point(212, 103);
+            headingLabel.Location = new Point(141, 69);
+            headingLabel.Margin = new Padding(2, 0, 2, 0);
             headingLabel.Name = "headingLabel";
-            headingLabel.Size = new Size(158, 48);
+            headingLabel.Size = new Size(112, 36);
             headingLabel.TabIndex = 0;
             headingLabel.Text = "Sign Up";
             // 
@@ -60,9 +61,10 @@
             // 
             subHeadingLabel.AutoSize = true;
             subHeadingLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            subHeadingLabel.Location = new Point(201, 180);
+            subHeadingLabel.Location = new Point(134, 120);
+            subHeadingLabel.Margin = new Padding(2, 0, 2, 0);
             subHeadingLabel.Name = "subHeadingLabel";
-            subHeadingLabel.Size = new Size(544, 38);
+            subHeadingLabel.Size = new Size(390, 28);
             subHeadingLabel.TabIndex = 1;
             subHeadingLabel.Text = "Register now and play your way, today!";
             // 
@@ -70,9 +72,10 @@
             // 
             firstNameLabel.AutoSize = true;
             firstNameLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            firstNameLabel.Location = new Point(212, 288);
+            firstNameLabel.Location = new Point(141, 192);
+            firstNameLabel.Margin = new Padding(2, 0, 2, 0);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new Size(132, 32);
+            firstNameLabel.Size = new Size(93, 23);
             firstNameLabel.TabIndex = 2;
             firstNameLabel.Text = "First Name";
             // 
@@ -80,9 +83,10 @@
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            lastNameLabel.Location = new Point(212, 388);
+            lastNameLabel.Location = new Point(141, 259);
+            lastNameLabel.Margin = new Padding(2, 0, 2, 0);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(130, 32);
+            lastNameLabel.Size = new Size(91, 23);
             lastNameLabel.TabIndex = 3;
             lastNameLabel.Text = "Last Name";
             // 
@@ -90,9 +94,10 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            emailLabel.Location = new Point(212, 488);
+            emailLabel.Location = new Point(141, 325);
+            emailLabel.Margin = new Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(72, 32);
+            emailLabel.Size = new Size(51, 23);
             emailLabel.TabIndex = 4;
             emailLabel.Text = "Email";
             // 
@@ -100,9 +105,10 @@
             // 
             phoneNumberLabel.AutoSize = true;
             phoneNumberLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            phoneNumberLabel.Location = new Point(212, 588);
+            phoneNumberLabel.Location = new Point(141, 392);
+            phoneNumberLabel.Margin = new Padding(2, 0, 2, 0);
             phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new Size(179, 32);
+            phoneNumberLabel.Size = new Size(127, 23);
             phoneNumberLabel.TabIndex = 5;
             phoneNumberLabel.Text = "Phone Number";
             // 
@@ -110,9 +116,10 @@
             // 
             locationLabel.AutoSize = true;
             locationLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            locationLabel.Location = new Point(212, 688);
+            locationLabel.Location = new Point(141, 459);
+            locationLabel.Margin = new Padding(2, 0, 2, 0);
             locationLabel.Name = "locationLabel";
-            locationLabel.Size = new Size(107, 32);
+            locationLabel.Size = new Size(75, 23);
             locationLabel.TabIndex = 6;
             locationLabel.Text = "Location";
             // 
@@ -120,18 +127,20 @@
             // 
             passwordLabel.AutoSize = true;
             passwordLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            passwordLabel.Location = new Point(212, 788);
+            passwordLabel.Location = new Point(141, 525);
+            passwordLabel.Margin = new Padding(2, 0, 2, 0);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(115, 32);
+            passwordLabel.Size = new Size(82, 23);
             passwordLabel.TabIndex = 7;
             passwordLabel.Text = "Password";
             // 
             // firstNameTextBox
             // 
             firstNameTextBox.ForeColor = SystemColors.ScrollBar;
-            firstNameTextBox.Location = new Point(212, 338);
+            firstNameTextBox.Location = new Point(141, 225);
+            firstNameTextBox.Margin = new Padding(2, 2, 2, 2);
             firstNameTextBox.Name = "firstNameTextBox";
-            firstNameTextBox.Size = new Size(521, 35);
+            firstNameTextBox.Size = new Size(349, 27);
             firstNameTextBox.TabIndex = 8;
             firstNameTextBox.Text = "Enter your first name";
             firstNameTextBox.Enter += firstNameTextBox_Enter;
@@ -140,9 +149,10 @@
             // lastNameTextBox
             // 
             lastNameTextBox.ForeColor = SystemColors.ScrollBar;
-            lastNameTextBox.Location = new Point(212, 438);
+            lastNameTextBox.Location = new Point(141, 292);
+            lastNameTextBox.Margin = new Padding(2, 2, 2, 2);
             lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(521, 35);
+            lastNameTextBox.Size = new Size(349, 27);
             lastNameTextBox.TabIndex = 9;
             lastNameTextBox.Text = "Enter your last name";
             lastNameTextBox.Enter += lastNameTextBox_Enter;
@@ -151,9 +161,10 @@
             // emailTextBox
             // 
             emailTextBox.ForeColor = SystemColors.ScrollBar;
-            emailTextBox.Location = new Point(212, 538);
+            emailTextBox.Location = new Point(141, 359);
+            emailTextBox.Margin = new Padding(2, 2, 2, 2);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(521, 35);
+            emailTextBox.Size = new Size(349, 27);
             emailTextBox.TabIndex = 10;
             emailTextBox.Text = "Enter your email address";
             emailTextBox.Enter += emailTextBox_Enter;
@@ -162,9 +173,10 @@
             // phoneNumberTextBox
             // 
             phoneNumberTextBox.ForeColor = SystemColors.ScrollBar;
-            phoneNumberTextBox.Location = new Point(212, 638);
+            phoneNumberTextBox.Location = new Point(141, 425);
+            phoneNumberTextBox.Margin = new Padding(2, 2, 2, 2);
             phoneNumberTextBox.Name = "phoneNumberTextBox";
-            phoneNumberTextBox.Size = new Size(521, 35);
+            phoneNumberTextBox.Size = new Size(349, 27);
             phoneNumberTextBox.TabIndex = 11;
             phoneNumberTextBox.Text = "Enter your phone number";
             phoneNumberTextBox.Enter += phoneNumberTextBox_Enter;
@@ -173,9 +185,10 @@
             // passwordTextBox
             // 
             passwordTextBox.ForeColor = SystemColors.ScrollBar;
-            passwordTextBox.Location = new Point(212, 838);
+            passwordTextBox.Location = new Point(141, 559);
+            passwordTextBox.Margin = new Padding(2, 2, 2, 2);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(521, 35);
+            passwordTextBox.Size = new Size(349, 27);
             passwordTextBox.TabIndex = 13;
             passwordTextBox.Text = "Enter your password";
             passwordTextBox.Enter += passwordTextBox_Enter;
@@ -186,21 +199,24 @@
             signUpButton.BackColor = Color.DarkSeaGreen;
             signUpButton.FlatStyle = FlatStyle.Popup;
             signUpButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            signUpButton.Location = new Point(212, 938);
+            signUpButton.Location = new Point(141, 625);
+            signUpButton.Margin = new Padding(2, 2, 2, 2);
             signUpButton.Name = "signUpButton";
-            signUpButton.Size = new Size(521, 40);
+            signUpButton.Size = new Size(347, 27);
             signUpButton.TabIndex = 14;
             signUpButton.Text = "Sign Up";
             signUpButton.UseVisualStyleBackColor = false;
+            signUpButton.Click += signUpButton_Click;
             // 
             // cancelButton
             // 
             cancelButton.BackColor = Color.LavenderBlush;
             cancelButton.FlatStyle = FlatStyle.Popup;
             cancelButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            cancelButton.Location = new Point(212, 1000);
+            cancelButton.Location = new Point(141, 667);
+            cancelButton.Margin = new Padding(2, 2, 2, 2);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(521, 40);
+            cancelButton.Size = new Size(347, 27);
             cancelButton.TabIndex = 15;
             cancelButton.Text = "Cancel";
             cancelButton.UseVisualStyleBackColor = false;
@@ -210,18 +226,19 @@
             locationComboBox.ForeColor = SystemColors.ScrollBar;
             locationComboBox.FormattingEnabled = true;
             locationComboBox.Items.AddRange(new object[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
-            locationComboBox.Location = new Point(212, 738);
+            locationComboBox.Location = new Point(141, 492);
+            locationComboBox.Margin = new Padding(2, 2, 2, 2);
             locationComboBox.Name = "locationComboBox";
-            locationComboBox.Size = new Size(521, 38);
+            locationComboBox.Size = new Size(349, 28);
             locationComboBox.TabIndex = 16;
             locationComboBox.Text = "Select your location";
             // 
             // SignUp
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
-            ClientSize = new Size(956, 1126);
+            ClientSize = new Size(637, 751);
             Controls.Add(locationComboBox);
             Controls.Add(cancelButton);
             Controls.Add(signUpButton);
@@ -238,6 +255,7 @@
             Controls.Add(firstNameLabel);
             Controls.Add(subHeadingLabel);
             Controls.Add(headingLabel);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "SignUp";
             Text = "Sign Up";
             ResumeLayout(false);

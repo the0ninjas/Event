@@ -10,7 +10,6 @@ namespace EventManagementSystem.Models
     public class User
     {
         [Key]
-        public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Password { get; set; }
@@ -19,11 +18,8 @@ namespace EventManagementSystem.Models
         public string Location { get; set; }
 
 
-        public User(string username, string password, string email)
+        public User()
         {
-            Username = username;
-            Password = password;
-            Email = email;
             //Notifications = new List<Notification>();
         }
 
