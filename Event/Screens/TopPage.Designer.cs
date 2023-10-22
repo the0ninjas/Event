@@ -29,70 +29,66 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            sideMenuBar = new FlowLayoutPanel();
-            menuBar = new Panel();
-            label1 = new Label();
+            sideBarFlowLayoutPanel = new FlowLayoutPanel();
+            menuPanel = new Panel();
+            menuLabel = new Label();
             menuButton = new PictureBox();
             panel2 = new Panel();
-            button1 = new Button();
+            homeButton = new Button();
             panel3 = new Panel();
-            button2 = new Button();
+            profileButton = new Button();
             panel4 = new Panel();
-            button3 = new Button();
-            panel5 = new Panel();
-            button4 = new Button();
+            eventCreationButton = new Button();
             panel6 = new Panel();
-            button5 = new Button();
+            myEventsButton = new Button();
             panel7 = new Panel();
-            button6 = new Button();
+            searchEventsButton = new Button();
             timerForSidebar = new System.Windows.Forms.Timer(components);
-            sideMenuBar.SuspendLayout();
-            menuBar.SuspendLayout();
+            sideBarFlowLayoutPanel.SuspendLayout();
+            menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menuButton).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            panel5.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             SuspendLayout();
             // 
-            // sideMenuBar
+            // sideBarFlowLayoutPanel
             // 
-            sideMenuBar.BackColor = Color.DarkSeaGreen;
-            sideMenuBar.Controls.Add(menuBar);
-            sideMenuBar.Controls.Add(panel2);
-            sideMenuBar.Controls.Add(panel3);
-            sideMenuBar.Controls.Add(panel4);
-            sideMenuBar.Controls.Add(panel5);
-            sideMenuBar.Controls.Add(panel6);
-            sideMenuBar.Controls.Add(panel7);
-            sideMenuBar.Dock = DockStyle.Left;
-            sideMenuBar.Location = new Point(0, 0);
-            sideMenuBar.MaximumSize = new Size(330, 879);
-            sideMenuBar.MinimumSize = new Size(89, 879);
-            sideMenuBar.Name = "sideMenuBar";
-            sideMenuBar.Size = new Size(330, 879);
-            sideMenuBar.TabIndex = 0;
+            sideBarFlowLayoutPanel.BackColor = Color.DarkSeaGreen;
+            sideBarFlowLayoutPanel.Controls.Add(menuPanel);
+            sideBarFlowLayoutPanel.Controls.Add(panel2);
+            sideBarFlowLayoutPanel.Controls.Add(panel3);
+            sideBarFlowLayoutPanel.Controls.Add(panel4);
+            sideBarFlowLayoutPanel.Controls.Add(panel6);
+            sideBarFlowLayoutPanel.Controls.Add(panel7);
+            sideBarFlowLayoutPanel.Dock = DockStyle.Left;
+            sideBarFlowLayoutPanel.Location = new Point(0, 0);
+            sideBarFlowLayoutPanel.MaximumSize = new Size(330, 879);
+            sideBarFlowLayoutPanel.MinimumSize = new Size(89, 879);
+            sideBarFlowLayoutPanel.Name = "sideBarFlowLayoutPanel";
+            sideBarFlowLayoutPanel.Size = new Size(330, 879);
+            sideBarFlowLayoutPanel.TabIndex = 0;
             // 
-            // menuBar
+            // menuPanel
             // 
-            menuBar.Controls.Add(label1);
-            menuBar.Controls.Add(menuButton);
-            menuBar.Location = new Point(3, 3);
-            menuBar.Name = "menuBar";
-            menuBar.Size = new Size(350, 146);
-            menuBar.TabIndex = 0;
+            menuPanel.Controls.Add(menuLabel);
+            menuPanel.Controls.Add(menuButton);
+            menuPanel.Location = new Point(3, 3);
+            menuPanel.Name = "menuPanel";
+            menuPanel.Size = new Size(350, 146);
+            menuPanel.TabIndex = 0;
             // 
-            // label1
+            // menuLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(147, 57);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 32);
-            label1.TabIndex = 1;
-            label1.Text = "Menu";
+            menuLabel.AutoSize = true;
+            menuLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            menuLabel.Location = new Point(147, 57);
+            menuLabel.Name = "menuLabel";
+            menuLabel.Size = new Size(77, 32);
+            menuLabel.TabIndex = 1;
+            menuLabel.Text = "Menu";
             // 
             // menuButton
             // 
@@ -108,134 +104,113 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(homeButton);
             panel2.Location = new Point(3, 155);
             panel2.Name = "panel2";
             panel2.Size = new Size(350, 66);
             panel2.TabIndex = 1;
             // 
-            // button1
+            // homeButton
             // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Image = Properties.Resources.home;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(-11, -12);
-            button1.Name = "button1";
-            button1.Padding = new Padding(20, 0, 0, 0);
-            button1.Size = new Size(376, 91);
-            button1.TabIndex = 1;
-            button1.Text = "Home";
-            button1.UseVisualStyleBackColor = true;
+            homeButton.FlatStyle = FlatStyle.Flat;
+            homeButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            homeButton.Image = Properties.Resources.home;
+            homeButton.ImageAlign = ContentAlignment.MiddleLeft;
+            homeButton.Location = new Point(-11, -12);
+            homeButton.Name = "homeButton";
+            homeButton.Padding = new Padding(20, 0, 0, 0);
+            homeButton.Size = new Size(376, 91);
+            homeButton.TabIndex = 1;
+            homeButton.Text = "Home";
+            homeButton.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            panel3.Controls.Add(button2);
+            panel3.Controls.Add(profileButton);
             panel3.Location = new Point(3, 227);
             panel3.Name = "panel3";
             panel3.Size = new Size(350, 66);
             panel3.TabIndex = 2;
             // 
-            // button2
+            // profileButton
             // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Image = Properties.Resources.user;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-11, -12);
-            button2.Name = "button2";
-            button2.Padding = new Padding(20, 0, 0, 0);
-            button2.Size = new Size(376, 91);
-            button2.TabIndex = 1;
-            button2.Text = "Profile";
-            button2.UseVisualStyleBackColor = true;
+            profileButton.FlatStyle = FlatStyle.Flat;
+            profileButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            profileButton.Image = Properties.Resources.user;
+            profileButton.ImageAlign = ContentAlignment.MiddleLeft;
+            profileButton.Location = new Point(-11, -12);
+            profileButton.Name = "profileButton";
+            profileButton.Padding = new Padding(20, 0, 0, 0);
+            profileButton.Size = new Size(376, 91);
+            profileButton.TabIndex = 1;
+            profileButton.Text = "Profile";
+            profileButton.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
-            panel4.Controls.Add(button3);
+            panel4.Controls.Add(eventCreationButton);
             panel4.Location = new Point(3, 299);
             panel4.Name = "panel4";
             panel4.Size = new Size(350, 66);
             panel4.TabIndex = 3;
             // 
-            // button3
+            // eventCreationButton
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Image = Properties.Resources.calendar_pen;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-11, -12);
-            button3.Name = "button3";
-            button3.Padding = new Padding(20, 0, 0, 0);
-            button3.Size = new Size(376, 91);
-            button3.TabIndex = 1;
-            button3.Text = "Create New Event";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(button4);
-            panel5.Location = new Point(3, 371);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(350, 66);
-            panel5.TabIndex = 4;
-            // 
-            // button4
-            // 
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Image = Properties.Resources.calendar_plus;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-11, -12);
-            button4.Name = "button4";
-            button4.Padding = new Padding(20, 0, 0, 0);
-            button4.Size = new Size(376, 91);
-            button4.TabIndex = 1;
-            button4.Text = "My Created Event";
-            button4.UseVisualStyleBackColor = true;
+            eventCreationButton.FlatStyle = FlatStyle.Flat;
+            eventCreationButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            eventCreationButton.Image = Properties.Resources.calendar_pen;
+            eventCreationButton.ImageAlign = ContentAlignment.MiddleLeft;
+            eventCreationButton.Location = new Point(-11, -12);
+            eventCreationButton.Name = "eventCreationButton";
+            eventCreationButton.Padding = new Padding(20, 0, 0, 0);
+            eventCreationButton.Size = new Size(376, 91);
+            eventCreationButton.TabIndex = 1;
+            eventCreationButton.Text = "Create Event";
+            eventCreationButton.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
-            panel6.Controls.Add(button5);
-            panel6.Location = new Point(3, 443);
+            panel6.Controls.Add(myEventsButton);
+            panel6.Location = new Point(3, 371);
             panel6.Name = "panel6";
             panel6.Size = new Size(350, 66);
             panel6.TabIndex = 5;
             // 
-            // button5
+            // myEventsButton
             // 
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Image = Properties.Resources.calendar_check;
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(-11, -12);
-            button5.Name = "button5";
-            button5.Padding = new Padding(20, 0, 0, 0);
-            button5.Size = new Size(376, 91);
-            button5.TabIndex = 1;
-            button5.Text = "My Joined Event";
-            button5.UseVisualStyleBackColor = true;
+            myEventsButton.FlatStyle = FlatStyle.Flat;
+            myEventsButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            myEventsButton.Image = Properties.Resources.calendar_check;
+            myEventsButton.ImageAlign = ContentAlignment.MiddleLeft;
+            myEventsButton.Location = new Point(-11, -12);
+            myEventsButton.Name = "myEventsButton";
+            myEventsButton.Padding = new Padding(20, 0, 0, 0);
+            myEventsButton.Size = new Size(376, 91);
+            myEventsButton.TabIndex = 1;
+            myEventsButton.Text = "My Events";
+            myEventsButton.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
-            panel7.Controls.Add(button6);
-            panel7.Location = new Point(3, 515);
+            panel7.Controls.Add(searchEventsButton);
+            panel7.Location = new Point(3, 443);
             panel7.Name = "panel7";
             panel7.Size = new Size(350, 66);
             panel7.TabIndex = 6;
             // 
-            // button6
+            // searchEventsButton
             // 
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(-11, -12);
-            button6.Name = "button6";
-            button6.Padding = new Padding(20, 0, 0, 0);
-            button6.Size = new Size(376, 91);
-            button6.TabIndex = 1;
-            button6.Text = "(Sub)";
-            button6.UseVisualStyleBackColor = true;
+            searchEventsButton.FlatStyle = FlatStyle.Flat;
+            searchEventsButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            searchEventsButton.Image = Properties.Resources.search;
+            searchEventsButton.ImageAlign = ContentAlignment.MiddleLeft;
+            searchEventsButton.Location = new Point(-11, -12);
+            searchEventsButton.Name = "searchEventsButton";
+            searchEventsButton.Padding = new Padding(20, 0, 0, 0);
+            searchEventsButton.Size = new Size(376, 91);
+            searchEventsButton.TabIndex = 1;
+            searchEventsButton.Text = "Search Events";
+            searchEventsButton.UseVisualStyleBackColor = true;
             // 
             // timerForSidebar
             // 
@@ -247,17 +222,16 @@
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1497, 879);
-            Controls.Add(sideMenuBar);
+            Controls.Add(sideBarFlowLayoutPanel);
             Name = "TopPage";
             Text = "Top Page";
-            sideMenuBar.ResumeLayout(false);
-            menuBar.ResumeLayout(false);
-            menuBar.PerformLayout();
+            sideBarFlowLayoutPanel.ResumeLayout(false);
+            menuPanel.ResumeLayout(false);
+            menuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)menuButton).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
             ResumeLayout(false);
@@ -265,22 +239,22 @@
 
         #endregion
 
-        private FlowLayoutPanel sideMenuBar;
+        private FlowLayoutPanel sideBarFlowLayoutPanel;
         private Panel panel2;
-        private Button button1;
+        private Button homeButton;
         private Panel panel3;
-        private Button button2;
+        private Button profileButton;
         private Panel panel4;
-        private Button button3;
+        private Button eventCreationButton;
         private Panel panel5;
-        private Button button4;
+        private Button myCreatedEventButton;
         private Panel panel6;
-        private Button button5;
+        private Button myEventsButton;
         private Panel panel7;
-        private Button button6;
-        private Label label1;
+        private Button searchEventsButton;
+        private Label menuLabel;
         private PictureBox menuButton;
         private System.Windows.Forms.Timer timerForSidebar;
-        private Panel menuBar;
+        private Panel menuPanel;
     }
 }
