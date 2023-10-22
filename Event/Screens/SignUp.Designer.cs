@@ -138,7 +138,7 @@
             // 
             firstNameTextBox.ForeColor = SystemColors.ScrollBar;
             firstNameTextBox.Location = new Point(141, 225);
-            firstNameTextBox.Margin = new Padding(2, 2, 2, 2);
+            firstNameTextBox.Margin = new Padding(2);
             firstNameTextBox.Name = "firstNameTextBox";
             firstNameTextBox.Size = new Size(349, 27);
             firstNameTextBox.TabIndex = 8;
@@ -150,7 +150,7 @@
             // 
             lastNameTextBox.ForeColor = SystemColors.ScrollBar;
             lastNameTextBox.Location = new Point(141, 292);
-            lastNameTextBox.Margin = new Padding(2, 2, 2, 2);
+            lastNameTextBox.Margin = new Padding(2);
             lastNameTextBox.Name = "lastNameTextBox";
             lastNameTextBox.Size = new Size(349, 27);
             lastNameTextBox.TabIndex = 9;
@@ -162,7 +162,7 @@
             // 
             emailTextBox.ForeColor = SystemColors.ScrollBar;
             emailTextBox.Location = new Point(141, 359);
-            emailTextBox.Margin = new Padding(2, 2, 2, 2);
+            emailTextBox.Margin = new Padding(2);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(349, 27);
             emailTextBox.TabIndex = 10;
@@ -174,7 +174,7 @@
             // 
             phoneNumberTextBox.ForeColor = SystemColors.ScrollBar;
             phoneNumberTextBox.Location = new Point(141, 425);
-            phoneNumberTextBox.Margin = new Padding(2, 2, 2, 2);
+            phoneNumberTextBox.Margin = new Padding(2);
             phoneNumberTextBox.Name = "phoneNumberTextBox";
             phoneNumberTextBox.Size = new Size(349, 27);
             phoneNumberTextBox.TabIndex = 11;
@@ -186,7 +186,7 @@
             // 
             passwordTextBox.ForeColor = SystemColors.ScrollBar;
             passwordTextBox.Location = new Point(141, 559);
-            passwordTextBox.Margin = new Padding(2, 2, 2, 2);
+            passwordTextBox.Margin = new Padding(2);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(349, 27);
             passwordTextBox.TabIndex = 13;
@@ -200,7 +200,7 @@
             signUpButton.FlatStyle = FlatStyle.Popup;
             signUpButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             signUpButton.Location = new Point(141, 625);
-            signUpButton.Margin = new Padding(2, 2, 2, 2);
+            signUpButton.Margin = new Padding(2);
             signUpButton.Name = "signUpButton";
             signUpButton.Size = new Size(347, 27);
             signUpButton.TabIndex = 14;
@@ -214,12 +214,13 @@
             cancelButton.FlatStyle = FlatStyle.Popup;
             cancelButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cancelButton.Location = new Point(141, 667);
-            cancelButton.Margin = new Padding(2, 2, 2, 2);
+            cancelButton.Margin = new Padding(2);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(347, 27);
             cancelButton.TabIndex = 15;
             cancelButton.Text = "Cancel";
             cancelButton.UseVisualStyleBackColor = false;
+            cancelButton.Click += cancelButton_Click;
             // 
             // locationComboBox
             // 
@@ -227,7 +228,7 @@
             locationComboBox.FormattingEnabled = true;
             locationComboBox.Items.AddRange(new object[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
             locationComboBox.Location = new Point(141, 492);
-            locationComboBox.Margin = new Padding(2, 2, 2, 2);
+            locationComboBox.Margin = new Padding(2);
             locationComboBox.Name = "locationComboBox";
             locationComboBox.Size = new Size(349, 28);
             locationComboBox.TabIndex = 16;
@@ -255,7 +256,7 @@
             Controls.Add(firstNameLabel);
             Controls.Add(subHeadingLabel);
             Controls.Add(headingLabel);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "SignUp";
             Text = "Sign Up";
             ResumeLayout(false);

@@ -140,7 +140,7 @@ namespace EventManagementSystem.Screens
             string location = locationComboBox.SelectedItem.ToString();
 
 
-            using (var context = new ConnectionFactory()) 
+            using (var context = new ConnectionFactory())
             {
                 var newUser = new User
                 {
@@ -158,6 +158,11 @@ namespace EventManagementSystem.Screens
 
             this.Close();
 
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

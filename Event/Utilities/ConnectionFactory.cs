@@ -29,18 +29,5 @@ namespace EventManagementSystem.Utilities
                 .HasKey(eu => new { eu.EventId, eu.UserId });
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Event>()
-        //        .HasMany(e => e.Attendees)
-        //        .WithMany(u => u.AttendingEvents)
-        //        .Map(m =>
-        //        {
-        //            m.MapLeftKey("EventId");
-        //            m.MapRightKey("UserId");
-        //            m.ToTable("EventAttendees");
-        //        });
-        //}
-
     }
 }
