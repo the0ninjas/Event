@@ -156,6 +156,8 @@ namespace EventManagementSystem.Screens
                 context.SaveChanges();
             }
 
+            this.Close();
+
         }
     }
 }
