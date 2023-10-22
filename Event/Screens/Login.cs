@@ -66,26 +66,26 @@ namespace EventManagementSystem.Screens
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            using (var context = new ConnectionFactory())
-            {
-                string username = textBox1.Text;
-                string password = textBox2.Text;
+            //using (var context = new ConnectionFactory())
+            //{
+            //    string username = textBox1.Text;
+            //    string password = textBox2.Text;
 
-                // Check if the user with the given username and password exists
-                var user = context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+            //    // Check if the user with the given username and password exists
+            //    var user = context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
 
-                if (user != null)
-                {
-                    // Successful login
-                    MessageBox.Show("Login successful!");
-                    // You can now navigate to another form or perform other actions.
-                }
-                else
-                {
-                    // Invalid credentials
-                    MessageBox.Show("Login failed. Please check your username and password.");
-                }
-            }
+            //    if (user != null)
+            //    {
+            //        // Successful login
+            //        MessageBox.Show("Login successful!");
+            //        // You can now navigate to another form or perform other actions.
+            //    }
+            //    else
+            //    {
+            //        // Invalid credentials
+            //        MessageBox.Show("Login failed. Please check your username and password.");
+            //    }
+            //}
         }
     }
 }
