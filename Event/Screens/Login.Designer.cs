@@ -76,7 +76,7 @@
             signInButton.TabIndex = 4;
             signInButton.Text = "Sign In";
             signInButton.UseVisualStyleBackColor = false;
-            signInButton.Click += button1_Click;
+            signInButton.Click += signInButton_Click;
             // 
             // passwordTextBox
             // 
@@ -86,8 +86,8 @@
             passwordTextBox.Size = new Size(414, 35);
             passwordTextBox.TabIndex = 3;
             passwordTextBox.Text = "Enter your password";
-            passwordTextBox.Enter += textBox2_Enter;
-            passwordTextBox.Leave += textBox2_Leave;
+            passwordTextBox.Enter += passwordTextBox_Enter;
+            passwordTextBox.Leave += passwordTextBox_Leave;
             // 
             // emailTextBox
             // 
@@ -97,8 +97,8 @@
             emailTextBox.Size = new Size(414, 35);
             emailTextBox.TabIndex = 2;
             emailTextBox.Text = "Enter your email address";
-            emailTextBox.Enter += textBox1_Enter;
-            emailTextBox.Leave += textBox1_Leave;
+            emailTextBox.Enter += emailTextBox_Enter;
+            emailTextBox.Leave += emailTextBox_Leave;
             // 
             // passwordLabel
             // 

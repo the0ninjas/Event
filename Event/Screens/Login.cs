@@ -18,7 +18,7 @@ namespace EventManagementSystem.Screens
             InitializeComponent();
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
+        private void emailTextBox_Enter(object sender, EventArgs e)
         {
             if (emailTextBox.Text == "Enter your email address")
             {
@@ -27,7 +27,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void emailTextBox_Leave(object sender, EventArgs e)
         {
             if (emailTextBox.Text == "")
             {
@@ -36,7 +36,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
-        private void textBox2_Enter(object sender, EventArgs e)
+        private void passwordTextBox_Enter(object sender, EventArgs e)
         {
             if (passwordTextBox.Text == "Enter your password")
             {
@@ -46,7 +46,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void passwordTextBox_Leave(object sender, EventArgs e)
         {
             if (passwordTextBox.Text == "")
             {
@@ -56,7 +56,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void signInButton_Click(object sender, EventArgs e)
         {
             SignUp signup = new SignUp();
             signup.Show();
