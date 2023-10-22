@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventManagementSystem.Models
 {
-    internal class Notification
+    public class Notification
     {
         public string Message { get; set; }
         public DateTime Timestamp { get; set; }
