@@ -69,15 +69,14 @@ namespace EventManagementSystem.Screens
 
                 if (user != null)
                 {
-                    // Successful login, navigate to the TopPage
-                    TopPage topPage = new TopPage();
-                    topPage.Show(); // or topPage.ShowDialog(); if you want it to be modal
-                    this.Hide(); // Hide the login form
+                    // Successful login
+                    MessageBox.Show("Login successful!");
+                    // You can now navigate to another form or perform other actions.
                 }
                 else
                 {
                     // Invalid credentials
-                    MessageBox.Show("Login failed. Please check your email and password.");
+                    MessageBox.Show("Login failed. Please check your username and password.");
                 }
             }
         }
