@@ -16,5 +16,30 @@ namespace EventManagementSystem.Screens
         {
             InitializeComponent();
         }
+
+        private void firstNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lastNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void emailTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phoneTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void locationComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

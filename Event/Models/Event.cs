@@ -16,7 +16,7 @@ namespace EventManagementSystem.Models
         public string Location { get; set; }
         public string Description { get; set; }
         public bool IsVisible { get; set; }
-        public List<User> Attendees { get; set; }
+        //public List<User> Attendees { get; set; }
 
 
         public Event(string name, DateTime date, DateTime time, string location, string description, bool isVisible)
@@ -27,20 +27,20 @@ namespace EventManagementSystem.Models
             Location = location;
             Description = description;
             IsVisible = isVisible;
-            Attendees = new List<User>();
+            //Attendees = new List<User>();
         }
 
         // Method to add an attendee to the event
-        public void AddAttendee(User user)
-        {
-            Attendees.Add(user);
-        }
+        //public void AddAttendee(User user)
+        //{
+        //    Attendees.Add(user);
+        //}
 
-        // Method to remove an attendee from the event
-        public void RemoveAttendee(User user)
-        {
-            Attendees.Remove(user);
-        }
+        //// Method to remove an attendee from the event
+        //public void RemoveAttendee(User user)
+        //{
+        //    Attendees.Remove(user);
+        //}
 
 
     }
