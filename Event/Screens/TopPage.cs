@@ -16,7 +16,18 @@ namespace EventManagementSystem.Screens
         public TopPage()
         {
             InitializeComponent();
+            // Create a new instance of Dashboard
+            Dashboard dashboardForm = new Dashboard();
 
+            dashboardForm.TopLevel = false;
+            dashboardForm.FormBorderStyle = FormBorderStyle.None;
+            dashboardForm.Dock = DockStyle.Fill;
+
+            // Add the Dashboard form to the topPagePane
+            this.topPagePane.Controls.Add(dashboardForm);
+
+            dashboardForm.BringToFront();
+            dashboardForm.Show();
         }
 
         bool openSideMenuBar;
@@ -76,6 +87,12 @@ namespace EventManagementSystem.Screens
         private void homeButton_Click(object sender, EventArgs e)
         {
             OpenSelectedMenu(new Screens.Dashboard(), sender);
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You are going to logout.", "Logout", MessageBoxButtons.OKCancel);
+            //Add Logout function
         }
     }
 }

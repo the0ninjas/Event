@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TopPage));
             sideBarFlowLayoutPanel = new FlowLayoutPanel();
             menuPanel = new Panel();
             menuLabel = new Label();
@@ -40,7 +41,7 @@
             panel4 = new Panel();
             eventCreationButton = new Button();
             panel6 = new Panel();
-            subButton1 = new Button();
+            logoutButton = new Button();
             panel7 = new Panel();
             subButton2 = new Button();
             timerForSidebar = new System.Windows.Forms.Timer(components);
@@ -178,24 +179,26 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(subButton1);
+            panel6.Controls.Add(logoutButton);
             panel6.Location = new Point(3, 339);
             panel6.Name = "panel6";
             panel6.Size = new Size(350, 66);
             panel6.TabIndex = 5;
             // 
-            // subButton1
+            // logoutButton
             // 
-            subButton1.FlatStyle = FlatStyle.Flat;
-            subButton1.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            subButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            subButton1.Location = new Point(-11, -12);
-            subButton1.Name = "subButton1";
-            subButton1.Padding = new Padding(20, 0, 0, 0);
-            subButton1.Size = new Size(376, 91);
-            subButton1.TabIndex = 1;
-            subButton1.Text = "(Sub)";
-            subButton1.UseVisualStyleBackColor = true;
+            logoutButton.FlatStyle = FlatStyle.Flat;
+            logoutButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            logoutButton.Image = (Image)resources.GetObject("logoutButton.Image");
+            logoutButton.ImageAlign = ContentAlignment.MiddleLeft;
+            logoutButton.Location = new Point(-11, -12);
+            logoutButton.Name = "logoutButton";
+            logoutButton.Padding = new Padding(20, 0, 0, 0);
+            logoutButton.Size = new Size(376, 91);
+            logoutButton.TabIndex = 1;
+            logoutButton.Text = "Logout";
+            logoutButton.UseVisualStyleBackColor = true;
+            logoutButton.Click += logoutButton_Click;
             // 
             // panel7
             // 
@@ -298,7 +301,7 @@
         private Panel panel5;
         private Button myCreatedEventButton;
         private Panel panel6;
-        private Button subButton1;
+        private Button logoutButton;
         private Panel panel7;
         private Button subButton2;
         private Label menuLabel;
