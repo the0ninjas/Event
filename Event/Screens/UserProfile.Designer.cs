@@ -35,12 +35,12 @@
             phoneLabel = new Label();
             locationLabel = new Label();
             panel1 = new Panel();
-            firstNameTextBox = new TextBox();
-            lastNameTextBox = new TextBox();
-            emailTextBox = new TextBox();
-            phoneTextBox = new TextBox();
-            locationComboBox = new ComboBox();
             updateButton = new Button();
+            locationComboBox = new ComboBox();
+            phoneTextBox = new TextBox();
+            emailTextBox = new TextBox();
+            lastNameTextBox = new TextBox();
+            firstNameTextBox = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -118,47 +118,10 @@
             panel1.Controls.Add(locationLabel);
             panel1.Controls.Add(lastNameLabel);
             panel1.Controls.Add(phoneLabel);
-            panel1.Location = new Point(304, 45);
+            panel1.Location = new Point(311, 264);
             panel1.Name = "panel1";
             panel1.Size = new Size(1016, 855);
             panel1.TabIndex = 7;
-            // 
-            // firstNameTextBox
-            // 
-            firstNameTextBox.Location = new Point(458, 236);
-            firstNameTextBox.Name = "firstNameTextBox";
-            firstNameTextBox.Size = new Size(414, 35);
-            firstNameTextBox.TabIndex = 7;
-            // 
-            // lastNameTextBox
-            // 
-            lastNameTextBox.Location = new Point(458, 336);
-            lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(414, 35);
-            lastNameTextBox.TabIndex = 8;
-            // 
-            // emailTextBox
-            // 
-            emailTextBox.Location = new Point(458, 436);
-            emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(414, 35);
-            emailTextBox.TabIndex = 9;
-            // 
-            // phoneTextBox
-            // 
-            phoneTextBox.Location = new Point(458, 536);
-            phoneTextBox.Name = "phoneTextBox";
-            phoneTextBox.Size = new Size(414, 35);
-            phoneTextBox.TabIndex = 10;
-            // 
-            // locationComboBox
-            // 
-            locationComboBox.FormattingEnabled = true;
-            locationComboBox.Items.AddRange(new object[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
-            locationComboBox.Location = new Point(458, 636);
-            locationComboBox.Name = "locationComboBox";
-            locationComboBox.Size = new Size(414, 38);
-            locationComboBox.TabIndex = 14;
             // 
             // updateButton
             // 
@@ -172,12 +135,49 @@
             updateButton.Text = "Update";
             updateButton.UseVisualStyleBackColor = false;
             // 
+            // locationComboBox
+            // 
+            locationComboBox.FormattingEnabled = true;
+            locationComboBox.Items.AddRange(new object[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
+            locationComboBox.Location = new Point(458, 636);
+            locationComboBox.Name = "locationComboBox";
+            locationComboBox.Size = new Size(414, 38);
+            locationComboBox.TabIndex = 14;
+            // 
+            // phoneTextBox
+            // 
+            phoneTextBox.Location = new Point(458, 536);
+            phoneTextBox.Name = "phoneTextBox";
+            phoneTextBox.Size = new Size(414, 35);
+            phoneTextBox.TabIndex = 10;
+            // 
+            // emailTextBox
+            // 
+            emailTextBox.Location = new Point(458, 436);
+            emailTextBox.Name = "emailTextBox";
+            emailTextBox.Size = new Size(414, 35);
+            emailTextBox.TabIndex = 9;
+            // 
+            // lastNameTextBox
+            // 
+            lastNameTextBox.Location = new Point(458, 336);
+            lastNameTextBox.Name = "lastNameTextBox";
+            lastNameTextBox.Size = new Size(414, 35);
+            lastNameTextBox.TabIndex = 8;
+            // 
+            // firstNameTextBox
+            // 
+            firstNameTextBox.Location = new Point(458, 236);
+            firstNameTextBox.Name = "firstNameTextBox";
+            firstNameTextBox.Size = new Size(414, 35);
+            firstNameTextBox.TabIndex = 7;
+            // 
             // UserProfile
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
-            ClientSize = new Size(1622, 1122);
+            ClientSize = new Size(1626, 1386);
             Controls.Add(panel1);
             Name = "UserProfile";
             Text = "User Profile";

@@ -181,7 +181,7 @@
             createEventPanel.Controls.Add(titleTextBox);
             createEventPanel.Controls.Add(descriptionLabel);
             createEventPanel.Controls.Add(capacityLabel);
-            createEventPanel.Location = new Point(354, 45);
+            createEventPanel.Location = new Point(375, 223);
             createEventPanel.Name = "createEventPanel";
             createEventPanel.Size = new Size(916, 939);
             createEventPanel.TabIndex = 13;
@@ -203,7 +203,7 @@
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
-            ClientSize = new Size(1622, 1122);
+            ClientSize = new Size(1626, 1386);
             Controls.Add(createEventPanel);
             Name = "EventCreationForm";
             Text = "Event Creation Form";
