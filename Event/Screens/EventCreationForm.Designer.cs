@@ -118,10 +118,14 @@
             // 
             // titleTextBox
             // 
+            titleTextBox.ForeColor = SystemColors.ScrollBar;
             titleTextBox.Location = new Point(405, 158);
             titleTextBox.Name = "titleTextBox";
             titleTextBox.Size = new Size(350, 35);
             titleTextBox.TabIndex = 7;
+            titleTextBox.Text = "Enter event title";
+            titleTextBox.Enter += titleTextBox_Enter;
+            titleTextBox.Leave += titleTextBox_Leave;
             // 
             // datePicker
             // 
@@ -143,27 +147,40 @@
             // 
             // locationComboBox
             // 
+            locationComboBox.ForeColor = SystemColors.ScrollBar;
             locationComboBox.FormattingEnabled = true;
             locationComboBox.Items.AddRange(new object[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
             locationComboBox.Location = new Point(405, 458);
             locationComboBox.Name = "locationComboBox";
             locationComboBox.Size = new Size(350, 38);
             locationComboBox.TabIndex = 10;
+            locationComboBox.Text = "Select the location";
+            locationComboBox.SelectedIndexChanged += locationComboBox_SelectedIndexChanged;
+            locationComboBox.Enter += locationComboBox_Enter;
+            locationComboBox.Leave += locationComboBox_Leave;
             // 
             // capacityTextBox
             // 
+            capacityTextBox.ForeColor = SystemColors.ScrollBar;
             capacityTextBox.Location = new Point(405, 558);
             capacityTextBox.Name = "capacityTextBox";
             capacityTextBox.Size = new Size(350, 35);
             capacityTextBox.TabIndex = 11;
+            capacityTextBox.Text = "Enter max capacity";
+            capacityTextBox.Enter += capacityTextBox_Enter;
+            capacityTextBox.Leave += capacityTextBox_Leave;
             // 
             // descriptionTextBox
             // 
+            descriptionTextBox.ForeColor = SystemColors.ScrollBar;
             descriptionTextBox.Location = new Point(405, 658);
             descriptionTextBox.Multiline = true;
             descriptionTextBox.Name = "descriptionTextBox";
             descriptionTextBox.Size = new Size(350, 118);
             descriptionTextBox.TabIndex = 12;
+            descriptionTextBox.Text = "Enter event description";
+            descriptionTextBox.Enter += descriptionTextBox_Enter;
+            descriptionTextBox.Leave += descriptionTextBox_Leave;
             // 
             // createEventPanel
             // 
