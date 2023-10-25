@@ -51,10 +51,11 @@
             joinedEventFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             joinedEventFlowLayoutPanel.AutoScroll = true;
             joinedEventFlowLayoutPanel.Location = new Point(3, 79);
-            joinedEventFlowLayoutPanel.Margin = new Padding(3, 3, 3, 40);
+            joinedEventFlowLayoutPanel.Margin = new Padding(3, 3, 3, 20);
             joinedEventFlowLayoutPanel.Name = "joinedEventFlowLayoutPanel";
-            joinedEventFlowLayoutPanel.Size = new Size(1603, 305);
+            joinedEventFlowLayoutPanel.Size = new Size(1603, 350);
             joinedEventFlowLayoutPanel.TabIndex = 1;
+            joinedEventFlowLayoutPanel.WrapContents = false;
             // 
             // eventCard1
             // 
@@ -105,7 +106,7 @@
             // 
             createdEventTitleFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             createdEventTitleFlowLayoutPanel.Controls.Add(createdEventTitleLabel);
-            createdEventTitleFlowLayoutPanel.Location = new Point(3, 427);
+            createdEventTitleFlowLayoutPanel.Location = new Point(3, 452);
             createdEventTitleFlowLayoutPanel.Name = "createdEventTitleFlowLayoutPanel";
             createdEventTitleFlowLayoutPanel.Size = new Size(1603, 70);
             createdEventTitleFlowLayoutPanel.TabIndex = 2;
@@ -124,17 +125,18 @@
             // 
             createdEventFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             createdEventFlowLayoutPanel.AutoScroll = true;
-            createdEventFlowLayoutPanel.Location = new Point(3, 503);
-            createdEventFlowLayoutPanel.Margin = new Padding(3, 3, 3, 40);
+            createdEventFlowLayoutPanel.Location = new Point(3, 528);
+            createdEventFlowLayoutPanel.Margin = new Padding(3, 3, 3, 20);
             createdEventFlowLayoutPanel.Name = "createdEventFlowLayoutPanel";
-            createdEventFlowLayoutPanel.Size = new Size(1603, 305);
+            createdEventFlowLayoutPanel.Size = new Size(1603, 350);
             createdEventFlowLayoutPanel.TabIndex = 3;
+            createdEventFlowLayoutPanel.WrapContents = false;
             // 
             // upcomingEventTitleFlowLayoutPanel
             // 
             upcomingEventTitleFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             upcomingEventTitleFlowLayoutPanel.Controls.Add(upcomingEventTitleLabel);
-            upcomingEventTitleFlowLayoutPanel.Location = new Point(3, 851);
+            upcomingEventTitleFlowLayoutPanel.Location = new Point(3, 901);
             upcomingEventTitleFlowLayoutPanel.Name = "upcomingEventTitleFlowLayoutPanel";
             upcomingEventTitleFlowLayoutPanel.Size = new Size(1603, 70);
             upcomingEventTitleFlowLayoutPanel.TabIndex = 4;
@@ -153,11 +155,12 @@
             // 
             upcomingEventFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             upcomingEventFlowLayoutPanel.AutoScroll = true;
-            upcomingEventFlowLayoutPanel.Location = new Point(3, 927);
-            upcomingEventFlowLayoutPanel.Margin = new Padding(3, 3, 3, 40);
+            upcomingEventFlowLayoutPanel.Location = new Point(3, 977);
+            upcomingEventFlowLayoutPanel.Margin = new Padding(3, 3, 3, 20);
             upcomingEventFlowLayoutPanel.Name = "upcomingEventFlowLayoutPanel";
-            upcomingEventFlowLayoutPanel.Size = new Size(1603, 305);
+            upcomingEventFlowLayoutPanel.Size = new Size(1603, 350);
             upcomingEventFlowLayoutPanel.TabIndex = 5;
+            upcomingEventFlowLayoutPanel.WrapContents = false;
             // 
             // sqlCommand1
             // 
