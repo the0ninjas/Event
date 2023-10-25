@@ -1,4 +1,5 @@
-﻿using EventManagementSystem.Utilities;
+﻿using EventManagementSystem.Models;
+using EventManagementSystem.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,10 +70,14 @@ namespace EventManagementSystem.Screens
 
                 if (user != null)
                 {
+                    // Store the authenticated user in UserSession
+                    UserSession.AuthenticateUser(user);
+
                     // Successful login, navigate to the TopPage
                     TopPage topPage = new TopPage();
-                    topPage.Show(); // or topPage.ShowDialog(); if you want it to be modal
+                    topPage.Show();
                     this.Hide(); // Hide the login form
+
                 }
                 else
                 {

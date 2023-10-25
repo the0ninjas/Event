@@ -48,9 +48,10 @@
             // 
             headingLabel.AutoSize = true;
             headingLabel.Font = new Font("Segoe UI Black", 15.000001F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            headingLabel.Location = new Point(154, 75);
+            headingLabel.Location = new Point(103, 50);
+            headingLabel.Margin = new Padding(2, 0, 2, 0);
             headingLabel.Name = "headingLabel";
-            headingLabel.Size = new Size(230, 48);
+            headingLabel.Size = new Size(163, 36);
             headingLabel.TabIndex = 0;
             headingLabel.Text = "User Profile";
             // 
@@ -58,9 +59,10 @@
             // 
             firstNameLabel.AutoSize = true;
             firstNameLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            firstNameLabel.Location = new Point(154, 236);
+            firstNameLabel.Location = new Point(103, 157);
+            firstNameLabel.Margin = new Padding(2, 0, 2, 0);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new Size(132, 32);
+            firstNameLabel.Size = new Size(93, 23);
             firstNameLabel.TabIndex = 1;
             firstNameLabel.Text = "First Name";
             // 
@@ -68,9 +70,10 @@
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            lastNameLabel.Location = new Point(154, 336);
+            lastNameLabel.Location = new Point(103, 224);
+            lastNameLabel.Margin = new Padding(2, 0, 2, 0);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(130, 32);
+            lastNameLabel.Size = new Size(91, 23);
             lastNameLabel.TabIndex = 2;
             lastNameLabel.Text = "Last Name";
             // 
@@ -78,9 +81,10 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            emailLabel.Location = new Point(154, 436);
+            emailLabel.Location = new Point(103, 291);
+            emailLabel.Margin = new Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(165, 32);
+            emailLabel.Size = new Size(116, 23);
             emailLabel.TabIndex = 3;
             emailLabel.Text = "Email Address";
             // 
@@ -88,9 +92,10 @@
             // 
             phoneLabel.AutoSize = true;
             phoneLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            phoneLabel.Location = new Point(154, 536);
+            phoneLabel.Location = new Point(103, 357);
+            phoneLabel.Margin = new Padding(2, 0, 2, 0);
             phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new Size(179, 32);
+            phoneLabel.Size = new Size(127, 23);
             phoneLabel.TabIndex = 4;
             phoneLabel.Text = "Phone Number";
             // 
@@ -98,9 +103,10 @@
             // 
             locationLabel.AutoSize = true;
             locationLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            locationLabel.Location = new Point(154, 636);
+            locationLabel.Location = new Point(103, 424);
+            locationLabel.Margin = new Padding(2, 0, 2, 0);
             locationLabel.Name = "locationLabel";
-            locationLabel.Size = new Size(107, 32);
+            locationLabel.Size = new Size(75, 23);
             locationLabel.TabIndex = 5;
             locationLabel.Text = "Location";
             // 
@@ -118,9 +124,10 @@
             panel1.Controls.Add(locationLabel);
             panel1.Controls.Add(lastNameLabel);
             panel1.Controls.Add(phoneLabel);
-            panel1.Location = new Point(311, 264);
+            panel1.Location = new Point(203, 30);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1016, 855);
+            panel1.Size = new Size(677, 570);
             panel1.TabIndex = 7;
             // 
             // updateButton
@@ -128,9 +135,10 @@
             updateButton.BackColor = Color.DarkSeaGreen;
             updateButton.FlatStyle = FlatStyle.Popup;
             updateButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            updateButton.Location = new Point(458, 740);
+            updateButton.Location = new Point(305, 493);
+            updateButton.Margin = new Padding(2, 2, 2, 2);
             updateButton.Name = "updateButton";
-            updateButton.Size = new Size(131, 40);
+            updateButton.Size = new Size(87, 27);
             updateButton.TabIndex = 15;
             updateButton.Text = "Update";
             updateButton.UseVisualStyleBackColor = false;
@@ -139,46 +147,57 @@
             // 
             locationComboBox.FormattingEnabled = true;
             locationComboBox.Items.AddRange(new object[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
-            locationComboBox.Location = new Point(458, 636);
+            locationComboBox.Location = new Point(305, 424);
+            locationComboBox.Margin = new Padding(2, 2, 2, 2);
             locationComboBox.Name = "locationComboBox";
-            locationComboBox.Size = new Size(414, 38);
+            locationComboBox.Size = new Size(277, 28);
             locationComboBox.TabIndex = 14;
+            locationComboBox.SelectedIndexChanged += locationComboBox_SelectedIndexChanged;
             // 
             // phoneTextBox
             // 
-            phoneTextBox.Location = new Point(458, 536);
+            phoneTextBox.Location = new Point(305, 357);
+            phoneTextBox.Margin = new Padding(2, 2, 2, 2);
             phoneTextBox.Name = "phoneTextBox";
-            phoneTextBox.Size = new Size(414, 35);
+            phoneTextBox.Size = new Size(277, 27);
             phoneTextBox.TabIndex = 10;
+            phoneTextBox.TextChanged += phoneTextBox_TextChanged;
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(458, 436);
+            emailTextBox.Location = new Point(305, 291);
+            emailTextBox.Margin = new Padding(2, 2, 2, 2);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(414, 35);
+            emailTextBox.Size = new Size(277, 27);
             emailTextBox.TabIndex = 9;
+            emailTextBox.TextChanged += emailTextBox_TextChanged;
             // 
             // lastNameTextBox
             // 
-            lastNameTextBox.Location = new Point(458, 336);
+            lastNameTextBox.Location = new Point(305, 224);
+            lastNameTextBox.Margin = new Padding(2, 2, 2, 2);
             lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(414, 35);
+            lastNameTextBox.Size = new Size(277, 27);
             lastNameTextBox.TabIndex = 8;
+            lastNameTextBox.TextChanged += lastNameTextBox_TextChanged;
             // 
             // firstNameTextBox
             // 
-            firstNameTextBox.Location = new Point(458, 236);
+            firstNameTextBox.Location = new Point(305, 157);
+            firstNameTextBox.Margin = new Padding(2, 2, 2, 2);
             firstNameTextBox.Name = "firstNameTextBox";
-            firstNameTextBox.Size = new Size(414, 35);
+            firstNameTextBox.Size = new Size(277, 27);
             firstNameTextBox.TabIndex = 7;
+            firstNameTextBox.TextChanged += firstNameTextBox_TextChanged;
             // 
             // UserProfile
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
-            ClientSize = new Size(1626, 1386);
+            ClientSize = new Size(1081, 748);
             Controls.Add(panel1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UserProfile";
             Text = "User Profile";
             panel1.ResumeLayout(false);
