@@ -25,9 +25,9 @@ namespace EventManagementSystem.Screens
             if (authenticatedUser != null)
             {
                 // Populate UI elements with user data
-                firstNameTextBox.Text = authenticatedUser.FirstName;
-                lastNameTextBox.Text = authenticatedUser.LastName;
-                emailTextBox.Text = authenticatedUser.Email;
+                firstNameTextBox.Text = authenticatedUser.firstName;
+                lastNameTextBox.Text = authenticatedUser.lastName;
+                emailTextBox.Text = authenticatedUser.email;
                 // Add other data as needed
             }
         }

@@ -10,18 +10,25 @@ namespace EventManagementSystem.Models
     public class User
     {
         [Key]
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public int PhoneNumber { get; set; }
-        public string Location { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public int phoneNumber { get; set; }
+        public string location { get; set; }
 
 
-        public User()
+        public User(string firstName, string lastName, string password, string email, int phoneNumber, string location)
         {
-            //Notifications = new List<Notification>();
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.password = password;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
+            this.location = location;
         }
+
+       
 
         // Method to create a new event
         //public void CreateEvent(string name, DateTime date, DateTime time, string location, string description, bool isVisible)

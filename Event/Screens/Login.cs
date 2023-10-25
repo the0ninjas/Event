@@ -66,18 +66,16 @@ namespace EventManagementSystem.Screens
                 string password = passwordTextBox.Text;
 
                 //Check if the user with the given username and password exists
-                var user = context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+                User user = context.Users.FirstOrDefault(u => u.email == email && u.password == password);
 
                 if (user != null)
                 {
                     // Store the authenticated user in UserSession
                     UserSession.AuthenticateUser(user);
-
                     // Successful login, navigate to the TopPage
                     TopPage topPage = new TopPage();
-                    topPage.Show();
+                    topPage.Show(); // or topPage.ShowDialog(); if you want it to be modal
                     this.Hide(); // Hide the login form
-
                 }
                 else
                 {

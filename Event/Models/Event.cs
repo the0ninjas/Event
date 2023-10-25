@@ -9,24 +9,28 @@ namespace EventManagementSystem.Models
 {
     public class Event
     {
-        public int EventId { get; set; }
-        public string Name { get; set; }
-        public DateTime Date { get; set; }
-        public DateTime Time { get; set; }
-        public string Location { get; set; }
-        public string Description { get; set; }
-        public bool IsVisible { get; set; }
+        public int eventId { get; set; }
+        public string title { get; set; }
+        public DateTime date { get; set; }
+        public DateTime time { get; set; }
+        public string location { get; set; }
+        public int registrations { get; set; }
+        public int capacity { get; set; }
+        public string description { get; set; }
+        public bool isVisible { get; set; }
         //public List<User> Attendees { get; set; }
 
 
-        public Event(string name, DateTime date, DateTime time, string location, string description, bool isVisible)
+        public Event(string title, DateTime date, DateTime time, string location, int capacity, string description)
         {
-            Name = name;
-            Date = date;
-            Time = time;
-            Location = location;
-            Description = description;
-            IsVisible = isVisible;
+            this.title = title;
+            this.date = date;
+            this.time = time;
+            this.location = location;
+            this.capacity = capacity;
+            this.registrations = 1;
+            this.description = description;
+            this.isVisible = true;
             //Attendees = new List<User>();
         }
 

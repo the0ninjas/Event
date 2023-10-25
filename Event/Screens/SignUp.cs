@@ -28,7 +28,7 @@ namespace EventManagementSystem.Screens
                 firstNameTextBox.ForeColor = Color.Black;
             }
         }
-
+        
         private void firstNameTextBox_Leave(object sender, EventArgs e)
         {
             if (firstNameTextBox.Text == "")
@@ -150,14 +150,14 @@ namespace EventManagementSystem.Screens
 
                 using (var context = new ConnectionFactory())
                 {
-                    var newUser = new User
+                    User newUser = new User(firstName, lastName, password, email, phoneNumber, location)
                     {
-                        FirstName = firstName,
-                        LastName = lastName,
-                        Password = password,
-                        Email = email,
-                        PhoneNumber = phoneNumber,
-                        Location = location
+                        firstName = firstName,
+                        lastName = lastName,
+                        password = password,
+                        email = email,
+                        phoneNumber = phoneNumber,
+                        location = location
                     };
 
                     context.Users.Add(newUser);
