@@ -28,63 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            headingPanel = new Panel();
-            searchTextBox = new TextBox();
-            headingLabel = new Label();
             joinedEventFlowLayoutPanel = new FlowLayoutPanel();
-            joinedEventHScrollBar = new HScrollBar();
             eventCard1 = new EventCard();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            headingPanel.SuspendLayout();
+            dashboardPanel = new FlowLayoutPanel();
+            joinedEventTitleFlowLayoutPanel = new FlowLayoutPanel();
+            joinedEventTitleLabel = new Label();
+            createdEventTitleFlowLayoutPanel = new FlowLayoutPanel();
+            createdEventTitleLabel = new Label();
+            createdEventFlowLayoutPanel = new FlowLayoutPanel();
+            upcomingEventTitleFlowLayoutPanel = new FlowLayoutPanel();
+            upcomingEventTitleLabel = new Label();
+            upcomingEventFlowLayoutPanel = new FlowLayoutPanel();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            dashboardPanel.SuspendLayout();
+            joinedEventTitleFlowLayoutPanel.SuspendLayout();
+            createdEventTitleFlowLayoutPanel.SuspendLayout();
+            upcomingEventTitleFlowLayoutPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // headingPanel
-            // 
-            headingPanel.BackColor = Color.DarkSeaGreen;
-            headingPanel.Controls.Add(searchTextBox);
-            headingPanel.Controls.Add(headingLabel);
-            headingPanel.Dock = DockStyle.Top;
-            headingPanel.Location = new Point(0, 0);
-            headingPanel.Name = "headingPanel";
-            headingPanel.Size = new Size(1625, 105);
-            headingPanel.TabIndex = 0;
-            // 
-            // searchTextBox
-            // 
-            searchTextBox.ForeColor = SystemColors.ScrollBar;
-            searchTextBox.Location = new Point(1248, 43);
-            searchTextBox.Name = "searchTextBox";
-            searchTextBox.Size = new Size(327, 35);
-            searchTextBox.TabIndex = 1;
-            searchTextBox.Text = "Search";
-            // 
-            // headingLabel
-            // 
-            headingLabel.AutoSize = true;
-            headingLabel.Font = new Font("Segoe UI Black", 15.000001F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            headingLabel.Location = new Point(34, 32);
-            headingLabel.Name = "headingLabel";
-            headingLabel.Size = new Size(194, 48);
-            headingLabel.TabIndex = 1;
-            headingLabel.Text = "EventHub";
             // 
             // joinedEventFlowLayoutPanel
             // 
+            joinedEventFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             joinedEventFlowLayoutPanel.AutoScroll = true;
-            joinedEventFlowLayoutPanel.Location = new Point(7, 184);
+            joinedEventFlowLayoutPanel.Location = new Point(3, 79);
+            joinedEventFlowLayoutPanel.Margin = new Padding(3, 3, 3, 20);
             joinedEventFlowLayoutPanel.Name = "joinedEventFlowLayoutPanel";
-            joinedEventFlowLayoutPanel.Size = new Size(1603, 305);
+            joinedEventFlowLayoutPanel.Size = new Size(1603, 350);
             joinedEventFlowLayoutPanel.TabIndex = 1;
-            joinedEventFlowLayoutPanel.ControlAdded += joinedEventFlowLayoutPanel_ControlAdded;
-            joinedEventFlowLayoutPanel.ControlRemoved += joinedEventFlowLayoutPanel_ControlRemoved;
-            // 
-            // joinedEventHScrollBar
-            // 
-            joinedEventHScrollBar.Location = new Point(7, 495);
-            joinedEventHScrollBar.Name = "joinedEventHScrollBar";
-            joinedEventHScrollBar.Size = new Size(1606, 31);
-            joinedEventHScrollBar.TabIndex = 4;
-            joinedEventHScrollBar.Scroll += joinedEventHScrollBar_Scroll;
+            joinedEventFlowLayoutPanel.WrapContents = false;
             // 
             // eventCard1
             // 
@@ -97,42 +68,138 @@
             eventCard1.Time = null;
             eventCard1.Title = null;
             // 
-            // flowLayoutPanel1
+            // dashboardPanel
             // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(0, 105);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1625, 1068);
-            flowLayoutPanel1.TabIndex = 6;
+            dashboardPanel.AutoScroll = true;
+            dashboardPanel.Controls.Add(joinedEventTitleFlowLayoutPanel);
+            dashboardPanel.Controls.Add(joinedEventFlowLayoutPanel);
+            dashboardPanel.Controls.Add(createdEventTitleFlowLayoutPanel);
+            dashboardPanel.Controls.Add(createdEventFlowLayoutPanel);
+            dashboardPanel.Controls.Add(upcomingEventTitleFlowLayoutPanel);
+            dashboardPanel.Controls.Add(upcomingEventFlowLayoutPanel);
+            dashboardPanel.Dock = DockStyle.Fill;
+            dashboardPanel.Location = new Point(0, 0);
+            dashboardPanel.Name = "dashboardPanel";
+            dashboardPanel.Size = new Size(1626, 1386);
+            dashboardPanel.TabIndex = 6;
+            // 
+            // joinedEventTitleFlowLayoutPanel
+            // 
+            joinedEventTitleFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            joinedEventTitleFlowLayoutPanel.Controls.Add(joinedEventTitleLabel);
+            joinedEventTitleFlowLayoutPanel.Location = new Point(3, 3);
+            joinedEventTitleFlowLayoutPanel.Name = "joinedEventTitleFlowLayoutPanel";
+            joinedEventTitleFlowLayoutPanel.Size = new Size(1603, 70);
+            joinedEventTitleFlowLayoutPanel.TabIndex = 1;
+            // 
+            // joinedEventTitleLabel
+            // 
+            joinedEventTitleLabel.AutoSize = true;
+            joinedEventTitleLabel.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            joinedEventTitleLabel.Location = new Point(3, 0);
+            joinedEventTitleLabel.Name = "joinedEventTitleLabel";
+            joinedEventTitleLabel.Size = new Size(244, 38);
+            joinedEventTitleLabel.TabIndex = 0;
+            joinedEventTitleLabel.Text = "My Joined Event";
+            // 
+            // createdEventTitleFlowLayoutPanel
+            // 
+            createdEventTitleFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            createdEventTitleFlowLayoutPanel.Controls.Add(createdEventTitleLabel);
+            createdEventTitleFlowLayoutPanel.Location = new Point(3, 452);
+            createdEventTitleFlowLayoutPanel.Name = "createdEventTitleFlowLayoutPanel";
+            createdEventTitleFlowLayoutPanel.Size = new Size(1603, 70);
+            createdEventTitleFlowLayoutPanel.TabIndex = 2;
+            // 
+            // createdEventTitleLabel
+            // 
+            createdEventTitleLabel.AutoSize = true;
+            createdEventTitleLabel.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            createdEventTitleLabel.Location = new Point(3, 0);
+            createdEventTitleLabel.Name = "createdEventTitleLabel";
+            createdEventTitleLabel.Size = new Size(261, 38);
+            createdEventTitleLabel.TabIndex = 0;
+            createdEventTitleLabel.Text = "My Created Event";
+            // 
+            // createdEventFlowLayoutPanel
+            // 
+            createdEventFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            createdEventFlowLayoutPanel.AutoScroll = true;
+            createdEventFlowLayoutPanel.Location = new Point(3, 528);
+            createdEventFlowLayoutPanel.Margin = new Padding(3, 3, 3, 20);
+            createdEventFlowLayoutPanel.Name = "createdEventFlowLayoutPanel";
+            createdEventFlowLayoutPanel.Size = new Size(1603, 350);
+            createdEventFlowLayoutPanel.TabIndex = 3;
+            createdEventFlowLayoutPanel.WrapContents = false;
+            // 
+            // upcomingEventTitleFlowLayoutPanel
+            // 
+            upcomingEventTitleFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            upcomingEventTitleFlowLayoutPanel.Controls.Add(upcomingEventTitleLabel);
+            upcomingEventTitleFlowLayoutPanel.Location = new Point(3, 901);
+            upcomingEventTitleFlowLayoutPanel.Name = "upcomingEventTitleFlowLayoutPanel";
+            upcomingEventTitleFlowLayoutPanel.Size = new Size(1603, 70);
+            upcomingEventTitleFlowLayoutPanel.TabIndex = 4;
+            // 
+            // upcomingEventTitleLabel
+            // 
+            upcomingEventTitleLabel.AutoSize = true;
+            upcomingEventTitleLabel.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            upcomingEventTitleLabel.Location = new Point(3, 0);
+            upcomingEventTitleLabel.Name = "upcomingEventTitleLabel";
+            upcomingEventTitleLabel.Size = new Size(242, 38);
+            upcomingEventTitleLabel.TabIndex = 0;
+            upcomingEventTitleLabel.Text = "Upcoming Event";
+            // 
+            // upcomingEventFlowLayoutPanel
+            // 
+            upcomingEventFlowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            upcomingEventFlowLayoutPanel.AutoScroll = true;
+            upcomingEventFlowLayoutPanel.Location = new Point(3, 977);
+            upcomingEventFlowLayoutPanel.Margin = new Padding(3, 3, 3, 20);
+            upcomingEventFlowLayoutPanel.Name = "upcomingEventFlowLayoutPanel";
+            upcomingEventFlowLayoutPanel.Size = new Size(1603, 350);
+            upcomingEventFlowLayoutPanel.TabIndex = 5;
+            upcomingEventFlowLayoutPanel.WrapContents = false;
+            // 
+            // sqlCommand1
+            // 
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
-            ClientSize = new Size(1625, 1173);
+            ClientSize = new Size(1626, 1386);
             Controls.Add(eventCard1);
-            Controls.Add(joinedEventHScrollBar);
-            Controls.Add(joinedEventFlowLayoutPanel);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(headingPanel);
+            Controls.Add(dashboardPanel);
             Name = "Dashboard";
             Text = "Dashboard";
             Load += Dashboard_Load;
-            headingPanel.ResumeLayout(false);
-            headingPanel.PerformLayout();
+            dashboardPanel.ResumeLayout(false);
+            joinedEventTitleFlowLayoutPanel.ResumeLayout(false);
+            joinedEventTitleFlowLayoutPanel.PerformLayout();
+            createdEventTitleFlowLayoutPanel.ResumeLayout(false);
+            createdEventTitleFlowLayoutPanel.PerformLayout();
+            upcomingEventTitleFlowLayoutPanel.ResumeLayout(false);
+            upcomingEventTitleFlowLayoutPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel headingPanel;
-        private TextBox searchTextBox;
-        private Label headingLabel;
         private FlowLayoutPanel joinedEventFlowLayoutPanel;
-        private HScrollBar joinedEventHScrollBar;
         private EventCard eventCard1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel dashboardPanel;
+        private FlowLayoutPanel joinedEventTitleFlowLayoutPanel;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private FlowLayoutPanel createdEventTitleFlowLayoutPanel;
+        private FlowLayoutPanel createdEventFlowLayoutPanel;
+        private FlowLayoutPanel upcomingEventTitleFlowLayoutPanel;
+        private FlowLayoutPanel upcomingEventFlowLayoutPanel;
+        private Label joinedEventTitleLabel;
+        private Label createdEventTitleLabel;
+        private Label upcomingEventTitleLabel;
     }
 }

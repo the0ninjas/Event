@@ -103,10 +103,18 @@ namespace EventManagementSystem.Screens
 
         private void locationComboBox_Leave(object sender, EventArgs e)
         {
-            if (locationComboBox.Text == "")
+            if (string.IsNullOrEmpty(locationComboBox.Text))
             {
                 locationComboBox.Text = "Select your location";
                 locationComboBox.ForeColor = SystemColors.ScrollBar;
+            }
+        }
+
+        private void locationComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(locationComboBox.Text) && locationComboBox.Text != "Select your location")
+            {
+                locationComboBox.ForeColor = Color.Black;
             }
         }
 

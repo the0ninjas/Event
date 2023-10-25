@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TopPage));
             sideBarFlowLayoutPanel = new FlowLayoutPanel();
             menuPanel = new Panel();
             menuLabel = new Label();
@@ -40,10 +41,13 @@
             panel4 = new Panel();
             eventCreationButton = new Button();
             panel6 = new Panel();
-            subButton1 = new Button();
+            logoutButton = new Button();
             panel7 = new Panel();
             subButton2 = new Button();
             timerForSidebar = new System.Windows.Forms.Timer(components);
+            headingPanel = new Panel();
+            searchBarTextBox = new TextBox();
+            headerTitleLabel = new Label();
             topPagePane = new Panel();
             sideBarFlowLayoutPanel.SuspendLayout();
             menuPanel.SuspendLayout();
@@ -53,6 +57,7 @@
             panel4.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
+            headingPanel.SuspendLayout();
             SuspendLayout();
             // 
             // sideBarFlowLayoutPanel
@@ -66,10 +71,10 @@
             sideBarFlowLayoutPanel.Controls.Add(panel7);
             sideBarFlowLayoutPanel.Dock = DockStyle.Left;
             sideBarFlowLayoutPanel.Location = new Point(0, 0);
-            sideBarFlowLayoutPanel.MaximumSize = new Size(330, 1250);
+            sideBarFlowLayoutPanel.MaximumSize = new Size(330, 1574);
             sideBarFlowLayoutPanel.MinimumSize = new Size(89, 879);
             sideBarFlowLayoutPanel.Name = "sideBarFlowLayoutPanel";
-            sideBarFlowLayoutPanel.Size = new Size(330, 1186);
+            sideBarFlowLayoutPanel.Size = new Size(330, 1574);
             sideBarFlowLayoutPanel.TabIndex = 0;
             // 
             // menuPanel
@@ -174,24 +179,26 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(subButton1);
+            panel6.Controls.Add(logoutButton);
             panel6.Location = new Point(3, 339);
             panel6.Name = "panel6";
             panel6.Size = new Size(350, 66);
             panel6.TabIndex = 5;
             // 
-            // subButton1
+            // logoutButton
             // 
-            subButton1.FlatStyle = FlatStyle.Flat;
-            subButton1.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            subButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            subButton1.Location = new Point(-11, -12);
-            subButton1.Name = "subButton1";
-            subButton1.Padding = new Padding(20, 0, 0, 0);
-            subButton1.Size = new Size(376, 91);
-            subButton1.TabIndex = 1;
-            subButton1.Text = "(Sub)";
-            subButton1.UseVisualStyleBackColor = true;
+            logoutButton.FlatStyle = FlatStyle.Flat;
+            logoutButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            logoutButton.Image = (Image)resources.GetObject("logoutButton.Image");
+            logoutButton.ImageAlign = ContentAlignment.MiddleLeft;
+            logoutButton.Location = new Point(-11, -12);
+            logoutButton.Name = "logoutButton";
+            logoutButton.Padding = new Padding(20, 0, 0, 0);
+            logoutButton.Size = new Size(376, 91);
+            logoutButton.TabIndex = 1;
+            logoutButton.Text = "Logout";
+            logoutButton.UseVisualStyleBackColor = true;
+            logoutButton.Click += logoutButton_Click;
             // 
             // panel7
             // 
@@ -219,24 +226,55 @@
             timerForSidebar.Interval = 7;
             timerForSidebar.Tick += timerForSidebar_Tick;
             // 
+            // headingPanel
+            // 
+            headingPanel.BackColor = Color.DarkSeaGreen;
+            headingPanel.Controls.Add(searchBarTextBox);
+            headingPanel.Controls.Add(headerTitleLabel);
+            headingPanel.Dock = DockStyle.Top;
+            headingPanel.Location = new Point(330, 0);
+            headingPanel.Name = "headingPanel";
+            headingPanel.Size = new Size(1660, 117);
+            headingPanel.TabIndex = 1;
+            // 
+            // searchBarTextBox
+            // 
+            searchBarTextBox.ForeColor = SystemColors.ScrollBar;
+            searchBarTextBox.Location = new Point(1236, 49);
+            searchBarTextBox.Name = "searchBarTextBox";
+            searchBarTextBox.Size = new Size(394, 35);
+            searchBarTextBox.TabIndex = 1;
+            searchBarTextBox.Text = "Search";
+            // 
+            // headerTitleLabel
+            // 
+            headerTitleLabel.AutoSize = true;
+            headerTitleLabel.Font = new Font("Segoe UI Black", 15.000001F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            headerTitleLabel.Location = new Point(38, 34);
+            headerTitleLabel.Name = "headerTitleLabel";
+            headerTitleLabel.Size = new Size(204, 48);
+            headerTitleLabel.TabIndex = 0;
+            headerTitleLabel.Text = "Event Hub";
+            // 
             // topPagePane
             // 
             topPagePane.Dock = DockStyle.Fill;
-            topPagePane.Location = new Point(330, 0);
+            topPagePane.Location = new Point(330, 117);
             topPagePane.Name = "topPagePane";
-            topPagePane.Size = new Size(1646, 1186);
-            topPagePane.TabIndex = 1;
+            topPagePane.Size = new Size(1660, 1457);
+            topPagePane.TabIndex = 2;
             // 
             // TopPage
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
-            ClientSize = new Size(1976, 1186);
+            ClientSize = new Size(1990, 1574);
             Controls.Add(topPagePane);
+            Controls.Add(headingPanel);
             Controls.Add(sideBarFlowLayoutPanel);
             Name = "TopPage";
-            Text = "Top Page";
+            Text = "Event Hub";
             sideBarFlowLayoutPanel.ResumeLayout(false);
             menuPanel.ResumeLayout(false);
             menuPanel.PerformLayout();
@@ -246,6 +284,8 @@
             panel4.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
+            headingPanel.ResumeLayout(false);
+            headingPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -261,13 +301,16 @@
         private Panel panel5;
         private Button myCreatedEventButton;
         private Panel panel6;
-        private Button subButton1;
+        private Button logoutButton;
         private Panel panel7;
         private Button subButton2;
         private Label menuLabel;
         private PictureBox menuButton;
         private System.Windows.Forms.Timer timerForSidebar;
         private Panel menuPanel;
+        private Panel headingPanel;
+        private TextBox searchBarTextBox;
+        private Label headerTitleLabel;
         private Panel topPagePane;
     }
 }
