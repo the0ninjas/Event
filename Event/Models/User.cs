@@ -10,12 +10,12 @@ namespace EventManagementSystem.Models
 {
     public class User
     {
-        
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int UserID { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string password { get; set; }
-
-        [Key]
         public string email { get; set; }
         public int phoneNumber { get; set; }
         public string location { get; set; }
