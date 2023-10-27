@@ -125,7 +125,7 @@
             panel1.Controls.Add(lastNameLabel);
             panel1.Controls.Add(phoneLabel);
             panel1.Location = new Point(203, 30);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(677, 570);
             panel1.TabIndex = 7;
@@ -136,19 +136,20 @@
             updateButton.FlatStyle = FlatStyle.Popup;
             updateButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             updateButton.Location = new Point(305, 493);
-            updateButton.Margin = new Padding(2, 2, 2, 2);
+            updateButton.Margin = new Padding(2);
             updateButton.Name = "updateButton";
             updateButton.Size = new Size(87, 27);
             updateButton.TabIndex = 15;
             updateButton.Text = "Update";
             updateButton.UseVisualStyleBackColor = false;
+            updateButton.Click += updateButton_Click;
             // 
             // locationComboBox
             // 
             locationComboBox.FormattingEnabled = true;
             locationComboBox.Items.AddRange(new object[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
             locationComboBox.Location = new Point(305, 424);
-            locationComboBox.Margin = new Padding(2, 2, 2, 2);
+            locationComboBox.Margin = new Padding(2);
             locationComboBox.Name = "locationComboBox";
             locationComboBox.Size = new Size(277, 28);
             locationComboBox.TabIndex = 14;
@@ -157,7 +158,7 @@
             // phoneTextBox
             // 
             phoneTextBox.Location = new Point(305, 357);
-            phoneTextBox.Margin = new Padding(2, 2, 2, 2);
+            phoneTextBox.Margin = new Padding(2);
             phoneTextBox.Name = "phoneTextBox";
             phoneTextBox.Size = new Size(277, 27);
             phoneTextBox.TabIndex = 10;
@@ -166,7 +167,7 @@
             // emailTextBox
             // 
             emailTextBox.Location = new Point(305, 291);
-            emailTextBox.Margin = new Padding(2, 2, 2, 2);
+            emailTextBox.Margin = new Padding(2);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(277, 27);
             emailTextBox.TabIndex = 9;
@@ -175,7 +176,7 @@
             // lastNameTextBox
             // 
             lastNameTextBox.Location = new Point(305, 224);
-            lastNameTextBox.Margin = new Padding(2, 2, 2, 2);
+            lastNameTextBox.Margin = new Padding(2);
             lastNameTextBox.Name = "lastNameTextBox";
             lastNameTextBox.Size = new Size(277, 27);
             lastNameTextBox.TabIndex = 8;
@@ -184,7 +185,7 @@
             // firstNameTextBox
             // 
             firstNameTextBox.Location = new Point(305, 157);
-            firstNameTextBox.Margin = new Padding(2, 2, 2, 2);
+            firstNameTextBox.Margin = new Padding(2);
             firstNameTextBox.Name = "firstNameTextBox";
             firstNameTextBox.Size = new Size(277, 27);
             firstNameTextBox.TabIndex = 7;
@@ -197,7 +198,7 @@
             BackColor = Color.MintCream;
             ClientSize = new Size(1081, 748);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UserProfile";
             Text = "User Profile";
             panel1.ResumeLayout(false);

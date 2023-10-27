@@ -1,4 +1,5 @@
 ﻿using EventManagementSystem.Models;
+using EventManagementSystem.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace EventManagementSystem.Screens
 {
@@ -28,6 +30,8 @@ namespace EventManagementSystem.Screens
                 firstNameTextBox.Text = authenticatedUser.firstName;
                 lastNameTextBox.Text = authenticatedUser.lastName;
                 emailTextBox.Text = authenticatedUser.email;
+                phoneTextBox.Text = authenticatedUser.phoneNumber.ToString();
+                locationComboBox.SelectedItem = authenticatedUser.location;
                 // Add other data as needed
             }
         }
@@ -62,5 +66,43 @@ namespace EventManagementSystem.Screens
 
         }
 
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            // Retrieve the modified user data from the input fields
+            string newFirstName = firstNameTextBox.Text;
+            string newLastName = lastNameTextBox.Text;
+            string newEmail = emailTextBox.Text;
+
+            // Access the authenticated user from UserSession
+            User authenticatedUser = UserSession.AuthenticatedUser;
+
+            if (authenticatedUser != null)
+            {
+                // Update the user's data in the database using DbContext
+                using (var context = new ConnectionFactory()) // Replace YourDbContext with your actual DbContext
+                {
+                    // Retrieve the user from the database based on the user's ID or another unique identifier
+                    User userToUpdate = context.Users.FirstOrDefault(u => u.email == authenticatedUser.email);
+                    
+                    // Update user data
+                    userToUpdate.firstName = firstNameTextBox.Text;
+                    userToUpdate.lastName = lastNameTextBox.Text;
+                    userToUpdate.email = emailTextBox.Text;
+                    userToUpdate.phoneNumber = int.Parse(phoneTextBox.Text);
+                    userToUpdate.location = locationComboBox.SelectedItem.ToString();
+
+                        // Save changes to the database
+                    context.SaveChanges();
+                    UserSession.AuthenticateUser(userToUpdate);
+
+                    MessageBox.Show("User data updated successfully.");
+                 }
+             }
+            
+            else
+            {
+                MessageBox.Show("User not authenticated. Update failed.");
+            }
+        }
     }
 }
