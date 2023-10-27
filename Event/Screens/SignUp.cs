@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Text.RegularExpressions;
 
 namespace EventManagementSystem.Screens
 {
@@ -28,7 +29,7 @@ namespace EventManagementSystem.Screens
                 firstNameTextBox.ForeColor = Color.Black;
             }
         }
-        
+
         private void firstNameTextBox_Leave(object sender, EventArgs e)
         {
             if (firstNameTextBox.Text == "")
@@ -63,6 +64,7 @@ namespace EventManagementSystem.Screens
                 emailTextBox.Text = "";
                 emailTextBox.ForeColor = Color.Black;
             }
+
         }
 
         private void emailTextBox_Leave(object sender, EventArgs e)
@@ -72,6 +74,8 @@ namespace EventManagementSystem.Screens
                 emailTextBox.Text = "Enter your email address";
                 emailTextBox.ForeColor = SystemColors.ScrollBar;
             }
+
+
         }
 
         private void phoneNumberTextBox_Enter(object sender, EventArgs e)
@@ -140,6 +144,14 @@ namespace EventManagementSystem.Screens
 
         private void signUpButton_Click(object sender, EventArgs e)
         {
+            // Check if the ErrorProvider has any error messages displayed
+            if (errorProvider1.GetError(emailTextBox) != "" || errorProvider2.GetError(phoneNumberTextBox) != "")
+            {
+                // Display an error message to the user
+                MessageBox.Show("Please correct the errors before signing up.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the event handler to prevent the form submission
+            }
+
             try
             {
                 string firstName = firstNameTextBox.Text;
@@ -185,6 +197,36 @@ namespace EventManagementSystem.Screens
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void emailTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            string emailPattern = @".+@.+";
+            if (!Regex.IsMatch(emailTextBox.Text, emailPattern))
+            {
+                errorProvider1.SetError(emailTextBox, "Invalid email format.");
+                //e.Cancel = true; // Prevent focus from leaving the TextBox.
+            }
+            else
+            {
+                errorProvider1.SetError(emailTextBox, ""); // Clear the error message.
+            }
+        }
+
+        private void phoneNumberTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            string phonePattern = @"^0\d*$"; // Matches a string that starts with '0' and is followed by zero or more numeric digits
+
+            if (!Regex.IsMatch(phoneNumberTextBox.Text, phonePattern))
+            {
+                errorProvider2.SetError(phoneNumberTextBox, "Invalid format. Phone number should start with 0");
+                // e.Cancel = true; // Remove or comment out this line to allow moving to other textboxes.
+            }
+            else
+            {
+                errorProvider2.SetError(phoneNumberTextBox, ""); // Clear the error message.
+            }
         }
     }
 }
