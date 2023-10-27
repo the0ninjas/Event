@@ -70,6 +70,7 @@
             cardPictureBox.Location = new Point(3, 3);
             cardPictureBox.Name = "cardPictureBox";
             cardPictureBox.Size = new Size(474, 294);
+            cardPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             cardPictureBox.TabIndex = 3;
             cardPictureBox.TabStop = false;
             // 

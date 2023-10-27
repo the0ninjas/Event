@@ -50,8 +50,10 @@ namespace EventManagementSystem.Screens
                         eventCard.Date = Convert.ToString(userEvent.date);
                         eventCard.Time = Convert.ToString(userEvent.time);
                         eventCard.Location = Convert.ToString(userEvent.location);
+                        eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
 
-                        
+
+
                         joinedEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                 }
@@ -82,8 +84,9 @@ namespace EventManagementSystem.Screens
                         eventCard.Date = Convert.ToString(userEvent.date);
                         eventCard.Time = Convert.ToString(userEvent.time);
                         eventCard.Location = Convert.ToString(userEvent.location);
+                        eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
 
-                       createdEventFlowLayoutPanel.Controls.Add(eventCard);
+                        createdEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                 }
             }
@@ -114,6 +117,7 @@ namespace EventManagementSystem.Screens
                         eventCard.Date = Convert.ToString(userEvent.date);
                         eventCard.Time = Convert.ToString(userEvent.time);
                         eventCard.Location = Convert.ToString(userEvent.location);
+                        eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
 
                         upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
                     }

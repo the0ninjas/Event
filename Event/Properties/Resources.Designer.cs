@@ -63,6 +63,16 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseball {
+            get {
+                object obj = ResourceManager.GetObject("baseball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap basketball {
             get {
                 object obj = ResourceManager.GetObject("basketball", resourceCulture);
@@ -163,6 +173,16 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap running {
+            get {
+                object obj = ResourceManager.GetObject("running", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap soccer {
             get {
                 object obj = ResourceManager.GetObject("soccer", resourceCulture);
@@ -176,6 +196,26 @@ namespace EventManagementSystem.Properties {
         internal static System.Drawing.Bitmap tennis {
             get {
                 object obj = ResourceManager.GetObject("tennis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap volleyball {
+            get {
+                object obj = ResourceManager.GetObject("volleyball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yoga {
+            get {
+                object obj = ResourceManager.GetObject("yoga", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
