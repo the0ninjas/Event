@@ -1,4 +1,5 @@
 ﻿using EventManagementSystem.Models;
+using EventManagementSystem.Repository;
 using EventManagementSystem.Utilities;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,6 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -105,54 +107,70 @@ namespace EventManagementSystem.Screens
         {
             try
             {
-                string title = titleTextBox.Text;
-                DateTime date = datePicker.Value;
-                DateTime time = timePicker.Value;
-                string location = locationComboBox.Text;
-                int capacity = int.Parse(capacityTextBox.Text);
-                string description = descriptionTextBox.Text;
-
-                if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(location) ||
-                        string.IsNullOrWhiteSpace(description))
-                {
-                    throw new Exception("Please provide all required information.");
-                }
-
                 using (var context = new ConnectionFactory())
                 {
-                    Event newEvent = new Event(title, date, time, location, capacity, description)
-                    {
-                        title = title,
-                        date = date,
-                        time = time,
-                        location = location,
-                        capacity = capacity,
-                        description = description,
-                    };           
-                
-                    User authenticatedUser = UserSession.AuthenticatedUser;
+                    string title = titleTextBox.Text;
+                    DateTime date = datePicker.Value;
+                    DateTime time = timePicker.Value;
+                    string location = locationComboBox.Text;
+                    int capacity = int.Parse(capacityTextBox.Text);
+                    string description = descriptionTextBox.Text;
 
-                    EventAdministrator Admin = new EventAdministrator(newEvent.eventId, authenticatedUser.email)
-                    {
-                        eventId = newEvent.eventId,
-                        adminId = authenticatedUser.email,
-                    };
+                    //if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(location) ||
+                    //        string.IsNullOrWhiteSpace(description))
+                    //{
+                    //    throw new Exception("Please provide all required information.");
+                    //}
 
-                    context.Events.Add(newEvent);
-                    context.EventAdministrators.Add(Admin);
-                    context.SaveChanges();
+                    // Create a new event object that stores the details entered by the user
+                    Event newEvent = new Event(title, date, time, location, capacity, description);
+
+                    // Create an instance of EventRepo
+                    EventRepo eventRepo = new EventRepo();
+
+                    // Call createEvent function to save the event in the database
+                    bool eventCreated = eventRepo.createEvent(newEvent, context);
+
+                    if (eventCreated)
+                    {
+                        context.Entry(newEvent).Reload();
+                        int eventId = newEvent.eventId;
+                        // Get the object of the user that is currently logged in
+                        User authenticatedUser = UserSession.AuthenticatedUser;
+
+                        // Create an instance of EventAdminRepo
+                        CreatedEventRepo createdEventRepo = new CreatedEventRepo();
+
+                        // Call createEventAdmin function to save the admin / event combination in the database
+                        bool eventAdminCreated = createdEventRepo.createEventAdmin(newEvent.eventId, authenticatedUser.email, context);
+
+                        if (eventAdminCreated)
+                        {
+                            MessageBox.Show("Event created successfully.");
+                            this.Close();
+                        }
+                        else
+                        {
+                            eventRepo.deleteEvent(newEvent.eventId, context);
+                            MessageBox.Show("Failed to create the event admin. The event has been deleted.");
+                            this.Close();
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to create the event. Please check your input.");
+                    }
                 }
-
-                this.Close();
-
-                // Display a success message
-                MessageBox.Show($"Event creation successful!");
             }
             catch (Exception ex)
             {
-                // Display an error message to prompt for correct input
-                MessageBox.Show($"Event creation failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                MessageBox.Show("An error occurred. Please try again.");
             }
         }
     }
 }
+
+
+

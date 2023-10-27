@@ -12,15 +12,14 @@ namespace EventManagementSystem.Repository
     {
         private List<Event> Events = new List<Event>();
 
-        public bool createEvent(Event newEvent)
+        public bool createEvent(Event newEvent, ConnectionFactory context)
         {
             try
             {
-                using (var context = new ConnectionFactory())
-                {
-                    context.Events.Add(newEvent);
-                    context.SaveChanges();
-                }
+                            
+                context.Events.Add(newEvent);
+                context.SaveChanges();
+                
                 return true;
             }
             catch (Exception ex)
@@ -82,12 +81,11 @@ namespace EventManagementSystem.Repository
             }
         }
 
-        public bool deleteEvent(int eventId)
+        public bool deleteEvent(int eventId, ConnectionFactory context)
         {
             try
             {
-                using (var context = new ConnectionFactory())
-                {
+                
                     Event eventToDelete = Events.Find(u => u.eventId == eventId);
 
                     if (eventToDelete != null)
@@ -101,7 +99,7 @@ namespace EventManagementSystem.Repository
                     {
                         return false;
                     }
-                }
+                
             }
             catch (Exception ex)
             {
