@@ -29,15 +29,36 @@ namespace EventManagementSystem.Repository
             }
         }
 
-        public Event getEventById(int eventId)
+        public Event getEventById(int eventId, ConnectionFactory context)
         {
             try
             {
-                using (var context = new ConnectionFactory())
-                {
                     Event foundEvent = Events.Find(u => u.eventId == eventId);
                     return foundEvent;
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                return null;
+            }
+        }
+
+        public List<Event> upcomingEvents(ConnectionFactory context) 
+        {
+            try 
+            {
+                // Get the current date and time
+                DateTime currentDateTime = DateTime.Now;
+
+                // Query the database to get the next ten upcoming events
+                var upcomingEvents = context.Events
+                    .Where(e => e.date > currentDateTime.Date || (e.date == currentDateTime.Date && e.time.TimeOfDay > currentDateTime.TimeOfDay))
+                    .OrderBy(e => e.date)
+                    .ThenBy(e => e.time)
+                    .Take(10)
+                    .ToList();
+
+                return upcomingEvents;
             }
             catch (Exception ex)
             {
