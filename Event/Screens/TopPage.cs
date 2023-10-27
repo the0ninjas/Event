@@ -92,16 +92,22 @@ namespace EventManagementSystem.Screens
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You are going to logout.", "Logout", MessageBoxButtons.OKCancel);
-            // Clear the user session or authentication information.
-            UserSession.ClearAuthentication(); // Implement a method to clear user authentication.
+            // Display a confirmation dialog
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.OKCancel);
 
-            // Close the current form (e.g., the user profile form).
-            this.Close();
+            if (result == DialogResult.OK)
+            {
+                // Clear the user session or authentication information.
+                UserSession.ClearAuthentication(); 
 
-            // Optionally, show the login form or another appropriate form.
-            Login loginForm = new Login();
-            loginForm.Show();
+                // Close the current form
+                this.Close();
+
+                //show the login form 
+                Login loginForm = new Login();
+                loginForm.Show();
+            }
+            // If the user clicks "Cancel," do nothing and stay on the current page.
         }
     }
 }

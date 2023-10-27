@@ -14,6 +14,7 @@ namespace EventManagementSystem.Utilities
         public DbSet<User> Users { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<CreatedEvent> CreatedEvents { get; set; }
+        public DbSet<JoinedEvent> JoinedEvents { get; set; }
         public DbSet<Attendee> Attendees { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -29,6 +30,8 @@ namespace EventManagementSystem.Utilities
                 .HasKey(eu => new { eu.eventId, eu.userId });
             modelBuilder.Entity<CreatedEvent>()
                 .HasKey(eu => new { eu.eventId, eu.userEmail});
+            modelBuilder.Entity<JoinedEvent>()
+                .HasKey(eu => new { eu.eventId, eu.userEmail });
         }
 
     }
