@@ -32,7 +32,7 @@ namespace EventManagementSystem.Screens
                 emailTextBox.Text = authenticatedUser.email;
                 phoneTextBox.Text = authenticatedUser.phoneNumber.ToString();
                 locationComboBox.SelectedItem = authenticatedUser.location;
-                // Add other data as needed
+                
             }
         }
         private void firstNameTextBox_TextChanged(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace EventManagementSystem.Screens
             if (authenticatedUser != null)
             {
                 // Update the user's data in the database using DbContext
-                using (var context = new ConnectionFactory()) // Replace YourDbContext with your actual DbContext
+                using (var context = new ConnectionFactory()) 
                 {
                     // Retrieve the user from the database based on the user's ID or another unique identifier
                     User userToUpdate = context.Users.FirstOrDefault(u => u.email == authenticatedUser.email);
@@ -91,7 +91,7 @@ namespace EventManagementSystem.Screens
                     userToUpdate.phoneNumber = int.Parse(phoneTextBox.Text);
                     userToUpdate.location = locationComboBox.SelectedItem.ToString();
 
-                        // Save changes to the database
+                    // Save changes to the database
                     context.SaveChanges();
                     UserSession.AuthenticateUser(userToUpdate);
 

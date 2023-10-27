@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventManagementSystem.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -92,7 +93,15 @@ namespace EventManagementSystem.Screens
         private void logoutButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("You are going to logout.", "Logout", MessageBoxButtons.OKCancel);
-            //Add Logout function
+            // Clear the user session or authentication information.
+            UserSession.ClearAuthentication(); // Implement a method to clear user authentication.
+
+            // Close the current form (e.g., the user profile form).
+            this.Close();
+
+            // Optionally, show the login form or another appropriate form.
+            Login loginForm = new Login();
+            loginForm.Show();
         }
     }
 }
