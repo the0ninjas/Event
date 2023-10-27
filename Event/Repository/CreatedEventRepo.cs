@@ -31,28 +31,44 @@ namespace EventManagementSystem.Repository
             }
         }
 
-        public List<Event> GetEventsOfAdmin(string email)
+        public (bool eventOfAdmin, bool ErrorOccurred) EventofAdmin(int eventId, string userEmail, ConnectionFactory context)
         {
             try
             {
-                using (var context = new ConnectionFactory())
-                {
-                    // Find EventAdmins for the given email
-                    var createdEvents = context.CreatedEvents
-                        .Where(ea => ea.userEmail == email)
-                        .ToList();
+                var createdEvent = context.CreatedEvents
+                    .Where(ea => ea.eventId == eventId && ea.userEmail == userEmail)
+                    .ToList();
 
-                    // Get the list of eventIds associated with the admin
-                    List<int> eventIds = createdEvents.Select(ea => ea.eventId).ToList();
-
-                    // Retrieve events with the specified eventIds
-                    var eventsOfAdmin = context.Events
-                        .Where(e => eventIds.Contains(e.eventId))
-                        .ToList();
-
-                    return eventsOfAdmin;
-                }
+                return (eventOfAdmin: createdEvent.Any(), ErrorOccurred: false);
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                return (eventOfAdmin: false, ErrorOccurred: true);
+            }
+        }
+
+        public List<Event> GetEventsOfAdmin(string email, ConnectionFactory context)
+        {
+            try
+            {
+
+                // Find EventAdmins for the given email
+                var createdEvents = context.CreatedEvents
+                    .Where(ea => ea.userEmail == email)
+                    .ToList();
+
+                // Get the list of eventIds associated with the admin
+                List<int> eventIds = createdEvents.Select(ea => ea.eventId).ToList();
+
+                // Retrieve events with the specified eventIds
+                var eventsOfAdmin = context.Events
+                    .Where(e => eventIds.Contains(e.eventId))
+                    .ToList();
+
+                return eventsOfAdmin;
+            }
+
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
