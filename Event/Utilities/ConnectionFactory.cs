@@ -13,7 +13,7 @@ namespace EventManagementSystem.Utilities
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Event> Events { get; set; }
-        public DbSet<EventAdministrator> EventAdministrators { get; set; }
+        public DbSet<CreatedEvent> CreatedEvents { get; set; }
         public DbSet<Attendee> Attendees { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -27,8 +27,8 @@ namespace EventManagementSystem.Utilities
             // Copmposite primary key of EventId and UserId
             modelBuilder.Entity<Attendee>()
                 .HasKey(eu => new { eu.eventId, eu.userId });
-            modelBuilder.Entity<EventAdministrator>()
-                .HasKey(eu => new { eu.eventId, eu.adminId});
+            modelBuilder.Entity<CreatedEvent>()
+                .HasKey(eu => new { eu.eventId, eu.userEmail});
         }
 
     }

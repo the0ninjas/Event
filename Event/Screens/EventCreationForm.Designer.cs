@@ -214,6 +214,7 @@
             submitButton.TabIndex = 13;
             submitButton.Text = "Submit";
             submitButton.UseVisualStyleBackColor = false;
+            submitButton.Click += submitButton_Click;
             // 
             // EventCreationForm
             // 

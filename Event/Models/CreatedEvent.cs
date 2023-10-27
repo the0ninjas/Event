@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace EventManagementSystem.Models
 {
-    public class EventAdministrator
+    public class CreatedEvent
     {
+        
         public int eventId { get; set; }
-        public string adminId { get; set; }
+        public string userEmail { get; set; }
 
-        public EventAdministrator(int eventId, string adminId) 
+        public CreatedEvent(int eventId, string userEmail) 
         {
             this.eventId = eventId;
-            this.adminId = adminId;
+            this.userEmail = userEmail;
         }
     }
 }
