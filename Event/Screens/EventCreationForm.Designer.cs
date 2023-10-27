@@ -42,8 +42,12 @@
             capacityTextBox = new TextBox();
             descriptionTextBox = new TextBox();
             createEventPanel = new Panel();
+            pictureBox = new PictureBox();
+            imageComboBox = new ComboBox();
+            imageLabel = new Label();
             submitButton = new Button();
             createEventPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
             // headingLabel
@@ -184,6 +188,9 @@
             // 
             // createEventPanel
             // 
+            createEventPanel.Controls.Add(pictureBox);
+            createEventPanel.Controls.Add(imageComboBox);
+            createEventPanel.Controls.Add(imageLabel);
             createEventPanel.Controls.Add(submitButton);
             createEventPanel.Controls.Add(timePicker);
             createEventPanel.Controls.Add(descriptionTextBox);
@@ -198,17 +205,49 @@
             createEventPanel.Controls.Add(titleTextBox);
             createEventPanel.Controls.Add(descriptionLabel);
             createEventPanel.Controls.Add(capacityLabel);
-            createEventPanel.Location = new Point(375, 223);
+            createEventPanel.Location = new Point(375, 76);
             createEventPanel.Name = "createEventPanel";
-            createEventPanel.Size = new Size(916, 939);
+            createEventPanel.Size = new Size(916, 1235);
             createEventPanel.TabIndex = 13;
+            // 
+            // pictureBox
+            // 
+            pictureBox.Location = new Point(405, 882);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new Size(350, 199);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.TabIndex = 16;
+            pictureBox.TabStop = false;
+            // 
+            // imageComboBox
+            // 
+            imageComboBox.ForeColor = SystemColors.ScrollBar;
+            imageComboBox.FormattingEnabled = true;
+            imageComboBox.Location = new Point(405, 838);
+            imageComboBox.Name = "imageComboBox";
+            imageComboBox.Size = new Size(350, 38);
+            imageComboBox.TabIndex = 15;
+            imageComboBox.Text = "Select the image";
+            imageComboBox.SelectedIndexChanged += imageComboBox_SelectedIndexChanged;
+            imageComboBox.Enter += imageComboBox_Enter;
+            imageComboBox.Leave += imageComboBox_Leave;
+            // 
+            // imageLabel
+            // 
+            imageLabel.AutoSize = true;
+            imageLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
+            imageLabel.Location = new Point(168, 838);
+            imageLabel.Name = "imageLabel";
+            imageLabel.Size = new Size(82, 32);
+            imageLabel.TabIndex = 14;
+            imageLabel.Text = "Image";
             // 
             // submitButton
             // 
             submitButton.BackColor = Color.DarkSeaGreen;
             submitButton.FlatStyle = FlatStyle.Popup;
             submitButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            submitButton.Location = new Point(405, 836);
+            submitButton.Location = new Point(405, 1142);
             submitButton.Name = "submitButton";
             submitButton.Size = new Size(131, 40);
             submitButton.TabIndex = 13;
@@ -225,8 +264,10 @@
             Controls.Add(createEventPanel);
             Name = "EventCreationForm";
             Text = "Event Creation Form";
+            Load += EventCreationForm_Load;
             createEventPanel.ResumeLayout(false);
             createEventPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -247,5 +288,8 @@
         private TextBox descriptionTextBox;
         private Panel createEventPanel;
         private Button submitButton;
+        private ComboBox imageComboBox;
+        private Label imageLabel;
+        private PictureBox pictureBox;
     }
 }

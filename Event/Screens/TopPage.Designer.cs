@@ -99,7 +99,7 @@
             // menuButton
             // 
             menuButton.Cursor = Cursors.Hand;
-            menuButton.Image = Properties.Resources.menu_burger;
+            menuButton.Image = Properties.Resources.icon_menu_burger;
             menuButton.Location = new Point(19, 46);
             menuButton.Name = "menuButton";
             menuButton.Size = new Size(50, 50);
@@ -120,7 +120,7 @@
             // 
             homeButton.FlatStyle = FlatStyle.Flat;
             homeButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            homeButton.Image = Properties.Resources.home;
+            homeButton.Image = Properties.Resources.icon_home;
             homeButton.ImageAlign = ContentAlignment.MiddleLeft;
             homeButton.Location = new Point(-11, -12);
             homeButton.Name = "homeButton";
@@ -143,7 +143,7 @@
             // 
             profileButton.FlatStyle = FlatStyle.Flat;
             profileButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            profileButton.Image = Properties.Resources.user;
+            profileButton.Image = Properties.Resources.icon_user;
             profileButton.ImageAlign = ContentAlignment.MiddleLeft;
             profileButton.Location = new Point(-11, -12);
             profileButton.Name = "profileButton";
@@ -166,7 +166,7 @@
             // 
             eventCreationButton.FlatStyle = FlatStyle.Flat;
             eventCreationButton.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            eventCreationButton.Image = Properties.Resources.calendar_pen;
+            eventCreationButton.Image = Properties.Resources.icon_calendar_pen;
             eventCreationButton.ImageAlign = ContentAlignment.MiddleLeft;
             eventCreationButton.Location = new Point(-11, -12);
             eventCreationButton.Name = "eventCreationButton";

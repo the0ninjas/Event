@@ -3,15 +3,19 @@ using EventManagementSystem.Repository;
 using EventManagementSystem.Utilities;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace EventManagementSystem.Screens
@@ -100,6 +104,60 @@ namespace EventManagementSystem.Screens
             {
                 descriptionTextBox.Text = "Enter event description";
                 descriptionTextBox.ForeColor = SystemColors.ScrollBar;
+            }
+        }
+
+        private void imageComboBox_Enter(object sender, EventArgs e)
+        {
+            if (imageComboBox.Text == "Select the image")
+            {
+                imageComboBox.Text = "";
+                imageComboBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void imageComboBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(imageComboBox.Text))
+            {
+                imageComboBox.Text = "Select the image";
+                imageComboBox.ForeColor = SystemColors.ScrollBar;
+            }
+        }
+
+        private void imageComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(imageComboBox.Text) && imageComboBox.Text != "Select the image")
+            {
+                imageComboBox.ForeColor = Color.Black;
+            }
+
+            // Get the selected resource name from the ComboBox
+            string selectedImageName = imageComboBox.SelectedItem.ToString();
+
+            // Retrieve the image from the resources
+            Bitmap selectedImage = (Bitmap)Properties.Resources.ResourceManager.GetObject(selectedImageName);
+
+            // Set the image to the PictureBox
+            pictureBox.Image = selectedImage;
+        }
+
+        private void EventCreationForm_Load(object sender, EventArgs e)
+        {
+            // Get the resource set from the project resources
+            ResourceSet resourceSet = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, true, true);
+
+            // Iterate through all the resources and identify images
+            foreach (DictionaryEntry entry in resourceSet)
+            {
+                string resourceName = entry.Key.ToString();
+
+                // Check if the resource name doesn't start with "icon"
+                if (entry.Value is Bitmap && !resourceName.StartsWith("icon_", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Add the resource name to the ComboBox
+                    imageComboBox.Items.Add(resourceName);
+                }
             }
         }
 

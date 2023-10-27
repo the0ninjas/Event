@@ -63,9 +63,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap calendar_check {
+        internal static System.Drawing.Bitmap basketball {
             get {
-                object obj = ResourceManager.GetObject("calendar-check", resourceCulture);
+                object obj = ResourceManager.GetObject("basketball", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap calendar_pen {
+        internal static System.Drawing.Bitmap icon_calendar_check {
             get {
-                object obj = ResourceManager.GetObject("calendar-pen", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_calendar-check", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap calendar_plus {
+        internal static System.Drawing.Bitmap icon_calendar_pen {
             get {
-                object obj = ResourceManager.GetObject("calendar-plus", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_calendar-pen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap home {
+        internal static System.Drawing.Bitmap icon_calendar_plus {
             get {
-                object obj = ResourceManager.GetObject("home", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_calendar-plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap menu_burger {
+        internal static System.Drawing.Bitmap icon_home {
             get {
-                object obj = ResourceManager.GetObject("menu-burger", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap remi_jacquaint_WQEP0mrTD8Y_unsplash {
+        internal static System.Drawing.Bitmap icon_menu_burger {
             get {
-                object obj = ResourceManager.GetObject("remi-jacquaint-WQEP0mrTD8Y-unsplash", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_menu-burger", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap search {
+        internal static System.Drawing.Bitmap icon_remi_jacquaint_WQEP0mrTD8Y_unsplash {
             get {
-                object obj = ResourceManager.GetObject("search", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_remi-jacquaint-WQEP0mrTD8Y-unsplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap search35 {
+        internal static System.Drawing.Bitmap icon_search {
             get {
-                object obj = ResourceManager.GetObject("search35", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,39 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user {
+        internal static System.Drawing.Bitmap icon_search35 {
             get {
-                object obj = ResourceManager.GetObject("user", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_search35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_user {
+            get {
+                object obj = ResourceManager.GetObject("icon_user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap soccer {
+            get {
+                object obj = ResourceManager.GetObject("soccer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tennis {
+            get {
+                object obj = ResourceManager.GetObject("tennis", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

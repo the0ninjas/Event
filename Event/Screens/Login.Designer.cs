@@ -146,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.remi_jacquaint_WQEP0mrTD8Y_unsplash;
+            BackgroundImage = Properties.Resources.icon_remi_jacquaint_WQEP0mrTD8Y_unsplash;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(637, 751);
             Controls.Add(loginGroupBox);
