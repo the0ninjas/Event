@@ -19,9 +19,10 @@ namespace EventManagementSystem.Models
         public string description { get; set; }
         public bool isVisible { get; set; }
         //public List<User> Attendees { get; set; }
+        public string imageName { get; set; }
 
 
-        public Event(string title, DateTime date, DateTime time, string location, int capacity, string description)
+        public Event(string title, DateTime date, DateTime time, string location, int capacity, string description, string imageName)
         {
             this.title = title;
             this.date = date;
@@ -31,6 +32,7 @@ namespace EventManagementSystem.Models
             this.registrations = 1;
             this.description = description;
             this.isVisible = true;
+            this.imageName = imageName;
             //Attendees = new List<User>();
         }
 

@@ -173,6 +173,7 @@ namespace EventManagementSystem.Screens
                     string location = locationComboBox.Text;
                     int capacity = int.Parse(capacityTextBox.Text);
                     string description = descriptionTextBox.Text;
+                    string imageName = imageComboBox.Text;
 
                     //if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(location) ||
                     //        string.IsNullOrWhiteSpace(description))
@@ -181,7 +182,7 @@ namespace EventManagementSystem.Screens
                     //}
 
                     // Create a new event object that stores the details entered by the user
-                    Event newEvent = new Event(title, date, time, location, capacity, description);
+                    Event newEvent = new Event(title, date, time, location, capacity, description, imageName);
 
                     // Create an instance of EventRepo
                     EventRepo eventRepo = new EventRepo();
