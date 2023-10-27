@@ -1,33 +1,28 @@
 ﻿using EventManagementSystem.Models;
 using EventManagementSystem.Utilities;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace EventManagementSystem.Repository
 {
-    public class UserRepo
+    public class EventRepo
     {
+        private List<Event> Events = new List<Event>();
 
-        private List<User> Users = new List<User>();
-
-
-        public bool createUser(User user)
+        public bool createEvent(Event newEvent)
         {
             try
             {
                 using (var context = new ConnectionFactory())
                 {
-                    context.Users.Add(user);
+                    context.Events.Add(newEvent);
                     context.SaveChanges();
                 }
                 return true;
-            } 
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
@@ -35,14 +30,14 @@ namespace EventManagementSystem.Repository
             }
         }
 
-        public User getUserByEmail(string email)
+        public Event getEventById(int eventId)
         {
             try
             {
                 using (var context = new ConnectionFactory())
                 {
-                    User user = Users.Find(u => u.email == email);
-                    return user;
+                    Event foundEvent = Events.Find(u => u.eventId == eventId);
+                    return foundEvent;
                 }
             }
             catch (Exception ex)
@@ -52,49 +47,52 @@ namespace EventManagementSystem.Repository
             }
         }
 
-        public User updateUser(User updatedUser)
+        public Event updateEvent(Event updatedEvent)
         {
             try
             {
                 using (var context = new ConnectionFactory())
                 {
 
-                    User existingUser = Users.Find(u => u.email == updatedUser.email);
+                    Event existingEvent = Events.Find(u => u.eventId == updatedEvent.eventId);
 
-                    if (existingUser != null)
+                    if (existingEvent != null)
                     {
-                        existingUser.firstName = updatedUser.firstName;
-                        existingUser.lastName = updatedUser.lastName;
-                        existingUser.phoneNumber = updatedUser.phoneNumber;
-                        existingUser.location = updatedUser.location;
-
+                        existingEvent.title = updatedEvent.title;
+                        existingEvent.date = updatedEvent.date;
+                        existingEvent.time = updatedEvent.time;
+                        existingEvent.location = updatedEvent.location;
+                        existingEvent.capacity = updatedEvent.capacity;
+                        existingEvent.registrations = updatedEvent.registrations;
+                        existingEvent.description = updatedEvent.description;
+                        
                         context.SaveChanges();
-                        return existingUser;
+                        return existingEvent;
                     }
                     else
                     {
                         return null;
                     }
                 }
-            } 
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
-                return null; 
+                return null;
             }
         }
 
-        public bool deleteUser(string email) 
+        public bool deleteEvent(int eventId)
         {
             try
             {
                 using (var context = new ConnectionFactory())
                 {
-                    User userToDelete = Users.Find(u => u.email == email);
+                    Event eventToDelete = Events.Find(u => u.eventId == eventId);
 
-                    if (userToDelete != null)
+                    if (eventToDelete != null)
                     {
-                        context.Users.Remove(userToDelete);
+                        context.Events.Remove(eventToDelete);
                         context.SaveChanges();
 
                         return true;
