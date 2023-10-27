@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EventManagementSystem.Models;
+using EventManagementSystem.Repository;
+using EventManagementSystem.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,29 +18,9 @@ namespace EventManagementSystem.Screens
         public Dashboard()
         {
             InitializeComponent();
-
-            //joinedEventHScrollBar.Value = joinedEventFlowLayoutPanel.HorizontalScroll.Value;
-            //joinedEventHScrollBar.Minimum = joinedEventFlowLayoutPanel.HorizontalScroll.Minimum;
-            //joinedEventHScrollBar.Maximum = joinedEventFlowLayoutPanel.HorizontalScroll.Maximum;
-
-            //joinedEventFlowLayoutPanel.ControlAdded += joinedEventFlowLayoutPanel_ControlAdded;
-            //joinedEventFlowLayoutPanel.ControlRemoved += joinedEventFlowLayoutPanel_ControlRemoved;
         }
 
-        //private void joinedEventFlowLayoutPanel_ControlAdded(object sender, ControlEventArgs e)
-        //{
-        //    joinedEventHScrollBar.Maximum = joinedEventFlowLayoutPanel.HorizontalScroll.Maximum;
-        //}
-
-        //private void joinedEventFlowLayoutPanel_ControlRemoved(object sender, ControlEventArgs e)
-        //{
-        //    joinedEventHScrollBar.Minimum = joinedEventFlowLayoutPanel.HorizontalScroll.Minimum;
-        //}
-
-        //private void joinedEventHScrollBar_Scroll(object sender, ScrollEventArgs e)
-        //{
-        //    joinedEventFlowLayoutPanel.HorizontalScroll.Value = joinedEventHScrollBar.Value;
-        //}
+        
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
@@ -49,76 +32,96 @@ namespace EventManagementSystem.Screens
         //Populate my joined event EventCard
         private void populateMyJoinedEventCard()
         {
-            // populate it here  
-            EventCard[] myJoinedEvents = new EventCard[20];
-
-            // loop through each event
-            for (int i = 0; i < myJoinedEvents.Length; i++)
+            try
             {
-                myJoinedEvents[i] = new EventCard();
-                myJoinedEvents[i].Title = "Title";
-                myJoinedEvents[i].Capacity = "Capacity";
-                myJoinedEvents[i].Date = "Date";
-                myJoinedEvents[i].Time = "Time";
-                myJoinedEvents[i].Location = "Location";
+                using (var context = new ConnectionFactory())
+                {
+                    User authenticateUser = UserSession.AuthenticatedUser;
 
-                // add to joinedEventFlowLayoutPanel
-                //if (joinedEventFlowLayoutPanel.Controls.Count > 0)
-                //{
-                //    joinedEventFlowLayoutPanel.Controls.Clear();
-                //}
-                //else
-                joinedEventFlowLayoutPanel.Controls.Add(myJoinedEvents[i]);
+                    JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
+                    List<Event> joinedEvents = joinedEventsRepo.GetEventsOfUser(authenticateUser.email, context);
+
+                    // loop through each event
+                    foreach (var userEvent in joinedEvents)
+                    {
+                        EventCard eventCard = new EventCard();
+                        eventCard.Title = userEvent.title;
+                        eventCard.Capacity = Convert.ToString(userEvent.capacity);
+                        eventCard.Date = Convert.ToString(userEvent.date);
+                        eventCard.Time = Convert.ToString(userEvent.time);
+                        eventCard.Location = Convert.ToString(userEvent.location);
+
+                        
+                        joinedEventFlowLayoutPanel.Controls.Add(eventCard);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
-        //Populate my joined event EventCard
+        //Populate my created event EventCard
         private void populateMyCreatedEventCard()
         {
-            // populate it here  
-            EventCard[] myCreatedEvents = new EventCard[20];
-
-            // loop through each event
-            for (int i = 0; i < myCreatedEvents.Length; i++)
+            try
             {
-                myCreatedEvents[i] = new EventCard();
-                myCreatedEvents[i].Title = "Title";
-                myCreatedEvents[i].Capacity = "Capacity";
-                myCreatedEvents[i].Date = "Date";
-                myCreatedEvents[i].Time = "Time";
-                myCreatedEvents[i].Location = "Location";
+                using (var context = new ConnectionFactory())
+                {
+                    User authenticateUser = UserSession.AuthenticatedUser;
 
-                // add to joinedEventFlowLayoutPanel
-                //if (joinedEventFlowLayoutPanel.Controls.Count > 0)
-                //{
-                //    joinedEventFlowLayoutPanel.Controls.Clear();
-                //}
-                //else
-                createdEventFlowLayoutPanel.Controls.Add(myCreatedEvents[i]);
+                    CreatedEventRepo createdEventsRepo = new CreatedEventRepo();
+                    List<Event> createdEvents = createdEventsRepo.GetEventsOfAdmin(authenticateUser.email, context);
+
+                    // loop through each event
+                    foreach (var userEvent in createdEvents)
+                    {
+                        EventCard eventCard = new EventCard();
+                        eventCard.Title = userEvent.title;
+                        eventCard.Capacity = Convert.ToString(userEvent.capacity);
+                        eventCard.Date = Convert.ToString(userEvent.date);
+                        eventCard.Time = Convert.ToString(userEvent.time);
+                        eventCard.Location = Convert.ToString(userEvent.location);
+
+                       createdEventFlowLayoutPanel.Controls.Add(eventCard);
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            } 
         }
+
         //Populate my joined event EventCard
         private void populateUpcomingEventCard()
         {
-            // populate it here  
-            EventCard[] myUpcomingEvents = new EventCard[20];
-
-            // loop through each event
-            for (int i = 0; i < myUpcomingEvents.Length; i++)
+            try
             {
-                myUpcomingEvents[i] = new EventCard();
-                myUpcomingEvents[i].Title = "Title";
-                myUpcomingEvents[i].Capacity = "Capacity";
-                myUpcomingEvents[i].Date = "Date";
-                myUpcomingEvents[i].Time = "Time";
-                myUpcomingEvents[i].Location = "Location";
+                using (var context = new ConnectionFactory())
+                {
+                    User authenticateUser = UserSession.AuthenticatedUser;
 
-                // add to joinedEventFlowLayoutPanel
-                //if (joinedEventFlowLayoutPanel.Controls.Count > 0)
-                //{
-                //    joinedEventFlowLayoutPanel.Controls.Clear();
-                //}
-                //else
-                upcomingEventFlowLayoutPanel.Controls.Add(myUpcomingEvents[i]);
+                    EventRepo eventsRepo = new EventRepo();
+                    List<Event> createdEvents = eventsRepo.upcomingEvents(context);
+
+                    // loop through each event
+                    foreach (var userEvent in createdEvents)
+                    {
+                        EventCard eventCard = new EventCard();
+                        eventCard.Title = userEvent.title;
+                        eventCard.Capacity = Convert.ToString(userEvent.capacity);
+                        eventCard.Date = Convert.ToString(userEvent.date);
+                        eventCard.Time = Convert.ToString(userEvent.time);
+                        eventCard.Location = Convert.ToString(userEvent.location);
+
+                        upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
     }
