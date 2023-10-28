@@ -41,6 +41,7 @@
             // cardTitleLabel
             // 
             cardTitleLabel.AutoSize = true;
+            cardTitleLabel.BackColor = Color.Transparent;
             cardTitleLabel.Location = new Point(25, 27);
             cardTitleLabel.Name = "cardTitleLabel";
             cardTitleLabel.Size = new Size(52, 30);
@@ -50,6 +51,7 @@
             // cardDateLabel
             // 
             cardDateLabel.AutoSize = true;
+            cardDateLabel.BackColor = Color.Transparent;
             cardDateLabel.Location = new Point(25, 249);
             cardDateLabel.Name = "cardDateLabel";
             cardDateLabel.Size = new Size(57, 30);
@@ -59,7 +61,8 @@
             // cardTimeLabel
             // 
             cardTimeLabel.AutoSize = true;
-            cardTimeLabel.Location = new Point(100, 249);
+            cardTimeLabel.BackColor = Color.Transparent;
+            cardTimeLabel.Location = new Point(154, 249);
             cardTimeLabel.Name = "cardTimeLabel";
             cardTimeLabel.Size = new Size(58, 30);
             cardTimeLabel.TabIndex = 2;
@@ -77,6 +80,7 @@
             // cardLocationLabel
             // 
             cardLocationLabel.AutoSize = true;
+            cardLocationLabel.BackColor = Color.Transparent;
             cardLocationLabel.Location = new Point(25, 200);
             cardLocationLabel.Name = "cardLocationLabel";
             cardLocationLabel.Size = new Size(92, 30);
@@ -86,6 +90,7 @@
             // cardCapacityLabel
             // 
             cardCapacityLabel.AutoSize = true;
+            cardCapacityLabel.BackColor = Color.Transparent;
             cardCapacityLabel.Location = new Point(369, 27);
             cardCapacityLabel.Name = "cardCapacityLabel";
             cardCapacityLabel.Size = new Size(92, 30);

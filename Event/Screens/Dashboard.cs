@@ -47,8 +47,8 @@ namespace EventManagementSystem.Screens
                         EventCard eventCard = new EventCard();
                         eventCard.Title = userEvent.title;
                         eventCard.Capacity = Convert.ToString(userEvent.capacity);
-                        eventCard.Date = Convert.ToString(userEvent.date);
-                        eventCard.Time = Convert.ToString(userEvent.time);
+                        eventCard.Date = userEvent.date.ToShortDateString();
+                        eventCard.Time = userEvent.time.ToString("hh:mm tt");
                         eventCard.Location = Convert.ToString(userEvent.location);
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
 
@@ -81,8 +81,8 @@ namespace EventManagementSystem.Screens
                         EventCard eventCard = new EventCard();
                         eventCard.Title = userEvent.title;
                         eventCard.Capacity = Convert.ToString(userEvent.capacity);
-                        eventCard.Date = Convert.ToString(userEvent.date);
-                        eventCard.Time = Convert.ToString(userEvent.time);
+                        eventCard.Date = userEvent.date.ToShortDateString();
+                        eventCard.Time = userEvent.time.ToString("hh:mm tt");
                         eventCard.Location = Convert.ToString(userEvent.location);
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
 
@@ -114,8 +114,8 @@ namespace EventManagementSystem.Screens
                         EventCard eventCard = new EventCard();
                         eventCard.Title = userEvent.title;
                         eventCard.Capacity = Convert.ToString(userEvent.capacity);
-                        eventCard.Date = Convert.ToString(userEvent.date);
-                        eventCard.Time = Convert.ToString(userEvent.time);
+                        eventCard.Date = userEvent.date.ToShortDateString();
+                        eventCard.Time = userEvent.time.ToString("hh:mm tt");
                         eventCard.Location = Convert.ToString(userEvent.location);
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
 
