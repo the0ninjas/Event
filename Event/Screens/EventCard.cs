@@ -77,12 +77,13 @@ namespace EventManagementSystem.Screens
         private void cardPictureBox_Paint(object sender, PaintEventArgs e)
         {
             Font font = new Font("Segoe UI", 10, FontStyle.Bold);
+            Font titleFont = new Font("Segoe UI", 14, FontStyle.Bold);
             Brush textBrush = new SolidBrush(Color.Black);
 
-            e.Graphics.DrawString(EventTitle, font, textBrush, new PointF(25, 27));
+            e.Graphics.DrawString(EventTitle, titleFont, textBrush, new PointF(25, 27));
             e.Graphics.DrawString(EventCapacity, font, textBrush, new PointF(369, 27));
             e.Graphics.DrawString(EventDate, font, textBrush, new PointF(25, 249));
-            e.Graphics.DrawString(EventTime, font, textBrush, new PointF(154, 249));
+            e.Graphics.DrawString(EventTime, font, textBrush, new PointF(160, 249));
             e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(25, 200));
 
             textBrush.Dispose();
