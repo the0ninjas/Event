@@ -16,50 +16,78 @@ namespace EventManagementSystem.Screens
         {
             InitializeComponent();
         }
+        
+        private string eventTitle;
+        public string EventTitle
+        {
+            get { return eventTitle; }
+            set
+            {
+                eventTitle = value;
+                cardPictureBox.Invalidate();  // Triggers the cardPictureBox to redraw itself.
+            }
+        }
 
-        private string _title;
-        private string _capacity;
-        private string _date;
-        private string _time;
-        private string _location;
+        private string eventCapacity;
+        public string EventCapacity
+        {
+            get { return eventCapacity; }
+            set
+            {
+                eventCapacity = value;
+                cardPictureBox.Invalidate();  // Triggers the cardPictureBox to redraw itself.
+            }
+        }
+
+        private string eventDate;
+        public string EventDate
+        {
+            get { return eventDate; }
+            set
+            {
+                eventDate = value;
+                cardPictureBox.Invalidate();  // Triggers the cardPictureBox to redraw itself.
+            }
+        }
+
+        private string eventTime;
+        public string EventTime
+        {
+            get { return eventTime; }
+            set
+            {
+                eventTime = value;
+                cardPictureBox.Invalidate();  // Triggers the cardPictureBox to redraw itself.
+            }
+        }
+
+        private string eventLocation;
+        public string EventLocation
+        {
+            get { return eventLocation; }
+            set
+            {
+                eventLocation = value;
+                cardPictureBox.Invalidate();  // Triggers the cardPictureBox to redraw itself.
+            }
+        }
+        
         private Image _picture;
 
-        [Category("Custom Props")]
-        public string Title
+        private void cardPictureBox_Paint(object sender, PaintEventArgs e)
         {
-            get { return _title; }
-            set { _title = value; cardTitleLabel.Text = value; }
+            Font font = new Font("Segoe UI", 10, FontStyle.Bold);
+            Brush textBrush = new SolidBrush(Color.Black);
+
+            e.Graphics.DrawString(EventTitle, font, textBrush, new PointF(25, 27));
+            e.Graphics.DrawString(EventCapacity, font, textBrush, new PointF(369, 27));
+            e.Graphics.DrawString(EventDate, font, textBrush, new PointF(25, 249));
+            e.Graphics.DrawString(EventTime, font, textBrush, new PointF(154, 249));
+            e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(25, 200));
+
+            textBrush.Dispose();
         }
 
-        [Category("Custom Props")]
-        public string Capacity
-        {
-            get { return _capacity; }
-            set { _capacity = value; cardCapacityLabel.Text = value; }
-        }
-
-        [Category("Custom Props")]
-        public string Date
-        {
-            get { return _date; }
-            set { _date = value; cardDateLabel.Text = value; }
-        }
-
-        [Category("Custom Props")]
-        public string Time
-        {
-            get { return _time; }
-            set { _time = value; cardTimeLabel.Text = value; }
-        }
-
-        [Category("Custom Props")]
-        public string Location
-        {
-            get { return _location; }
-            set { _location = value; cardLocationLabel.Text = value; }
-        }
-
-        [Category("Custom Props")]
         public Image Picture
         {
             get { return _picture; }

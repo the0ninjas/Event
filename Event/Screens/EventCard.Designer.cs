@@ -28,45 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cardTitleLabel = new Label();
-            cardDateLabel = new Label();
-            cardTimeLabel = new Label();
             cardPictureBox = new PictureBox();
-            cardLocationLabel = new Label();
-            cardCapacityLabel = new Label();
             cardJoinButton = new Button();
             ((System.ComponentModel.ISupportInitialize)cardPictureBox).BeginInit();
             SuspendLayout();
-            // 
-            // cardTitleLabel
-            // 
-            cardTitleLabel.AutoSize = true;
-            cardTitleLabel.BackColor = Color.Transparent;
-            cardTitleLabel.Location = new Point(25, 27);
-            cardTitleLabel.Name = "cardTitleLabel";
-            cardTitleLabel.Size = new Size(52, 30);
-            cardTitleLabel.TabIndex = 0;
-            cardTitleLabel.Text = "Title";
-            // 
-            // cardDateLabel
-            // 
-            cardDateLabel.AutoSize = true;
-            cardDateLabel.BackColor = Color.Transparent;
-            cardDateLabel.Location = new Point(25, 249);
-            cardDateLabel.Name = "cardDateLabel";
-            cardDateLabel.Size = new Size(57, 30);
-            cardDateLabel.TabIndex = 1;
-            cardDateLabel.Text = "Date";
-            // 
-            // cardTimeLabel
-            // 
-            cardTimeLabel.AutoSize = true;
-            cardTimeLabel.BackColor = Color.Transparent;
-            cardTimeLabel.Location = new Point(154, 249);
-            cardTimeLabel.Name = "cardTimeLabel";
-            cardTimeLabel.Size = new Size(58, 30);
-            cardTimeLabel.TabIndex = 2;
-            cardTimeLabel.Text = "Time";
             // 
             // cardPictureBox
             // 
@@ -76,26 +41,7 @@
             cardPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             cardPictureBox.TabIndex = 3;
             cardPictureBox.TabStop = false;
-            // 
-            // cardLocationLabel
-            // 
-            cardLocationLabel.AutoSize = true;
-            cardLocationLabel.BackColor = Color.Transparent;
-            cardLocationLabel.Location = new Point(25, 200);
-            cardLocationLabel.Name = "cardLocationLabel";
-            cardLocationLabel.Size = new Size(92, 30);
-            cardLocationLabel.TabIndex = 4;
-            cardLocationLabel.Text = "Location";
-            // 
-            // cardCapacityLabel
-            // 
-            cardCapacityLabel.AutoSize = true;
-            cardCapacityLabel.BackColor = Color.Transparent;
-            cardCapacityLabel.Location = new Point(369, 27);
-            cardCapacityLabel.Name = "cardCapacityLabel";
-            cardCapacityLabel.Size = new Size(92, 30);
-            cardCapacityLabel.TabIndex = 5;
-            cardCapacityLabel.Text = "Capacity";
+            cardPictureBox.Paint += cardPictureBox_Paint;
             // 
             // cardJoinButton
             // 
@@ -111,27 +57,15 @@
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(cardJoinButton);
-            Controls.Add(cardCapacityLabel);
-            Controls.Add(cardLocationLabel);
-            Controls.Add(cardTimeLabel);
-            Controls.Add(cardDateLabel);
-            Controls.Add(cardTitleLabel);
             Controls.Add(cardPictureBox);
             Name = "EventCard";
             Size = new Size(480, 300);
             ((System.ComponentModel.ISupportInitialize)cardPictureBox).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label cardTitleLabel;
-        private Label cardDateLabel;
-        private Label cardTimeLabel;
         private PictureBox cardPictureBox;
-        private Label cardLocationLabel;
-        private Label cardCapacityLabel;
         private Button cardJoinButton;
     }
 }

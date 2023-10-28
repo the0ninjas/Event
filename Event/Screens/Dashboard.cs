@@ -45,14 +45,12 @@ namespace EventManagementSystem.Screens
                     foreach (var userEvent in joinedEvents)
                     {
                         EventCard eventCard = new EventCard();
-                        eventCard.Title = userEvent.title;
-                        eventCard.Capacity = Convert.ToString(userEvent.capacity);
-                        eventCard.Date = userEvent.date.ToShortDateString();
-                        eventCard.Time = userEvent.time.ToString("hh:mm tt");
-                        eventCard.Location = Convert.ToString(userEvent.location);
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
-
-
+                        eventCard.EventTitle = userEvent.title;
+                        eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                        eventCard.EventDate = userEvent.date.ToShortDateString();
+                        eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
+                        eventCard.EventLocation = Convert.ToString(userEvent.location);
 
                         joinedEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
@@ -79,12 +77,12 @@ namespace EventManagementSystem.Screens
                     foreach (var userEvent in createdEvents)
                     {
                         EventCard eventCard = new EventCard();
-                        eventCard.Title = userEvent.title;
-                        eventCard.Capacity = Convert.ToString(userEvent.capacity);
-                        eventCard.Date = userEvent.date.ToShortDateString();
-                        eventCard.Time = userEvent.time.ToString("hh:mm tt");
-                        eventCard.Location = Convert.ToString(userEvent.location);
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
+                        eventCard.EventTitle = userEvent.title;
+                        eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                        eventCard.EventDate = userEvent.date.ToShortDateString();
+                        eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
+                        eventCard.EventLocation = Convert.ToString(userEvent.location);
 
                         createdEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
@@ -112,12 +110,12 @@ namespace EventManagementSystem.Screens
                     foreach (var userEvent in createdEvents)
                     {
                         EventCard eventCard = new EventCard();
-                        eventCard.Title = userEvent.title;
-                        eventCard.Capacity = Convert.ToString(userEvent.capacity);
-                        eventCard.Date = userEvent.date.ToShortDateString();
-                        eventCard.Time = userEvent.time.ToString("hh:mm tt");
-                        eventCard.Location = Convert.ToString(userEvent.location);
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
+                        eventCard.EventTitle = userEvent.title;
+                        eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                        eventCard.EventDate = userEvent.date.ToShortDateString();
+                        eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
+                        eventCard.EventLocation = Convert.ToString(userEvent.location);
 
                         upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
                     }

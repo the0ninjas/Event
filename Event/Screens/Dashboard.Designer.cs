@@ -59,14 +59,10 @@
             // 
             // eventCard1
             // 
-            eventCard1.Capacity = null;
-            eventCard1.Date = null;
             eventCard1.Name = "eventCard1";
             eventCard1.Picture = null;
             eventCard1.Size = new Size(8, 8);
             eventCard1.TabIndex = 5;
-            eventCard1.Time = null;
-            eventCard1.Title = null;
             // 
             // dashboardPanel
             // 
