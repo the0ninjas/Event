@@ -29,7 +29,7 @@ namespace EventManagementSystem.Models
             this.time = time;
             this.location = location;
             this.capacity = capacity;
-            this.registrations = 1;
+            this.registrations = 0;
             this.description = description;
             this.isVisible = true;
             this.imageName = imageName;

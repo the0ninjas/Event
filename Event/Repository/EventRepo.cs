@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace EventManagementSystem.Repository
 {
@@ -43,7 +44,7 @@ namespace EventManagementSystem.Repository
             }
         }
 
-        public List<Event> upcomingEvents(ConnectionFactory context) 
+        public List<Event> upcomingEvents(string email, ConnectionFactory context) 
         {
             try 
             {
@@ -53,6 +54,8 @@ namespace EventManagementSystem.Repository
                 // Query the database to get the next ten upcoming events
                 var upcomingEvents = context.Events
                     .Where(e => e.date > currentDateTime.Date || (e.date == currentDateTime.Date && e.time.TimeOfDay > currentDateTime.TimeOfDay))
+                    .Where(e => !context.JoinedEvents.Any(je => je.eventId == e.eventId && je.userEmail == email))
+                    .Where(e => e.registrations <= e.capacity)
                     .OrderBy(e => e.date)
                     .ThenBy(e => e.time)
                     .Take(10)
@@ -66,6 +69,8 @@ namespace EventManagementSystem.Repository
                 return null;
             }
         }
+
+       
 
         public Event updateEvent(Event updatedEvent)
         {
@@ -102,6 +107,31 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        public bool eventRegistration(int eventId, ConnectionFactory context)
+        {
+            try
+            {
+                Event existingEvent = Events.Find(u => u.eventId == eventId);
+
+                if (existingEvent != null)
+                {
+                    existingEvent.registrations += 1;
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                return false;
+
+            }
+        }
+
         public bool deleteEvent(int eventId, ConnectionFactory context)
         {
             try
@@ -127,6 +157,23 @@ namespace EventManagementSystem.Repository
                 Console.WriteLine($"An error occurred: {ex.Message}");
                 return false;
             }
+        }
+
+        public void UpdateSearchResults(string searchString, ConnectionFactory context)
+        {
+            var searchResults = context.Events
+                .Where(e => e.title.Contains(searchString) || e.date.ToString().Contains(searchString) || e.location.Contains(searchString))
+                .OrderBy(e => e.date)
+                .ThenBy(e => e.time)
+                .ToList();
+
+            UpdateUIWithSearchResults(searchResults);
+
+        }
+
+        public void UpdateUIWithSearchResults(List<Event> searchResults)
+        {
+            // DataGridView.DataSource = searchResults;
         }
     }
 }

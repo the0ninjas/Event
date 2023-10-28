@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EventManagementSystem.Models;
+using EventManagementSystem.Repository;
+using EventManagementSystem.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +19,17 @@ namespace EventManagementSystem.Screens
         {
             InitializeComponent();
         }
-        
+
+        private int eventId;
+        public int EventId
+        {
+            get { return eventId; }
+            set
+            {
+                eventId = value;
+            }
+        }
+
         private string eventTitle;
         public string EventTitle
         {
@@ -95,6 +108,26 @@ namespace EventManagementSystem.Screens
             set { _picture = value; cardPictureBox.Image = value; }
         }
 
+        public void cardJoinButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new ConnectionFactory())
+                {
+                    EventCard clickedCard = (EventCard)((Button)sender).Parent;
+                    int eventIdToJoin = this.EventId;
+
+                    User authenticateUser = UserSession.AuthenticatedUser;
+
+                    JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
+                    joinedEventsRepo.joinEvent(eventIdToJoin, authenticateUser.email, context);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
 
     }
 }

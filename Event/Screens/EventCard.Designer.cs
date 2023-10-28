@@ -51,6 +51,7 @@
             cardJoinButton.TabIndex = 6;
             cardJoinButton.Text = "Join";
             cardJoinButton.UseVisualStyleBackColor = true;
+            cardJoinButton.Click += cardJoinButton_Click;
             // 
             // EventCard
             // 
@@ -66,6 +67,6 @@
 
         #endregion
         private PictureBox cardPictureBox;
-        private Button cardJoinButton;
+        public Button cardJoinButton;
     }
 }

@@ -163,62 +163,70 @@ namespace EventManagementSystem.Screens
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            CreatedEventRepo createdEventRepo = new CreatedEventRepo();
+
             try
             {
                 using (var context = new ConnectionFactory())
                 {
-                    string title = titleTextBox.Text;
-                    DateTime date = datePicker.Value;
-                    DateTime time = timePicker.Value;
-                    string location = locationComboBox.Text;
-                    int capacity = int.Parse(capacityTextBox.Text);
-                    string description = descriptionTextBox.Text;
-                    string imageName = imageComboBox.Text;
+                    // Get the object of the user that is currently logged in
+                    User authenticatedUser = UserSession.AuthenticatedUser;
 
-                    //if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(location) ||
-                    //        string.IsNullOrWhiteSpace(description))
-                    //{
-                    //    throw new Exception("Please provide all required information.");
-                    //}
-
-                    // Create a new event object that stores the details entered by the user
-                    Event newEvent = new Event(title, date, time, location, capacity, description, imageName);
-
-                    // Create an instance of EventRepo
-                    EventRepo eventRepo = new EventRepo();
-
-                    // Call createEvent function to save the event in the database
-                    bool eventCreated = eventRepo.createEvent(newEvent, context);
-
-                    if (eventCreated)
+                    if (createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context).Count < 10)
                     {
-                        context.Entry(newEvent).Reload();
-                        int eventId = newEvent.eventId;
-                        // Get the object of the user that is currently logged in
-                        User authenticatedUser = UserSession.AuthenticatedUser;
+                        string title = titleTextBox.Text;
+                        DateTime date = datePicker.Value;
+                        DateTime time = timePicker.Value;
+                        string location = locationComboBox.Text;
+                        int capacity = int.Parse(capacityTextBox.Text);
+                        string description = descriptionTextBox.Text;
+                        string imageName = imageComboBox.Text;
 
-                        // Create an instance of EventAdminRepo
-                        CreatedEventRepo createdEventRepo = new CreatedEventRepo();
+                        //if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(location) ||
+                        //        string.IsNullOrWhiteSpace(description))
+                        //{
+                        //    throw new Exception("Please provide all required information.");
+                        //}
 
-                        // Call createEventAdmin function to save the admin / event combination in the database
-                        bool eventAdminCreated = createdEventRepo.createEventAdmin(newEvent.eventId, authenticatedUser.email, context);
+                        // Create a new event object that stores the details entered by the user
+                        Event newEvent = new Event(title, date, time, location, capacity, description, imageName);
 
-                        if (eventAdminCreated)
+                        // Create an instance of EventRepo
+                        EventRepo eventRepo = new EventRepo();
+
+                        // Call createEvent function to save the event in the database
+                        bool eventCreated = eventRepo.createEvent(newEvent, context);
+
+                        if (eventCreated)
                         {
-                            MessageBox.Show("Event created successfully.");
-                            this.Close();
+                            context.Entry(newEvent).Reload();
+                            int eventId = newEvent.eventId;
+
+                            // Call createEventAdmin function to save the admin / event combination in the database
+                            bool eventAdminCreated = createdEventRepo.createEventAdmin(newEvent.eventId, authenticatedUser.email, context);
+
+                            if (eventAdminCreated)
+                            {
+                                MessageBox.Show("Event created successfully.");
+                                this.Close();
+                            }
+                            else
+                            {
+                                eventRepo.deleteEvent(newEvent.eventId, context);
+                                MessageBox.Show("Failed to create the event admin. The event has been deleted.");
+                                this.Close();
+
+                            }
                         }
                         else
                         {
-                            eventRepo.deleteEvent(newEvent.eventId, context);
-                            MessageBox.Show("Failed to create the event admin. The event has been deleted.");
-                            this.Close();
-
+                            MessageBox.Show("Failed to create the event. Please check your input.");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Failed to create the event. Please check your input.");
+                        MessageBox.Show("Failed to create the event admin. The event has been deleted.");
+
                     }
                 }
             }

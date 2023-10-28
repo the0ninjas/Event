@@ -185,6 +185,12 @@ namespace EventManagementSystem.Screens
                 }
 
                 this.Close();
+
+                // Initialize the EmailSender with your SMTP server details and credentials
+                EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+
+                // Send an email
+                emailSender.SendEmail("anieder25@gmail.com", "Hello", "This is a test email!");
             }
 
             catch (Exception ex)

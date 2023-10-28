@@ -1,4 +1,7 @@
-﻿namespace EventManagementSystem.Screens
+﻿using EventManagementSystem.Repository;
+using EventManagementSystem.Utilities;
+
+namespace EventManagementSystem.Screens
 {
     partial class TopPage
     {
@@ -245,6 +248,16 @@
             searchBarTextBox.Size = new Size(394, 35);
             searchBarTextBox.TabIndex = 1;
             searchBarTextBox.Text = "Search";
+            searchBarTextBox.TextChanged += (sender, e) =>
+            {
+                // Get the current text from the search bar
+                string searchString = searchBarTextBox.Text.Trim();
+
+                // Perform the search and update the UI with the results
+                EventRepo eventRepo = new EventRepo();
+                ConnectionFactory context = new ConnectionFactory();
+                eventRepo.UpdateSearchResults(searchString, context);
+            };
             // 
             // headerTitleLabel
             // 
