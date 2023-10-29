@@ -94,11 +94,20 @@ namespace EventManagementSystem.Screens
             Font titleFont = new Font("Segoe UI", 14, FontStyle.Bold);
             Brush textBrush = new SolidBrush(Color.White);
 
-            e.Graphics.DrawString(EventTitle, titleFont, textBrush, new PointF(25, 27));
-            e.Graphics.DrawString(EventCapacity, font, textBrush, new PointF(369, 27));
-            e.Graphics.DrawString(EventDate, font, textBrush, new PointF(25, 249));
-            e.Graphics.DrawString(EventTime, font, textBrush, new PointF(160, 249));
-            e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(25, 200));
+            //value from Yuta
+            //e.Graphics.DrawString(EventTitle, titleFont, textBrush, new PointF(25, 27));
+            //e.Graphics.DrawString(EventCapacity, font, textBrush, new PointF(369, 27));
+            //e.Graphics.DrawString(EventDate, font, textBrush, new PointF(25, 249));
+            //e.Graphics.DrawString(EventTime, font, textBrush, new PointF(160, 249));
+            //e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(25, 200));
+
+            //value from Stanley
+            e.Graphics.DrawString(EventTitle, titleFont, textBrush, new PointF(10, 10));
+            e.Graphics.DrawString(EventCapacity, font, textBrush, new PointF(10, 40));
+            e.Graphics.DrawString(EventDate, font, textBrush, new PointF(10, 70));
+            e.Graphics.DrawString(EventTime, font, textBrush, new PointF(10, 100));
+            e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(10, 130));
+
 
             textBrush.Dispose();
         }
