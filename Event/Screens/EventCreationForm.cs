@@ -209,6 +209,15 @@ namespace EventManagementSystem.Screens
                             {
                                 MessageBox.Show("Event created successfully.");
                                 this.Close();
+
+                                // Initialize the EmailSender with your SMTP server details and credentials
+                                EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+
+                                // Get email body
+                                string emailBody = emailSender.getBodyEmailEventCreated(authenticatedUser.firstName, newEvent);
+
+                                // Send an email
+                                emailSender.SendEmail(authenticatedUser.email, "Event Successfully Created!", emailBody);
                             }
                             else
                             {
