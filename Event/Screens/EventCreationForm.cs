@@ -167,6 +167,13 @@ namespace EventManagementSystem.Screens
             CreatedEventRepo createdEventRepo = new CreatedEventRepo();
             JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
 
+            if (titleTextBox.Text == "Enter event title" || locationComboBox.Text == "Select the location" || capacityTextBox.Text == "Enter max capacity" 
+                || descriptionTextBox.Text == "Enter description" || imageComboBox.Text == "Select the image")
+            {
+                MessageBox.Show("Please provide all required information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the event handler to prevent the form submission
+            }
+
             try
             {
                 using (var context = new ConnectionFactory())
