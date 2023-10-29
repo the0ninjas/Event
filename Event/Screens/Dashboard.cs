@@ -41,6 +41,7 @@ namespace EventManagementSystem.Screens
 
                     JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
                     List<Event> joinedEvents = joinedEventsRepo.GetEventsOfUser(authenticateUser.email, context);
+
                     if (joinedEvents == null)
                     {
                         // display an empty eventCard
@@ -71,9 +72,6 @@ namespace EventManagementSystem.Screens
 
                             joinedEventFlowLayoutPanel.Controls.Add(eventCard);
 
-
-                            eventCard.cardJoinButton.Click += CardJoinButton_Click;
-
                         }
                     }
                 }
@@ -83,11 +81,6 @@ namespace EventManagementSystem.Screens
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
-        }
-
-        private void CardJoinButton_Click(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         //Populate my created event EventCard
@@ -116,6 +109,7 @@ namespace EventManagementSystem.Screens
                     foreach (var userEvent in createdEvents)
                     {
                         EventCard eventCard = new EventCard();
+                        eventCard.EventId = userEvent.eventId;
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                         eventCard.EventTitle = userEvent.title;
                         eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
@@ -123,9 +117,9 @@ namespace EventManagementSystem.Screens
                         eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                         eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                            createdEventFlowLayoutPanel.Controls.Add(eventCard);
-                        }
+                        createdEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
+                }
                 
             }
             catch (Exception ex)
@@ -161,6 +155,7 @@ namespace EventManagementSystem.Screens
                     foreach (var userEvent in createdEvents)
                     {
                         EventCard eventCard = new EventCard();
+                        eventCard.EventId = userEvent.eventId;
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                         eventCard.EventTitle = userEvent.title;
                         eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
@@ -169,8 +164,8 @@ namespace EventManagementSystem.Screens
                         eventCard.EventLocation = Convert.ToString(userEvent.location);
 
                             upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
-                        }
                     }
+                }
                 
             }
             catch (Exception ex)
@@ -204,6 +199,7 @@ namespace EventManagementSystem.Screens
                     foreach (var userEvent in joinedPastEvents)
                     {
                         EventCard eventCard = new EventCard();
+                        eventCard.EventId = userEvent.eventId;
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                         eventCard.EventTitle = userEvent.title;
                         eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
@@ -211,7 +207,7 @@ namespace EventManagementSystem.Screens
                         eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                         eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                        joinedEventFlowLayoutPanel.Controls.Add(eventCard);
+                        //..EventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                 }
             }
