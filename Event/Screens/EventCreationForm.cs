@@ -90,24 +90,6 @@ namespace EventManagementSystem.Screens
             }
         }
 
-        private void descriptionTextBox_Enter(object sender, EventArgs e)
-        {
-            if (descriptionTextBox.Text == "Enter event description")
-            {
-                descriptionTextBox.Text = "";
-                descriptionTextBox.ForeColor = Color.Black;
-            }
-        }
-
-        private void descriptionTextBox_Leave(object sender, EventArgs e)
-        {
-            if (descriptionTextBox.Text == "")
-            {
-                descriptionTextBox.Text = "Enter event description";
-                descriptionTextBox.ForeColor = SystemColors.ScrollBar;
-            }
-        }
-
         private void imageComboBox_Enter(object sender, EventArgs e)
         {
             if (imageComboBox.Text == "Select the image")
@@ -132,15 +114,6 @@ namespace EventManagementSystem.Screens
             {
                 imageComboBox.ForeColor = Color.Black;
             }
-
-            // Get the selected resource name from the ComboBox
-            string selectedImageName = imageComboBox.SelectedItem.ToString();
-
-            // Retrieve the image from the resources
-            Bitmap selectedImage = (Bitmap)Properties.Resources.ResourceManager.GetObject(selectedImageName);
-
-            // Set the image to the PictureBox
-            pictureBox.Image = selectedImage;
         }
 
         private void EventCreationForm_Load(object sender, EventArgs e)
@@ -168,7 +141,7 @@ namespace EventManagementSystem.Screens
             JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
 
             if (titleTextBox.Text == "Enter event title" || locationComboBox.Text == "Select the location" || capacityTextBox.Text == "Enter max capacity"
-                || descriptionTextBox.Text == "Enter description" || imageComboBox.Text == "Select the image")
+                || imageComboBox.Text == "Select the image")
             {
                 MessageBox.Show("Please provide all required information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Exit the event handler to prevent the form submission
@@ -189,7 +162,6 @@ namespace EventManagementSystem.Screens
                         DateTime combinedDateTime = selectedDate.Date + selectedTime;
                         string location = locationComboBox.Text;
                         int capacity = int.Parse(capacityTextBox.Text);
-                        string description = descriptionTextBox.Text;
                         string imageName = imageComboBox.Text;
 
                         // Create a new event object that stores the details entered by the user
