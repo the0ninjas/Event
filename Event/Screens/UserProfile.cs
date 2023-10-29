@@ -38,13 +38,7 @@ namespace EventManagementSystem.Screens
         }
         private void firstNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            //User authenticatedUser = UserSession.AuthenticatedUser;
 
-            //if (authenticatedUser != null)
-            //{
-            //    // Populate the TextBox with the user's first name
-            //    firstNameTextBox.Text = authenticatedUser.FirstName;
-            //}
         }
 
         private void lastNameTextBox_TextChanged(object sender, EventArgs e)
@@ -54,6 +48,7 @@ namespace EventManagementSystem.Screens
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
+            // Restric user from updating email
             emailTextBox.ReadOnly = true;
         }
 

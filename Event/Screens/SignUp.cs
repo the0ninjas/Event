@@ -205,7 +205,7 @@ namespace EventManagementSystem.Screens
 
                         this.Close();
 
-                        // Initialize the EmailSender with your SMTP server details and credentials
+                        // Initialize the EmailSender with SMTP server details and credentials
                         EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "xduw ibjk vxyw jgey");
 
                         // Get email body
@@ -238,8 +238,7 @@ namespace EventManagementSystem.Screens
             string emailPattern = @".+@.+";
             if (!Regex.IsMatch(emailTextBox.Text, emailPattern))
             {
-                errorProvider1.SetError(emailTextBox, "Invalid email format.");
-                //e.Cancel = true; // Prevent focus from leaving the TextBox.
+                errorProvider1.SetError(emailTextBox, "Invalid email format.");            
             }
             else
             {
@@ -253,8 +252,7 @@ namespace EventManagementSystem.Screens
 
             if (!Regex.IsMatch(phoneNumberTextBox.Text, phonePattern))
             {
-                errorProvider2.SetError(phoneNumberTextBox, "Invalid format. Phone number should start with '0' and consist of only numeric digits.");
-                // e.Cancel = true; // Remove or comment out this line to allow moving to other textboxes.
+                errorProvider2.SetError(phoneNumberTextBox, "Invalid format. Phone number should start with '0' and consist of only numeric digits.");             
             }
             else
             {
@@ -267,7 +265,6 @@ namespace EventManagementSystem.Screens
             if (locationComboBox.SelectedItem == null)
             {
                 errorProvider3.SetError(locationComboBox, "Please select a location.");
-                //e.Cancel = true; // Prevent focus from leaving the ComboBox.
             }
             else
             {
