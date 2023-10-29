@@ -200,6 +200,9 @@ namespace EventManagementSystem.Screens
                         context.Users.Add(newUser);
                         context.SaveChanges();
 
+                        Login login = new Login();
+                        login.Show();
+
                         this.Close();
 
                         // Initialize the EmailSender with your SMTP server details and credentials
@@ -224,6 +227,8 @@ namespace EventManagementSystem.Screens
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            Login login = new Login();
+            login.Show();
             this.Close();
         }
 
