@@ -1,11 +1,15 @@
-﻿namespace EventManagementSystem.Screens
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("EventManagementSystem.NUnitTest")]
+
+namespace EventManagementSystem.Screens
 {
     partial class SignUp
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        internal System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -295,24 +299,24 @@
 
         #endregion
 
-        private Label headingLabel;
-        private Label subHeadingLabel;
-        private Label firstNameLabel;
-        private Label lastNameLabel;
-        private Label emailLabel;
-        private Label phoneNumberLabel;
-        private Label locationLabel;
-        private Label passwordLabel;
-        private TextBox firstNameTextBox;
-        private TextBox lastNameTextBox;
-        private TextBox emailTextBox;
-        private TextBox phoneNumberTextBox;
-        private TextBox passwordTextBox;
-        private Button signUpButton;
-        private Button cancelButton;
-        private ComboBox locationComboBox;
-        private ErrorProvider errorProvider1;
-        private ErrorProvider errorProvider2;
-        private ErrorProvider errorProvider3;
+        internal Label headingLabel;
+        internal Label subHeadingLabel;
+        internal Label firstNameLabel;
+        internal Label lastNameLabel;
+        internal Label emailLabel;
+        internal Label phoneNumberLabel;
+        internal Label locationLabel;
+        internal Label passwordLabel;
+        internal TextBox firstNameTextBox;
+        internal TextBox lastNameTextBox;
+        internal TextBox emailTextBox;
+        internal TextBox phoneNumberTextBox;
+        internal TextBox passwordTextBox;
+        internal Button signUpButton;
+        internal Button cancelButton;
+        internal ComboBox locationComboBox;
+        internal ErrorProvider errorProvider1;
+        internal ErrorProvider errorProvider2;
+        internal ErrorProvider errorProvider3;
     }
 }

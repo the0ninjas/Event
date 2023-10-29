@@ -143,7 +143,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
-        private void signUpButton_Click(object sender, EventArgs e)
+        internal void signUpButton_Click(object sender, EventArgs e)
         {
             // Check if the ErrorProvider has any error messages displayed
             if (errorProvider3.GetError(locationComboBox) != "" || errorProvider1.GetError(emailTextBox) != "" || errorProvider2.GetError(phoneNumberTextBox) != "")

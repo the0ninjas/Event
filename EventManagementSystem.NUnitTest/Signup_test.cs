@@ -20,8 +20,8 @@ namespace EventManagementSystem.Screens
             signUpForm.lastNameTextBox.Text = "Doe";
             signUpForm.passwordTextBox.Text = "StrongPassword123";
             signUpForm.emailTextBox.Text = "johndoe@example.com";
-            signUpForm.phoneNumberTextBox.Text = "1234567890";
-            signUpForm.locationComboBox.SelectedItem = "Location";
+            signUpForm.phoneNumberTextBox.Text = "01234567890";
+            signUpForm.locationComboBox.SelectedItem = "Sydney";
 
             // Act: Simulate a button click (invoke the event handler).
             signUpForm.signUpButton_Click(null, EventArgs.Empty);
@@ -38,9 +38,9 @@ namespace EventManagementSystem.Screens
             SignUp signUpForm = new SignUp();
             signUpForm.firstNameTextBox.Text = "";
             signUpForm.lastNameTextBox.Text = "Doe"; // Missing first name
-            signUpForm.passwordTextBox.Text = "Weak"; // Weak password
+            signUpForm.passwordTextBox.Text = "1234";
             signUpForm.emailTextBox.Text = "invalid-email"; // Invalid email
-            signUpForm.phoneNumberTextBox.Text = "1234567890";
+            signUpForm.phoneNumberTextBox.Text = "1234567890"; // Invalid password
             signUpForm.locationComboBox.SelectedItem = "Location";
 
             // Act: Simulate a button click (invoke the event handler).
