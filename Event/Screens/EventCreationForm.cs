@@ -28,6 +28,10 @@ namespace EventManagementSystem.Screens
             datePicker.MinDate = DateTime.Today;
         }
 
+        // titleTextBox format change
+
+        // Check if the text in the textbox is the default placeholder text
+        // When entering the textbox, clear the textbox and set the font color to black
         private void titleTextBox_Enter(object sender, EventArgs e)
         {
             if (titleTextBox.Text == "Enter event title")
@@ -37,6 +41,8 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // Check if the text in the textbox is empty
+        // When leaving the textbox, set the textbox to display the default placeholder text and change the font color to a grey color
         private void titleTextBox_Leave(object sender, EventArgs e)
         {
             if (titleTextBox.Text == "")
@@ -46,6 +52,10 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // locationComboBox format change
+
+        // Check if the current text in the combobox is the default placeholder text
+        // When entering the combobox, clear the combobox text and set the font color to black
         private void locationComboBox_Enter(object sender, EventArgs e)
         {
             if (locationComboBox.Text == "Select the location")
@@ -55,6 +65,8 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // Check if the text in the combobox is empty
+        // When leaving the combobox, set the combobox to display the default placeholder text and change the font color to a grey color
         private void locationComboBox_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(locationComboBox.Text))
@@ -64,6 +76,8 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // Check if the selected text in the combobox is neither empty nor the default placeholder text
+        // Change the font color to black to indicate a valid selection
         private void locationComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(locationComboBox.Text) && locationComboBox.Text != "Select the location")
@@ -72,6 +86,10 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // capacityTextBox format change
+
+        // Check if the text in the textbox is the default placeholder text
+        // When entering the textbox, clear the textbox and set the font color to black
         private void capacityTextBox_Enter(object sender, EventArgs e)
         {
             if (capacityTextBox.Text == "Enter max capacity")
@@ -81,6 +99,8 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // Check if the text in the textbox is empty
+        // When leaving the textbox, set the textbox to display the default placeholder text and change the font color to a grey color
         private void capacityTextBox_Leave(object sender, EventArgs e)
         {
             if (capacityTextBox.Text == "")
@@ -90,24 +110,10 @@ namespace EventManagementSystem.Screens
             }
         }
 
-        private void descriptionTextBox_Enter(object sender, EventArgs e)
-        {
-            if (descriptionTextBox.Text == "Enter event description")
-            {
-                descriptionTextBox.Text = "";
-                descriptionTextBox.ForeColor = Color.Black;
-            }
-        }
+        // imageComboBox format change
 
-        private void descriptionTextBox_Leave(object sender, EventArgs e)
-        {
-            if (descriptionTextBox.Text == "")
-            {
-                descriptionTextBox.Text = "Enter event description";
-                descriptionTextBox.ForeColor = SystemColors.ScrollBar;
-            }
-        }
-
+        // Check if the current text in the combobox is the default placeholder text
+        // When entering the combobox, clear the combobox text and set the font color to black
         private void imageComboBox_Enter(object sender, EventArgs e)
         {
             if (imageComboBox.Text == "Select the image")
@@ -117,6 +123,8 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // Check if the text in the combobox is empty
+        // When leaving the combobox, set the combobox to display the default placeholder text and change the font color to a grey color
         private void imageComboBox_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(imageComboBox.Text))
@@ -126,21 +134,14 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // Check if the selected text in the combobox is neither empty nor the default placeholder text
+        // Change the font color to black to indicate a valid selection
         private void imageComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(imageComboBox.Text) && imageComboBox.Text != "Select the image")
             {
                 imageComboBox.ForeColor = Color.Black;
             }
-
-            // Get the selected resource name from the ComboBox
-            string selectedImageName = imageComboBox.SelectedItem.ToString();
-
-            // Retrieve the image from the resources
-            Bitmap selectedImage = (Bitmap)Properties.Resources.ResourceManager.GetObject(selectedImageName);
-
-            // Set the image to the PictureBox
-            pictureBox.Image = selectedImage;
         }
 
         private void EventCreationForm_Load(object sender, EventArgs e)
@@ -168,7 +169,7 @@ namespace EventManagementSystem.Screens
             JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
 
             if (titleTextBox.Text == "Enter event title" || locationComboBox.Text == "Select the location" || capacityTextBox.Text == "Enter max capacity"
-                || descriptionTextBox.Text == "Enter description" || imageComboBox.Text == "Select the image")
+                || imageComboBox.Text == "Select the image")
             {
                 MessageBox.Show("Please provide all required information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Exit the event handler to prevent the form submission
@@ -189,7 +190,6 @@ namespace EventManagementSystem.Screens
                         DateTime combinedDateTime = selectedDate.Date + selectedTime;
                         string location = locationComboBox.Text;
                         int capacity = int.Parse(capacityTextBox.Text);
-                        string description = descriptionTextBox.Text;
                         string imageName = imageComboBox.Text;
 
                         //if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(location) ||
