@@ -107,7 +107,7 @@ namespace EventManagementSystem.Screens
                 // Close the current form
                 this.Close();
 
-                //show the login form 
+                // Show the login form 
                 Login loginForm = new Login();
                 loginForm.Show();
             }
