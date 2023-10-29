@@ -54,7 +54,7 @@ namespace EventManagementSystem.Repository
                 // Query the database to get the next ten upcoming events
                 var upcomingEvents = context.Events
                     .Where(e => e.date > currentDateTime.Date || (e.date == currentDateTime.Date && e.time.TimeOfDay > currentDateTime.TimeOfDay))
-                    .Where(e => !context.JoinedEvents.Any(je => je.eventId == e.eventId && je.userEmail == email))
+                    .Where(e => !context.CreatedEvents.Any(je => je.eventId == e.eventId && je.userEmail == email))
                     .Where(e => e.registrations <= e.capacity)
                     .OrderBy(e => e.date)
                     .ThenBy(e => e.time)
