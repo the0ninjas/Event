@@ -56,7 +56,7 @@ namespace EventManagementSystem.Repository
                 var upcomingEvents = context.Events
                     .Where(e => e.time > DateTime.Now)
                     .Where(e => !context.JoinedEvents.Any(je => je.eventId == e.eventId && je.userEmail == email))
-                    .Where(e => e.registrations <= e.capacity)
+                    .Where(e => e.registrations < e.capacity)
                     .OrderBy(e => e.time)
                     .Take(10)
                     .ToList();
