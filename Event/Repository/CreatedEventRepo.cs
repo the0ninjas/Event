@@ -81,28 +81,27 @@ namespace EventManagementSystem.Repository
         }
 
 
-        public bool deleteEventAdmin(int eventId)
+        public bool deleteEventAdmin(int eventId, ConnectionFactory context)
         {
             try
             {
-                using (var context = new ConnectionFactory())
+
+                var createdEventToDelete = context.CreatedEvents
+                    .FirstOrDefault(ea => ea.eventId == eventId);
+
+                if (createdEventToDelete != null)
                 {
-                    var createdEventToDelete = context.CreatedEvents
-                        .FirstOrDefault(ea => ea.eventId == eventId);
+                    context.CreatedEvents.Remove(createdEventToDelete);
+                    context.SaveChanges();
 
-                    if (createdEventToDelete != null)
-                    {
-                        context.CreatedEvents.Remove(createdEventToDelete);
-                        context.SaveChanges();
-
-                        return true;
-                    }
-                    else
-                    {
-                        // No EventAdmin found with the specified eventId
-                        return false;
-                    }
+                    return true;
                 }
+                else
+                {
+                    // No EventAdmin found with the specified eventId
+                    return false;
+                }
+
             }
             catch (Exception ex)
             {
