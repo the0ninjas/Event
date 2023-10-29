@@ -37,6 +37,11 @@ namespace EventManagementSystem.Repository
 
         public bool userExists(string email, ConnectionFactory context) 
         {
+            if (context == null)
+            {
+                return false;
+            }
+
             User user = context.Users.FirstOrDefault(u => u.email == email);
             if (user != null)
             {
