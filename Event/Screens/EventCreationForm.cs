@@ -25,6 +25,7 @@ namespace EventManagementSystem.Screens
         public EventCreationForm()
         {
             InitializeComponent();
+            datePicker.MinDate = DateTime.Today;
         }
 
         private void titleTextBox_Enter(object sender, EventArgs e)
@@ -175,7 +176,7 @@ namespace EventManagementSystem.Screens
 
                     if (createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context) == null || createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context).Count < 10)
                     {
-                        string title = titleTextBox.Text;
+                        string title = titleTextBox.Text;   
                         DateTime date = datePicker.Value;
                         DateTime time = timePicker.Value;
                         string location = locationComboBox.Text;
