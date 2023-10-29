@@ -17,6 +17,10 @@ namespace EventManagementSystem.Screens
         public TopPage()
         {
             InitializeComponent();
+
+            // Maximize the TopPage window
+            this.WindowState = FormWindowState.Maximized;
+
             // Create a new instance of Dashboard
             Dashboard dashboardForm = new Dashboard();
 

@@ -37,9 +37,10 @@
             // 
             // cardPictureBox
             // 
-            cardPictureBox.Location = new Point(3, 3);
+            cardPictureBox.Location = new Point(2, 2);
+            cardPictureBox.Margin = new Padding(2, 2, 2, 2);
             cardPictureBox.Name = "cardPictureBox";
-            cardPictureBox.Size = new Size(474, 294);
+            cardPictureBox.Size = new Size(316, 196);
             cardPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             cardPictureBox.TabIndex = 3;
             cardPictureBox.TabStop = false;
@@ -47,44 +48,57 @@
             // 
             // cardJoinButton
             // 
-            cardJoinButton.Location = new Point(330, 239);
+            cardJoinButton.BackColor = Color.DarkSeaGreen;
+            cardJoinButton.FlatStyle = FlatStyle.Popup;
+            cardJoinButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cardJoinButton.Location = new Point(220, 159);
+            cardJoinButton.Margin = new Padding(2, 2, 2, 2);
             cardJoinButton.Name = "cardJoinButton";
-            cardJoinButton.Size = new Size(131, 40);
+            cardJoinButton.Size = new Size(87, 27);
             cardJoinButton.TabIndex = 6;
             cardJoinButton.Text = "Join";
-            cardJoinButton.UseVisualStyleBackColor = true;
+            cardJoinButton.UseVisualStyleBackColor = false;
             cardJoinButton.Click += cardJoinButton_Click;
             // 
             // cardLeaveButton
             // 
-            cardLeaveButton.Location = new Point(330, 239);
+            cardLeaveButton.BackColor = Color.LavenderBlush;
+            cardLeaveButton.FlatStyle = FlatStyle.Popup;
+            cardLeaveButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cardLeaveButton.Location = new Point(220, 159);
+            cardLeaveButton.Margin = new Padding(2, 2, 2, 2);
             cardLeaveButton.Name = "cardLeaveButton";
-            cardLeaveButton.Size = new Size(131, 40);
+            cardLeaveButton.Size = new Size(87, 27);
             cardLeaveButton.TabIndex = 7;
             cardLeaveButton.Text = "Leave";
-            cardLeaveButton.UseVisualStyleBackColor = true;
+            cardLeaveButton.UseVisualStyleBackColor = false;
             cardLeaveButton.Click += cardLeaveButton_Click;
             // 
             // cardDeleteButton
             // 
-            cardDeleteButton.Location = new Point(330, 239);
+            cardDeleteButton.BackColor = Color.LavenderBlush;
+            cardDeleteButton.FlatStyle = FlatStyle.Popup;
+            cardDeleteButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cardDeleteButton.Location = new Point(220, 159);
+            cardDeleteButton.Margin = new Padding(2, 2, 2, 2);
             cardDeleteButton.Name = "cardDeleteButton";
-            cardDeleteButton.Size = new Size(131, 40);
+            cardDeleteButton.Size = new Size(87, 27);
             cardDeleteButton.TabIndex = 8;
             cardDeleteButton.Text = "Delete";
-            cardDeleteButton.UseVisualStyleBackColor = true;
+            cardDeleteButton.UseVisualStyleBackColor = false;
             cardDeleteButton.Click += button1_Click;
             // 
             // EventCard
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(cardDeleteButton);
             Controls.Add(cardLeaveButton);
             Controls.Add(cardJoinButton);
             Controls.Add(cardPictureBox);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "EventCard";
-            Size = new Size(480, 300);
+            Size = new Size(320, 200);
             ((System.ComponentModel.ISupportInitialize)cardPictureBox).EndInit();
             ResumeLayout(false);
         }

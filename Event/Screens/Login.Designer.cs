@@ -43,11 +43,11 @@
             // 
             headingLabel.AutoSize = true;
             headingLabel.BackColor = Color.Transparent;
-            headingLabel.Font = new Font("Segoe UI Black", 15.000001F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            headingLabel.Location = new Point(14, 69);
+            headingLabel.Font = new Font("Segoe UI Black", 13.2000008F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            headingLabel.Location = new Point(34, 70);
             headingLabel.Margin = new Padding(2, 0, 2, 0);
             headingLabel.Name = "headingLabel";
-            headingLabel.Size = new Size(652, 36);
+            headingLabel.Size = new Size(577, 31);
             headingLabel.TabIndex = 0;
             headingLabel.Text = "Find Your Time, Find Your Team: Play on Demand!";
             // 
@@ -61,9 +61,9 @@
             loginGroupBox.Controls.Add(passwordLabel);
             loginGroupBox.Controls.Add(emailLabel);
             loginGroupBox.Location = new Point(135, 183);
-            loginGroupBox.Margin = new Padding(2, 2, 2, 2);
+            loginGroupBox.Margin = new Padding(2);
             loginGroupBox.Name = "loginGroupBox";
-            loginGroupBox.Padding = new Padding(2, 2, 2, 2);
+            loginGroupBox.Padding = new Padding(2);
             loginGroupBox.Size = new Size(374, 302);
             loginGroupBox.TabIndex = 1;
             loginGroupBox.TabStop = false;
@@ -74,7 +74,7 @@
             signUpButton.FlatStyle = FlatStyle.Popup;
             signUpButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             signUpButton.Location = new Point(138, 242);
-            signUpButton.Margin = new Padding(2, 2, 2, 2);
+            signUpButton.Margin = new Padding(2);
             signUpButton.Name = "signUpButton";
             signUpButton.Size = new Size(87, 27);
             signUpButton.TabIndex = 5;
@@ -88,7 +88,7 @@
             signInButton.FlatStyle = FlatStyle.Popup;
             signInButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             signInButton.Location = new Point(138, 189);
-            signInButton.Margin = new Padding(2, 2, 2, 2);
+            signInButton.Margin = new Padding(2);
             signInButton.Name = "signInButton";
             signInButton.Size = new Size(87, 27);
             signInButton.TabIndex = 4;
@@ -100,7 +100,7 @@
             // 
             passwordTextBox.ForeColor = SystemColors.ScrollBar;
             passwordTextBox.Location = new Point(49, 137);
-            passwordTextBox.Margin = new Padding(2, 2, 2, 2);
+            passwordTextBox.Margin = new Padding(2);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(277, 27);
             passwordTextBox.TabIndex = 3;
@@ -112,7 +112,7 @@
             // 
             emailTextBox.ForeColor = SystemColors.ScrollBar;
             emailTextBox.Location = new Point(49, 70);
-            emailTextBox.Margin = new Padding(2, 2, 2, 2);
+            emailTextBox.Margin = new Padding(2);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(277, 27);
             emailTextBox.TabIndex = 2;
@@ -151,7 +151,7 @@
             ClientSize = new Size(637, 751);
             Controls.Add(loginGroupBox);
             Controls.Add(headingLabel);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Login";
             Text = "Login";
             loginGroupBox.ResumeLayout(false);
