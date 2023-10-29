@@ -94,18 +94,19 @@ namespace EventManagementSystem.Screens
             Font titleFont = new Font("Segoe UI", 14, FontStyle.Bold);
             Brush textBrush = new SolidBrush(Color.Black);
 
-            e.Graphics.DrawString(EventTitle, titleFont, textBrush, new PointF(25, 27));
-            e.Graphics.DrawString(EventCapacity, font, textBrush, new PointF(369, 27));
-            e.Graphics.DrawString(EventDate, font, textBrush, new PointF(25, 249));
-            e.Graphics.DrawString(EventTime, font, textBrush, new PointF(160, 249));
-            e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(25, 200));
+            //3000x2000 setting
+            //e.Graphics.DrawString(EventTitle, titleFont, textBrush, new PointF(25, 27));
+            //e.Graphics.DrawString(EventCapacity, font, textBrush, new PointF(369, 27));
+            //e.Graphics.DrawString(EventDate, font, textBrush, new PointF(25, 249));
+            //e.Graphics.DrawString(EventTime, font, textBrush, new PointF(160, 249));
+            //e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(25, 200));
 
-            //value from Stanley
-            //e.Graphics.DrawString(EventTitle, titleFont, textBrush, new PointF(10, 10));
-            //e.Graphics.DrawString(EventCapacity, font, textBrush, new PointF(10, 40));
-            //e.Graphics.DrawString(EventDate, font, textBrush, new PointF(10, 70));
-            //e.Graphics.DrawString(EventTime, font, textBrush, new PointF(10, 100));
-            //e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(10, 130));
+            //1920x1080 setting
+            e.Graphics.DrawString(EventTitle, titleFont, textBrush, new PointF(12, 19));
+            e.Graphics.DrawString(EventCapacity, font, textBrush, new PointF(250, 24));
+            e.Graphics.DrawString(EventDate, font, textBrush, new PointF(12, 162));
+            e.Graphics.DrawString(EventTime, font, textBrush, new PointF(117, 162));
+            e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(12, 132));
 
 
             textBrush.Dispose();
