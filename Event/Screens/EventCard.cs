@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace EventManagementSystem.Screens
 {
@@ -89,9 +90,9 @@ namespace EventManagementSystem.Screens
 
         private void cardPictureBox_Paint(object sender, PaintEventArgs e)
         {
-            Font font = new Font("Segoe UI", 10, FontStyle.Bold);
+            Font font = new Font("Segoe UI", 11, FontStyle.Bold);
             Font titleFont = new Font("Segoe UI", 14, FontStyle.Bold);
-            Brush textBrush = new SolidBrush(Color.Black);
+            Brush textBrush = new SolidBrush(Color.White);
 
             //value from Yuta
             //e.Graphics.DrawString(EventTitle, titleFont, textBrush, new PointF(25, 27));
@@ -138,6 +139,18 @@ namespace EventManagementSystem.Screens
 
                         JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
                         joinedEventsRepo.joinEvent(eventIdToJoin, authenticateUser.email, context);
+
+                        EventRepo eventRepo = new EventRepo();
+                        Event joinedEvent = eventRepo.getEventById(eventIdToJoin, context);
+
+                        // Initialize the EmailSender with your SMTP server details and credentials
+                        EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+
+                        // Get email body
+                        string emailBody = emailSender.getBodyEmailEventJoined(authenticateUser.firstName, joinedEvent);
+
+                        // Send an email
+                        emailSender.SendEmail(authenticateUser.email, "Event Successfully Joined!", emailBody);
                     }
                     else
                     {

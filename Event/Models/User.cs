@@ -41,7 +41,8 @@ namespace EventManagementSystem.Models
         //}
 
         //// Method to join an event
-        //public void JoinEvent(Event eventToJoin)
+        //public void
+        //(Event eventToJoin)
         //{
         //    eventToJoin.AddAttendee(this);
         //    JoinedEvents.Add(eventToJoin);
