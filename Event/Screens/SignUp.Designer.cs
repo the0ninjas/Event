@@ -47,8 +47,10 @@
             locationComboBox = new ComboBox();
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
+            errorProvider3 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
             SuspendLayout();
             // 
             // headingLabel
@@ -243,6 +245,7 @@
             locationComboBox.SelectedIndexChanged += locationComboBox_SelectedIndexChanged;
             locationComboBox.Enter += locationComboBox_Enter;
             locationComboBox.Leave += locationComboBox_Leave;
+            locationComboBox.Validating += locationComboBox_Validating;
             // 
             // errorProvider1
             // 
@@ -251,6 +254,10 @@
             // errorProvider2
             // 
             errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            errorProvider3.ContainerControl = this;
             // 
             // SignUp
             // 
@@ -279,6 +286,7 @@
             Text = "Sign Up";
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -303,5 +311,6 @@
         private ComboBox locationComboBox;
         private ErrorProvider errorProvider1;
         private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider3;
     }
 }
