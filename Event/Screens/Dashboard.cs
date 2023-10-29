@@ -94,8 +94,8 @@ namespace EventManagementSystem.Screens
                         eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                         eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                        createdEventFlowLayoutPanel.Controls.Add(eventCard);
-                    }
+                            createdEventFlowLayoutPanel.Controls.Add(eventCard);
+                        }
                 }
             }
             catch (Exception ex)
@@ -128,8 +128,8 @@ namespace EventManagementSystem.Screens
                         eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                         eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                        upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
-                    }
+                            upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
+                        }
                 }
             }
             catch (Exception ex)

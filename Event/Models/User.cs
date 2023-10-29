@@ -17,11 +17,11 @@ namespace EventManagementSystem.Models
         public string lastName { get; set; }
         public string password { get; set; }
         public string email { get; set; }
-        public int phoneNumber { get; set; }
+        public string phoneNumber { get; set; }
         public string location { get; set; }
 
 
-        public User(string firstName, string lastName, string password, string email, int phoneNumber, string location)
+        public User(string firstName, string lastName, string password, string email, string phoneNumber, string location)
         {
             this.firstName = firstName;
             this.lastName = lastName;

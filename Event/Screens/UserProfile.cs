@@ -89,7 +89,7 @@ namespace EventManagementSystem.Screens
                     userToUpdate.firstName = firstNameTextBox.Text;
                     userToUpdate.lastName = lastNameTextBox.Text;
                     userToUpdate.email = emailTextBox.Text;
-                    userToUpdate.phoneNumber = int.Parse(phoneTextBox.Text);
+                    userToUpdate.phoneNumber = phoneTextBox.Text;
                     userToUpdate.location = locationComboBox.SelectedItem.ToString();
 
                     // Save changes to the database
