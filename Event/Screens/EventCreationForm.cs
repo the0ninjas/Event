@@ -245,20 +245,19 @@ namespace EventManagementSystem.Screens
                             else
                             {
                                 eventRepo.deleteEvent(newEvent.eventId, context);
-                                MessageBox.Show("Failed to create the event admin. The event has been deleted.");
+                                MessageBox.Show("Failed to create the event admin. The event has been deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 this.Close();
 
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Failed to create the event. Please check your input.");
+                            MessageBox.Show("Failed to create the event. Please check your input.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("You cannot create more than 10 events. Wait until one of your created events has passed or delete one of the events.");
-
+                        MessageBox.Show("You cannot create more than 10 events. Wait until one of your created events has passed or delete one of the events.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
