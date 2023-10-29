@@ -42,16 +42,16 @@ namespace EventManagementSystem.Screens
                     JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
                     List<Event> joinedEvents = joinedEventsRepo.GetEventsOfUser(authenticateUser.email, context);
 
-                    if (joinedEvents == null)
+                    if (joinedEvents.Count == 0)
                     {
                         // display an empty eventCard
 
                         {
-                            EventCard eventCard = new EventCard();
-                            eventCard.EventTitle = "No joined event";
-                            eventCard.cardJoinButton.Enabled = false;
+                            //EventCard eventCard = new EventCard();
+                            //eventCard.EventTitle = "No joined event";
+                            //eventCard.cardJoinButton.Enabled = false;
 
-                            joinedEventFlowLayoutPanel.Controls.Add(eventCard);
+                            //joinedEventFlowLayoutPanel.Controls.Add(eventCard);
                         };
 
                     }
@@ -95,14 +95,14 @@ namespace EventManagementSystem.Screens
                     CreatedEventRepo createdEventsRepo = new CreatedEventRepo();
                     List<Event> createdEvents = createdEventsRepo.GetEventsOfAdmin(authenticateUser.email, context);
 
-                    if (createdEvents == null)
+                    if (createdEvents.Count == 0)
                     // populate an empty eventCard
                     {
-                        EventCard eventCard = new EventCard();
-                        eventCard.EventTitle = "No created event";
-                        eventCard.cardJoinButton.Enabled = false;
+                        //EventCard eventCard = new EventCard();
+                        //eventCard.EventTitle = "No created event";
+                        //eventCard.cardJoinButton.Enabled = false;
 
-                        createdEventFlowLayoutPanel.Controls.Add(eventCard);
+                        //createdEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                     else 
                     // loop through each event
@@ -141,14 +141,14 @@ namespace EventManagementSystem.Screens
                     List<Event> createdEvents = eventsRepo.upcomingEvents(authenticateUser.email, context);
 
                     
-                    if (createdEvents == null)
+                    if (createdEvents.Count == 0l)
                     // populate an empty eventCard
                     {
-                        EventCard eventCard = new EventCard();
-                        eventCard.EventTitle = "No upcoming event";
-                        eventCard.cardJoinButton.Enabled = false;
+                        //EventCard eventCard = new EventCard();
+                        //eventCard.EventTitle = "No upcoming event";
+                        //eventCard.cardJoinButton.Enabled = false;
 
-                        upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
+                        //upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                     else
                     // loop through each event
@@ -185,14 +185,14 @@ namespace EventManagementSystem.Screens
                     List<Event> joinedPastEvents = joinedEventsRepo.GetPastEventsOfUser(authenticateUser.email, context);
 
                     
-                    if (joinedPastEvents == null)
+                    if (joinedPastEvents.Count == 0)
                     // populate empty eventCard
                     {
-                        EventCard eventCard = new EventCard();
-                        eventCard.EventTitle = "No past event";
-                        eventCard.cardJoinButton.Enabled = false;
+                        //EventCard eventCard = new EventCard();
+                        //eventCard.EventTitle = "No past event";
+                        //eventCard.cardJoinButton.Enabled = false;
 
-                        joinedEventFlowLayoutPanel.Controls.Add(eventCard);
+                        //joinedEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                     else
                     // loop through each event
