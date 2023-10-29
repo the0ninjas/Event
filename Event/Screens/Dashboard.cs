@@ -72,9 +72,8 @@ namespace EventManagementSystem.Screens
                             joinedEventFlowLayoutPanel.Controls.Add(eventCard);
 
 
-                            eventCard.cardJoinButton.Click += CardJoinButton_Click;
+                        eventCard.cardJoinButton.Click += CardJoinButton_Click;
 
-                        }
                     }
                 }
             }
@@ -112,16 +111,15 @@ namespace EventManagementSystem.Screens
                     }
                     else 
                     // loop through each event
+                    foreach (var userEvent in createdEvents)
                     {
-                        foreach (var userEvent in createdEvents)
-                        {
-                            EventCard eventCard = new EventCard();
-                            eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
-                            eventCard.EventTitle = userEvent.title;
-                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
-                            eventCard.EventDate = userEvent.date.ToShortDateString();
-                            eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
-                            eventCard.EventLocation = Convert.ToString(userEvent.location);
+                        EventCard eventCard = new EventCard();
+                        eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
+                        eventCard.EventTitle = userEvent.title;
+                        eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                        eventCard.EventDate = userEvent.date.ToShortDateString();
+                        eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
+                        eventCard.EventLocation = Convert.ToString(userEvent.location);
 
                             createdEventFlowLayoutPanel.Controls.Add(eventCard);
                         }
@@ -134,7 +132,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
-        //Populate upcoming event EventCard
+        //Populate my joined event EventCard
         private void populateUpcomingEventCard()
         {
             try
@@ -158,16 +156,15 @@ namespace EventManagementSystem.Screens
                     }
                     else
                     // loop through each event
+                    foreach (var userEvent in createdEvents)
                     {
-                        foreach (var userEvent in createdEvents)
-                        {
-                            EventCard eventCard = new EventCard();
-                            eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
-                            eventCard.EventTitle = userEvent.title;
-                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
-                            eventCard.EventDate = userEvent.date.ToShortDateString();
-                            eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
-                            eventCard.EventLocation = Convert.ToString(userEvent.location);
+                        EventCard eventCard = new EventCard();
+                        eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
+                        eventCard.EventTitle = userEvent.title;
+                        eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                        eventCard.EventDate = userEvent.date.ToShortDateString();
+                        eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
+                        eventCard.EventLocation = Convert.ToString(userEvent.location);
 
                             upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
                         }
@@ -202,19 +199,17 @@ namespace EventManagementSystem.Screens
                     }
                     else
                     // loop through each event
+                    foreach (var userEvent in joinedPastEvents)
                     {
-                        foreach (var userEvent in joinedPastEvents)
-                        {
-                            EventCard eventCard = new EventCard();
-                            eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
-                            eventCard.EventTitle = userEvent.title;
-                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
-                            eventCard.EventDate = userEvent.date.ToShortDateString();
-                            eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
-                            eventCard.EventLocation = Convert.ToString(userEvent.location);
+                        EventCard eventCard = new EventCard();
+                        eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
+                        eventCard.EventTitle = userEvent.title;
+                        eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                        eventCard.EventDate = userEvent.date.ToShortDateString();
+                        eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
+                        eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                            joinedEventFlowLayoutPanel.Controls.Add(eventCard);
-                        }
+                        joinedEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                 }
             }
