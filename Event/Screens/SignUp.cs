@@ -170,7 +170,7 @@ namespace EventManagementSystem.Screens
                 string lastName = lastNameTextBox.Text;
                 string password = passwordTextBox.Text;
                 string email = emailTextBox.Text;
-                int phoneNumber = int.Parse(phoneNumberTextBox.Text);
+                string phoneNumber = phoneNumberTextBox.Text;
                 string location = locationComboBox.SelectedItem.ToString();
 
                 using (var context = new ConnectionFactory())
@@ -234,7 +234,7 @@ namespace EventManagementSystem.Screens
 
             if (!Regex.IsMatch(phoneNumberTextBox.Text, phonePattern))
             {
-                errorProvider2.SetError(phoneNumberTextBox, "Invalid format. Phone number should start with 0");
+                errorProvider2.SetError(phoneNumberTextBox, "Invalid format. Phone number should start with '0' and consist of only numeric digits.");
                 // e.Cancel = true; // Remove or comment out this line to allow moving to other textboxes.
             }
             else
