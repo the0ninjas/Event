@@ -130,15 +130,19 @@ namespace EventManagementSystem.Screens
                         parent = parent.Parent;
                     }
 
+                    // Check if an EventCard was found.
                     if (parent is EventCard clickedCard)
                     {
                         int eventIdToJoin = clickedCard.EventId;
 
+                        // Fetch the authenticated user's details.
                         User authenticateUser = UserSession.AuthenticatedUser;
 
+                        // Join the event using the JoinedEventsRepo.
                         JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
                         joinedEventsRepo.joinEvent(eventIdToJoin, authenticateUser.email, context);
 
+                        // Fetch the details of the event the user just joined.
                         EventRepo eventRepo = new EventRepo();
                         Event joinedEvent = eventRepo.getEventById(eventIdToJoin, context);
 
@@ -209,18 +213,21 @@ namespace EventManagementSystem.Screens
                         parent = parent.Parent;
                     }
 
+                    // Check if an EventCard was found.
                     if (parent is EventCard clickedCard)
                     {
                         int eventIdToLeave = clickedCard.EventId;
 
+                        // Fetch the authenticated user's details.
                         User authenticateUser = UserSession.AuthenticatedUser;
 
+                        // Leave the event using the JoinedEventsRepo.
                         JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
                         bool success = joinedEventsRepo.leaveEvent(eventIdToLeave, authenticateUser.email, context);
 
                         if (success)
                         {
-
+                            // Fetch the details of the event the user just left.
                             EventRepo eventRepo = new EventRepo();
                             Event leftEvent = eventRepo.getEventById(eventIdToLeave, context);
 
@@ -296,17 +303,17 @@ namespace EventManagementSystem.Screens
                     {
                         parent = parent.Parent;
                     }
-
+                    // Check if an EventCard was found.
                     if (parent is EventCard clickedCard)
                     {
                         int eventIdToDelete = clickedCard.EventId;
 
+                        // Fetch the authenticated user's details.
                         User authenticateUser = UserSession.AuthenticatedUser;
 
+                        // Delete the event using the EventsRepo.
                         EventRepo eventRepo = new EventRepo();
                         Event deletedEvent = eventRepo.getEventById(eventIdToDelete, context);
-
-                        
                         bool success = eventRepo.deleteEvent(eventIdToDelete, context);
 
                         if (success)

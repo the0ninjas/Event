@@ -28,6 +28,10 @@ namespace EventManagementSystem.Screens
             datePicker.MinDate = DateTime.Today;
         }
 
+        // titleTextBox format change
+
+        // Check if the text in the textbox is the default placeholder text
+        // When entering the textbox, clear the textbox and set the font color to black
         private void titleTextBox_Enter(object sender, EventArgs e)
         {
             if (titleTextBox.Text == "Enter event title")
@@ -37,6 +41,8 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // Check if the text in the textbox is empty
+        // When leaving the textbox, set the textbox to display the default placeholder text and change the font color to a grey color
         private void titleTextBox_Leave(object sender, EventArgs e)
         {
             if (titleTextBox.Text == "")
@@ -46,6 +52,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // locationComboBox format change
         private void locationComboBox_Enter(object sender, EventArgs e)
         {
             if (locationComboBox.Text == "Select the location")
@@ -72,6 +79,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // capacityTextBox format change
         private void capacityTextBox_Enter(object sender, EventArgs e)
         {
             if (capacityTextBox.Text == "Enter max capacity")
@@ -90,6 +98,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // imageComboBox format change
         private void imageComboBox_Enter(object sender, EventArgs e)
         {
             if (imageComboBox.Text == "Select the image")
@@ -115,6 +124,7 @@ namespace EventManagementSystem.Screens
                 imageComboBox.ForeColor = Color.Black;
             }
         }
+
 
         private void EventCreationForm_Load(object sender, EventArgs e)
         {
@@ -183,11 +193,6 @@ namespace EventManagementSystem.Screens
 
                             if (eventAdminCreated)
                             {
-                                //bool eventJoined = joinedEventsRepo.joinEvent(eventId, authenticatedUser.email, context);
-
-                                //if (eventJoined)
-                                //{
-
                                 MessageBox.Show("Event created successfully.");
                                 this.Close();
 
@@ -200,14 +205,6 @@ namespace EventManagementSystem.Screens
                                 // Send an email
                                 emailSender.SendEmail(authenticatedUser.email, "Event Successfully Created!", emailBody);
                             }
-                            //else
-                            //{
-                            //  createdEventRepo.deleteEventAdmin(eventId, context);
-                            //eventRepo.deleteEvent(newEvent.eventId, context);
-                            //MessageBox.Show("Failed to create the event admin. The event has been deleted.");
-                            //this.Close();
-                            //}
-                            //}
                             else
                             {
                                 eventRepo.deleteEvent(newEvent.eventId, context);
@@ -244,7 +241,7 @@ namespace EventManagementSystem.Screens
             }
         }
 
-
+        //Validation logic for the capacityTextBox input
         private void capacityTextBox_Validating(object sender, CancelEventArgs e)
         {
             int capacity;
