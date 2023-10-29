@@ -69,10 +69,8 @@ namespace EventManagementSystem.Repository
                 // Retrieve events with the specified eventIds that are in the future
                 var eventsOfUser = context.Events
                     .Where(e => eventIds.Contains(e.eventId) &&
-                           (e.date > currentDateTime.Date ||
-                            (e.date == currentDateTime.Date && e.time.TimeOfDay > currentDateTime.TimeOfDay)))
-                    .OrderByDescending(e => e.date)
-                    .ThenByDescending(e => e.time)
+                           (e.time > DateTime.Now))
+                    .OrderBy(e => e.time)
                     .Take(10)
                     .ToList();
 
@@ -101,9 +99,8 @@ namespace EventManagementSystem.Repository
                         e => e.eventId,
                         (je, e) => new { JoinedEvent = je, Event = e }
                       )
-                      .Where(e => e.Event.date < currentDateTime.Date || (e.Event.date == currentDateTime.Date && e.Event.time.TimeOfDay < currentDateTime.TimeOfDay))
-                      .OrderByDescending(e => e.Event.date)
-                      .ThenByDescending(e => e.Event.time)
+                      .Where(e => e.Event.time < DateTime.Now)
+                      .OrderByDescending(e => e.Event.time)
                       .Take(10)
                       .Select(e => e.Event)
                       .ToList();

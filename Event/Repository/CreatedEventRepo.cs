@@ -52,8 +52,7 @@ namespace EventManagementSystem.Repository
         {
             try
             {
-                // Get the current date and time
-                DateTime currentDateTime = DateTime.Now;
+                
 
                 // Find EventAdmins for the given email
                 var createdEvents = context.CreatedEvents
@@ -66,8 +65,8 @@ namespace EventManagementSystem.Repository
                 // Retrieve events with the specified eventIds that are in the future
                 var eventsOfAdmin = context.Events
                     .Where(e => eventIds.Contains(e.eventId) &&
-                           (e.date > currentDateTime.Date ||
-                            (e.date == currentDateTime.Date && e.time.TimeOfDay > currentDateTime.TimeOfDay)))
+                           (e.time > DateTime.Now))
+                    .OrderBy(e => e.time)
                     .ToList();
 
                 return eventsOfAdmin;

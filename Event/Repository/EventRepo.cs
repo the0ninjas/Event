@@ -52,12 +52,12 @@ namespace EventManagementSystem.Repository
                 DateTime currentDateTime = DateTime.Now;
 
                 // Query the database to get the next ten upcoming events
+               
                 var upcomingEvents = context.Events
-                    .Where(e => e.date > currentDateTime.Date || (e.date == currentDateTime.Date && e.time.TimeOfDay > currentDateTime.TimeOfDay))
-                    .Where(e => !context.CreatedEvents.Any(je => je.eventId == e.eventId && je.userEmail == email))
+                    .Where(e => e.time > DateTime.Now)
+                    .Where(e => !context.JoinedEvents.Any(je => je.eventId == e.eventId && je.userEmail == email))
                     .Where(e => e.registrations <= e.capacity)
-                    .OrderBy(e => e.date)
-                    .ThenBy(e => e.time)
+                    .OrderBy(e => e.time)
                     .Take(10)
                     .ToList();
 
@@ -84,7 +84,6 @@ namespace EventManagementSystem.Repository
                     if (existingEvent != null)
                     {
                         existingEvent.title = updatedEvent.title;
-                        existingEvent.date = updatedEvent.date;
                         existingEvent.time = updatedEvent.time;
                         existingEvent.location = updatedEvent.location;
                         existingEvent.capacity = updatedEvent.capacity;
@@ -162,9 +161,8 @@ namespace EventManagementSystem.Repository
         public void UpdateSearchResults(string searchString, ConnectionFactory context)
         {
             var searchResults = context.Events
-                .Where(e => e.title.Contains(searchString) || e.date.ToString().Contains(searchString) || e.location.Contains(searchString))
-                .OrderBy(e => e.date)
-                .ThenBy(e => e.time)
+                .Where(e => e.title.Contains(searchString) || e.time.ToString().Contains(searchString) || e.location.Contains(searchString))
+                .OrderBy(e => e.time)
                 .ToList();
 
             UpdateUIWithSearchResults(searchResults);
