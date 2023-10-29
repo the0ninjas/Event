@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace EventManagementSystem.Screens
@@ -53,7 +54,7 @@ namespace EventManagementSystem.Screens
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            emailTextBox.ReadOnly = true;
         }
 
         private void phoneTextBox_TextChanged(object sender, EventArgs e)
