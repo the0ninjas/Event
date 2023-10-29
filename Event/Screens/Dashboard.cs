@@ -104,23 +104,23 @@ namespace EventManagementSystem.Screens
 
                         //createdEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
-                    else 
-                    // loop through each event
-                    foreach (var userEvent in createdEvents)
-                    {
-                        EventCard eventCard = new EventCard();
-                        eventCard.EventId = userEvent.eventId;
-                        eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
-                        eventCard.EventTitle = userEvent.title;
-                        eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
-                        eventCard.EventDate = userEvent.date.ToShortDateString();
-                        eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
-                        eventCard.EventLocation = Convert.ToString(userEvent.location);
+                    else
+                        // loop through each event
+                        foreach (var userEvent in createdEvents)
+                        {
+                            EventCard eventCard = new EventCard();
+                            eventCard.EventId = userEvent.eventId;
+                            eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
+                            eventCard.EventTitle = userEvent.title;
+                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                            eventCard.EventDate = userEvent.date.ToShortDateString();
+                            eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
+                            eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                        createdEventFlowLayoutPanel.Controls.Add(eventCard);
-                    }
+                            createdEventFlowLayoutPanel.Controls.Add(eventCard);
+                        }
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -140,7 +140,7 @@ namespace EventManagementSystem.Screens
                     EventRepo eventsRepo = new EventRepo();
                     List<Event> createdEvents = eventsRepo.upcomingEvents(authenticateUser.email, context);
 
-                    
+
                     if (createdEvents.Count == 0l)
                     // populate an empty eventCard
                     {
@@ -151,22 +151,22 @@ namespace EventManagementSystem.Screens
                         //upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                     else
-                    // loop through each event
-                    foreach (var userEvent in createdEvents)
-                    {
-                        EventCard eventCard = new EventCard();
-                        eventCard.EventId = userEvent.eventId;
-                        eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
-                        eventCard.EventTitle = userEvent.title;
-                        eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
-                        eventCard.EventDate = userEvent.date.ToShortDateString();
-                        eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
-                        eventCard.EventLocation = Convert.ToString(userEvent.location);
+                        // loop through each event
+                        foreach (var userEvent in createdEvents)
+                        {
+                            EventCard eventCard = new EventCard();
+                            eventCard.EventId = userEvent.eventId;
+                            eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
+                            eventCard.EventTitle = userEvent.title;
+                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                            eventCard.EventDate = userEvent.date.ToShortDateString();
+                            eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
+                            eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                        upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
-                    }
+                            upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
+                        }
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -184,7 +184,7 @@ namespace EventManagementSystem.Screens
                     JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
                     List<Event> joinedPastEvents = joinedEventsRepo.GetPastEventsOfUser(authenticateUser.email, context);
 
-                    
+
                     if (joinedPastEvents.Count == 0)
                     // populate empty eventCard
                     {
@@ -195,20 +195,20 @@ namespace EventManagementSystem.Screens
                         //joinedEventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                     else
-                    // loop through each event
-                    foreach (var userEvent in joinedPastEvents)
-                    {
-                        EventCard eventCard = new EventCard();
-                        eventCard.EventId = userEvent.eventId;
-                        eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
-                        eventCard.EventTitle = userEvent.title;
-                        eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
-                        eventCard.EventDate = userEvent.date.ToShortDateString();
-                        eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
-                        eventCard.EventLocation = Convert.ToString(userEvent.location);
+                        // loop through each event
+                        foreach (var userEvent in joinedPastEvents)
+                        {
+                            EventCard eventCard = new EventCard();
+                            eventCard.EventId = userEvent.eventId;
+                            eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
+                            eventCard.EventTitle = userEvent.title;
+                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                            eventCard.EventDate = userEvent.date.ToShortDateString();
+                            eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
+                            eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                        //....EventFlowLayoutPanel.Controls.Add(eventCard);
-                    }
+                            myPastEventFlowLayoutPanel.Controls.Add(eventCard);
+                        }
                 }
             }
             catch (Exception ex)
