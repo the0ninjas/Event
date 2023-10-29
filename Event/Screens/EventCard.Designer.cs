@@ -30,6 +30,8 @@
         {
             cardPictureBox = new PictureBox();
             cardJoinButton = new Button();
+            cardLeaveButton = new Button();
+            cardDeleteButton = new Button();
             ((System.ComponentModel.ISupportInitialize)cardPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -53,10 +55,32 @@
             cardJoinButton.UseVisualStyleBackColor = true;
             cardJoinButton.Click += cardJoinButton_Click;
             // 
+            // cardLeaveButton
+            // 
+            cardLeaveButton.Location = new Point(330, 239);
+            cardLeaveButton.Name = "cardLeaveButton";
+            cardLeaveButton.Size = new Size(131, 40);
+            cardLeaveButton.TabIndex = 7;
+            cardLeaveButton.Text = "Leave";
+            cardLeaveButton.UseVisualStyleBackColor = true;
+            cardLeaveButton.Click += cardLeaveButton_Click;
+            // 
+            // cardDeleteButton
+            // 
+            cardDeleteButton.Location = new Point(330, 239);
+            cardDeleteButton.Name = "cardDeleteButton";
+            cardDeleteButton.Size = new Size(131, 40);
+            cardDeleteButton.TabIndex = 8;
+            cardDeleteButton.Text = "Delete";
+            cardDeleteButton.UseVisualStyleBackColor = true;
+            cardDeleteButton.Click += button1_Click;
+            // 
             // EventCard
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(cardDeleteButton);
+            Controls.Add(cardLeaveButton);
             Controls.Add(cardJoinButton);
             Controls.Add(cardPictureBox);
             Name = "EventCard";
@@ -68,5 +92,7 @@
         #endregion
         private PictureBox cardPictureBox;
         public Button cardJoinButton;
+        public Button cardLeaveButton;
+        public Button cardDeleteButton;
     }
 }

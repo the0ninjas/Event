@@ -85,7 +85,7 @@ namespace EventManagementSystem.Screens
                 cardPictureBox.Invalidate();  // Triggers the cardPictureBox to redraw itself.
             }
         }
-        
+
         private Image _picture;
 
         private void cardPictureBox_Paint(object sender, PaintEventArgs e)
@@ -163,5 +163,14 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        public void cardLeaveButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Leave button pressed");
+        }
+
+        public void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Delete button pressed");
+        }
     }
 }

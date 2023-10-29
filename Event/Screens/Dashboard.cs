@@ -65,10 +65,12 @@ namespace EventManagementSystem.Screens
                             eventCard.EventId = userEvent.eventId;
                             eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                             eventCard.EventTitle = userEvent.title;
-                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                            eventCard.EventCapacity = Convert.ToString(userEvent.registrations + " / " + userEvent.capacity);
                             eventCard.EventDate = userEvent.date.ToShortDateString();
                             eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                             eventCard.EventLocation = Convert.ToString(userEvent.location);
+                            eventCard.cardJoinButton.Visible = false;
+                            eventCard.cardDeleteButton.Visible = false;
 
                             joinedEventFlowLayoutPanel.Controls.Add(eventCard);
 
@@ -112,10 +114,12 @@ namespace EventManagementSystem.Screens
                             eventCard.EventId = userEvent.eventId;
                             eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                             eventCard.EventTitle = userEvent.title;
-                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                            eventCard.EventCapacity = Convert.ToString(userEvent.registrations + " / " + userEvent.capacity);
                             eventCard.EventDate = userEvent.date.ToShortDateString();
                             eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                             eventCard.EventLocation = Convert.ToString(userEvent.location);
+                            eventCard.cardJoinButton.Visible = false;
+                            eventCard.cardLeaveButton.Visible = false;
 
                             createdEventFlowLayoutPanel.Controls.Add(eventCard);
                         }
@@ -158,10 +162,12 @@ namespace EventManagementSystem.Screens
                             eventCard.EventId = userEvent.eventId;
                             eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                             eventCard.EventTitle = userEvent.title;
-                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                            eventCard.EventCapacity = Convert.ToString(userEvent.registrations + " / " + userEvent.capacity);
                             eventCard.EventDate = userEvent.date.ToShortDateString();
                             eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                             eventCard.EventLocation = Convert.ToString(userEvent.location);
+                            eventCard.cardLeaveButton.Visible = false;
+                            eventCard.cardDeleteButton.Visible = false;
 
                             upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
                         }
@@ -202,10 +208,13 @@ namespace EventManagementSystem.Screens
                             eventCard.EventId = userEvent.eventId;
                             eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                             eventCard.EventTitle = userEvent.title;
-                            eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
+                            eventCard.EventCapacity = Convert.ToString(userEvent.registrations + " / " + userEvent.capacity);
                             eventCard.EventDate = userEvent.date.ToShortDateString();
                             eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                             eventCard.EventLocation = Convert.ToString(userEvent.location);
+                            eventCard.cardJoinButton.Visible = false;
+                            eventCard.cardLeaveButton.Visible = false;
+                            eventCard.cardDeleteButton.Visible = false;
 
                             myPastEventFlowLayoutPanel.Controls.Add(eventCard);
                         }
