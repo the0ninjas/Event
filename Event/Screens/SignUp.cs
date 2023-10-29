@@ -146,7 +146,7 @@ namespace EventManagementSystem.Screens
         private void signUpButton_Click(object sender, EventArgs e)
         {
             // Check if the ErrorProvider has any error messages displayed
-            if (errorProvider3.GetError(locationComboBox) != "" ||errorProvider1.GetError(emailTextBox) != "" || errorProvider2.GetError(phoneNumberTextBox) != "")
+            if (errorProvider3.GetError(locationComboBox) != "" || errorProvider1.GetError(emailTextBox) != "" || errorProvider2.GetError(phoneNumberTextBox) != "")
             {
                 // Display an error message to the user
                 MessageBox.Show("Please correct the errors before signing up.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -159,7 +159,7 @@ namespace EventManagementSystem.Screens
                 return; // Exit the event handler to prevent the form submission
             }
 
-            if ( firstNameTextBox.Text == "Enter your first name" || lastNameTextBox.Text == "Enter your last name" || passwordTextBox.Text == "Enter your password" || emailTextBox.Text == "Enter your email address")
+            if (firstNameTextBox.Text == "Enter your first name" || lastNameTextBox.Text == "Enter your last name" || passwordTextBox.Text == "Enter your password" || emailTextBox.Text == "Enter your email address")
             {
                 MessageBox.Show("Please provide all required information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Exit the event handler to prevent the form submission
