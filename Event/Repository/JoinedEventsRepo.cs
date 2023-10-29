@@ -13,15 +13,18 @@ namespace EventManagementSystem.Repository
     {
         private List<JoinedEvent> JoinedEvents = new List<JoinedEvent>();
         
-
+        // Function to join an event
         public bool joinEvent(int eventId, string userEmail, ConnectionFactory context)
         {
             try
             {
                 JoinedEvent joinedEvent = new JoinedEvent(eventId, userEmail);
                 context.JoinedEvents.Add(joinedEvent);
+
+                // Increase the number of registrations by 1
                 EventRepo eventRepo = new EventRepo();
                 eventRepo.eventRegistration(eventId, context);
+
                 context.SaveChanges();
 
                 return true;
@@ -146,14 +149,20 @@ namespace EventManagementSystem.Repository
         {
             try
             {
+                // Get event that user tries to leave
                 var eventToLeave = context.JoinedEvents
                     .FirstOrDefault(ea => ea.eventId == eventId && ea.userEmail == email);
 
+                
                 if (eventToLeave != null)
                 {
+                    // Remove user from event
                     context.JoinedEvents.Remove(eventToLeave);
+
+                    // Decrease the number of registrations by 1
                     EventRepo eventRepo = new EventRepo();
                     eventRepo.eventDeRegistration(eventId, context);
+
                     context.SaveChanges();
 
                     return true;

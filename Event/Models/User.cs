@@ -30,37 +30,6 @@ namespace EventManagementSystem.Models
             this.phoneNumber = phoneNumber;
             this.location = location;
         }
-
-       
-
-        // Method to create a new event
-        //public void CreateEvent(string name, DateTime date, DateTime time, string location, string description, bool isVisible)
-        //{
-        //    Event newEvent = new Event(name, date, time, location, description, isVisible);
-        //    CreatedEvents.Add(newEvent);
-        //}
-
-        //// Method to join an event
-        //public void
-        //(Event eventToJoin)
-        //{
-        //    eventToJoin.AddAttendee(this);
-        //    JoinedEvents.Add(eventToJoin);
-        //}
-
-        //// Method to leave an event
-        //public void LeaveEvent(Event eventToLeave)
-        //{
-        //    eventToLeave.RemoveAttendee(this);
-        //    JoinedEvents.Remove(eventToLeave);
-        //}
-
-        //// Method to send a notification
-        //public void SendNotification(string message)
-        //{
-        //    Notification notification = new Notification(message);
-        //    Notifications.Add(notification);
-        //}
     }
 }
 

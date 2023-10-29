@@ -35,6 +35,7 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        // Function to check if user exists
         public bool userExists(string email, ConnectionFactory context) 
         {
             if (context == null)
@@ -76,11 +77,12 @@ namespace EventManagementSystem.Repository
             {
                 using (var context = new ConnectionFactory())
                 {
-
+                    // Get user details from database
                     User existingUser = Users.FirstOrDefault(u => u.email == updatedUser.email);
 
                     if (existingUser != null)
                     {
+                        // assign updated values to properties of user
                         existingUser.firstName = updatedUser.firstName;
                         existingUser.lastName = updatedUser.lastName;
                         existingUser.phoneNumber = updatedUser.phoneNumber;

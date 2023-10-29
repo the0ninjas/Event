@@ -13,6 +13,7 @@ namespace EventManagementSystem.Repository
     {
         private List<Event> Events = new List<Event>();
 
+        // Function to save a new event to database
         public bool createEvent(Event newEvent, ConnectionFactory context)
         {
             try
@@ -30,12 +31,13 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        // Function to get an event by passing its id
         public Event getEventById(int eventId, ConnectionFactory context)
         {
             try
             {
-                    Event foundEvent = context.Events.FirstOrDefault(u => u.eventId == eventId);
-                    return foundEvent;
+                Event foundEvent = context.Events.FirstOrDefault(u => u.eventId == eventId);
+                return foundEvent;
             }
             catch (Exception ex)
             {
@@ -44,6 +46,7 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        
         public List<Event> upcomingEvents(string email, ConnectionFactory context) 
         {
             try 
@@ -51,7 +54,7 @@ namespace EventManagementSystem.Repository
                 // Get the current date and time
                 DateTime currentDateTime = DateTime.Now;
 
-                // Query the database to get the next ten upcoming events
+                // Query the database to get the next ten future events that are not yet full
                
                 var upcomingEvents = context.Events
                     .Where(e => e.time > DateTime.Now)
@@ -70,8 +73,7 @@ namespace EventManagementSystem.Repository
             }
         }
 
-       
-
+        // Function to update the properties of an event -- not used
         public Event updateEvent(Event updatedEvent)
         {
             try
@@ -106,6 +108,7 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        // Increase the number of registrations of an event, when a user joins the event
         public bool eventRegistration(int eventId, ConnectionFactory context)
         {
             try
@@ -131,6 +134,7 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        // Decrease the number of registrations of an event, when a user leaves the event
         public bool eventDeRegistration(int eventId, ConnectionFactory context)
         {
             try
@@ -156,52 +160,44 @@ namespace EventManagementSystem.Repository
             }
         }
 
+
+        // Delete an event with a specific id
         public bool deleteEvent(int eventId, ConnectionFactory context)
         {
             try
             {
-                
-                    Event eventToDelete = context.Events.FirstOrDefault(u => u.eventId == eventId);
+                // Get the event that shall be deleted from database
+                Event eventToDelete = context.Events.FirstOrDefault(u => u.eventId == eventId);
 
-                    if (eventToDelete != null)
-                    {
-                        context.Events.Remove(eventToDelete);
-                        JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
-                        joinedEventsRepo.removeAllUserfromEvent(eventId, context);
-                        CreatedEventRepo createdEventRepo = new CreatedEventRepo();
-                        createdEventRepo.deleteEvent(eventId, context);
-                        
-                        context.SaveChanges();
+                // Check if an event has been returned
+                if (eventToDelete != null)
+                {
+                    // Delete event itself
+                    context.Events.Remove(eventToDelete);
 
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                
+                    // Remove the event for all users that have joined it already
+                    JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
+                    joinedEventsRepo.removeAllUserfromEvent(eventId, context);
+
+                    // Remove the event for the user who created the event
+                    CreatedEventRepo createdEventRepo = new CreatedEventRepo();
+                    createdEventRepo.deleteEvent(eventId, context);
+
+                    context.SaveChanges();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
                 return false;
             }
-        }
-
-        public void UpdateSearchResults(string searchString, ConnectionFactory context)
-        {
-            var searchResults = context.Events
-                .Where(e => e.title.Contains(searchString) || e.time.ToString().Contains(searchString) || e.location.Contains(searchString))
-                .OrderBy(e => e.time)
-                .ToList();
-
-            UpdateUIWithSearchResults(searchResults);
-
-        }
-
-        public void UpdateUIWithSearchResults(List<Event> searchResults)
-        {
-            // DataGridView.DataSource = searchResults;
         }
     }
 }

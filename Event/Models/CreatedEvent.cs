@@ -8,7 +8,7 @@ namespace EventManagementSystem.Models
 {
     public class CreatedEvent
     {
-        
+        // class to store which events a user has created
         public int eventId { get; set; }
         public string userEmail { get; set; }
 
