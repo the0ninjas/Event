@@ -12,7 +12,7 @@ namespace EventManagementSystem.Repository
     {
         private List<CreatedEvent> CreatedEvents = new List<CreatedEvent>();
 
-
+        // Method to save the creator of the event
         public bool createEventAdmin(int createdEventId, string userEmail, ConnectionFactory context)
         {
             try
@@ -31,6 +31,7 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        // Method to return whether an event has been created by a specific user
         public (bool eventOfAdmin, bool ErrorOccurred) EventofAdmin(int eventId, string userEmail, ConnectionFactory context)
         {
             try
@@ -48,12 +49,12 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        // Method to get all the events that a user has created
         public List<Event> GetEventsOfAdmin(string email, ConnectionFactory context)
         {
             try
             {
                 
-
                 // Find EventAdmins for the given email
                 var createdEvents = context.CreatedEvents
                     .Where(ea => ea.userEmail == email)
@@ -79,7 +80,7 @@ namespace EventManagementSystem.Repository
             }
         }
 
-
+        // Method to delete that the user has been created a specific event
         public bool deleteEvent(int eventId, ConnectionFactory context)
         {
             try
