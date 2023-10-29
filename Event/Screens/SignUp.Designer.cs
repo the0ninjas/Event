@@ -281,7 +281,9 @@
             Controls.Add(firstNameLabel);
             Controls.Add(subHeadingLabel);
             Controls.Add(headingLabel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
+            MaximizeBox = false;
             Name = "SignUp";
             Text = "Sign Up";
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();

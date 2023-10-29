@@ -151,7 +151,9 @@
             ClientSize = new Size(637, 751);
             Controls.Add(loginGroupBox);
             Controls.Add(headingLabel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
+            MaximizeBox = false;
             Name = "Login";
             Text = "Login";
             loginGroupBox.ResumeLayout(false);
