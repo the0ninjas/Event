@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventManagementSystem.Models
 {
+    // Class to store what events a user has joined
     public class JoinedEvent
     { 
         public int eventId {  get; set; }
