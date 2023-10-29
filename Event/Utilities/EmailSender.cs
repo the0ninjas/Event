@@ -1,5 +1,6 @@
 ﻿using EventManagementSystem.Models;
 using Microsoft.Identity.Client;
+using Microsoft.VisualBasic;
 using System;
 using System.Net;
 using System.Net.Mail;
@@ -76,4 +77,29 @@ public class EmailSender
 
         return body;
     }
+
+    internal string getBodyEmailEventLeft(string firstName, Event leftEvent)
+    {
+        string body = string.Empty;
+
+        body = "Dear " + firstName + ",\n\nYou have successfully left the event with the following details:\n\n" +
+                "Name: " + leftEvent.title + "\nDate: " + leftEvent.time.ToShortDateString() + "\nTime: " + leftEvent.time.ToString("hh:mm tt") + "\nLocation: " + leftEvent.location + "\n\n" +
+                "If you have any further questions, feel free to contact us.\n\n" +
+                "Best regards,\nYour EventHub Team";
+
+        return body;
+    }
+
+    internal string getBodyEmailEventDeleted(string firstName, Event deletedEvent)
+    {
+        string body = string.Empty;
+
+        body = "Dear " + firstName + ",\n\nYou have successfully deleted the event with the following details:\n\n" +
+                "Name: " + deletedEvent.title + "\nDate: " + deletedEvent.time.ToShortDateString() + "\nTime: " + deletedEvent.time.ToString("hh:mm tt") + "\nLocation: " + deletedEvent.location + "\n\n" +
+                "If you have any further questions, feel free to contact us.\n\n" +
+                "Best regards,\nYour EventHub Team";
+
+        return body;
+    }
+
 }

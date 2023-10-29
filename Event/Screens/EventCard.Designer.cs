@@ -86,7 +86,7 @@
             cardDeleteButton.TabIndex = 8;
             cardDeleteButton.Text = "Delete";
             cardDeleteButton.UseVisualStyleBackColor = false;
-            cardDeleteButton.Click += button1_Click;
+            cardDeleteButton.Click += cardDeleteButton_Click;
             // 
             // EventCard
             // 

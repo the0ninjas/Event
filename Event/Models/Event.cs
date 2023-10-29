@@ -16,7 +16,6 @@ namespace EventManagementSystem.Models
         public int registrations { get; set; }
         public int capacity { get; set; }
         public bool isVisible { get; set; }
-        //public List<User> Attendees { get; set; }
         public string imageName { get; set; }
 
 
@@ -29,21 +28,7 @@ namespace EventManagementSystem.Models
             this.registrations = 0;
             this.isVisible = true;
             this.imageName = imageName;
-            //Attendees = new List<User>();
+           
         }
-
-        // Method to add an attendee to the event
-        //public void AddAttendee(User user)
-        //{
-        //    Attendees.Add(user);
-        //}
-
-        //// Method to remove an attendee from the event
-        //public void RemoveAttendee(User user)
-        //{
-        //    Attendees.Remove(user);
-        //}
-
-
     }
 }
