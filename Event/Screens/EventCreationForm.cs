@@ -164,6 +164,7 @@ namespace EventManagementSystem.Screens
         private void submitButton_Click(object sender, EventArgs e)
         {
             CreatedEventRepo createdEventRepo = new CreatedEventRepo();
+            JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
 
             try
             {
@@ -207,17 +208,30 @@ namespace EventManagementSystem.Screens
 
                             if (eventAdminCreated)
                             {
-                                MessageBox.Show("Event created successfully.");
-                                this.Close();
+                                bool eventJoined = joinedEventsRepo.joinEvent(eventId, authenticatedUser.email, context);
 
-                                // Initialize the EmailSender with your SMTP server details and credentials
-                                EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+                                if (eventJoined)
+                                {
 
-                                // Get email body
-                                string emailBody = emailSender.getBodyEmailEventCreated(authenticatedUser.firstName, newEvent);
+                                    MessageBox.Show("Event created successfully.");
+                                    this.Close();
 
-                                // Send an email
-                                emailSender.SendEmail(authenticatedUser.email, "Event Successfully Created!", emailBody);
+                                    // Initialize the EmailSender with your SMTP server details and credentials
+                                    EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+
+                                    // Get email body
+                                    string emailBody = emailSender.getBodyEmailEventCreated(authenticatedUser.firstName, newEvent);
+
+                                    // Send an email
+                                    emailSender.SendEmail(authenticatedUser.email, "Event Successfully Created!", emailBody);
+                                }
+                                else
+                                {
+                                    createdEventRepo.deleteEventAdmin(eventId, context);
+                                    eventRepo.deleteEvent(newEvent.eventId, context);
+                                    MessageBox.Show("Failed to create the event admin. The event has been deleted.");
+                                    this.Close();
+                                }
                             }
                             else
                             {
@@ -234,7 +248,7 @@ namespace EventManagementSystem.Screens
                     }
                     else
                     {
-                        MessageBox.Show("Failed to create the event admin. The event has been deleted.");
+                        MessageBox.Show("You cannot create more than 10 events. Wait until one of your created events has passed or delete one of the events.");
 
                     }
                 }
