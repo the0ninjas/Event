@@ -110,7 +110,7 @@
             joinedEventTitleLabel.Name = "joinedEventTitleLabel";
             joinedEventTitleLabel.Size = new Size(244, 38);
             joinedEventTitleLabel.TabIndex = 0;
-            joinedEventTitleLabel.Text = "My Joined Event";
+            joinedEventTitleLabel.Text = "My Joined Events";
             // 
             // createdEventTitleFlowLayoutPanel
             // 
@@ -129,7 +129,7 @@
             createdEventTitleLabel.Name = "createdEventTitleLabel";
             createdEventTitleLabel.Size = new Size(261, 38);
             createdEventTitleLabel.TabIndex = 0;
-            createdEventTitleLabel.Text = "My Created Event";
+            createdEventTitleLabel.Text = "My Created Events";
             // 
             // createdEventFlowLayoutPanel
             // 
@@ -159,7 +159,7 @@
             upcomingEventTitleLabel.Name = "upcomingEventTitleLabel";
             upcomingEventTitleLabel.Size = new Size(242, 38);
             upcomingEventTitleLabel.TabIndex = 0;
-            upcomingEventTitleLabel.Text = "Upcoming Event";
+            upcomingEventTitleLabel.Text = "Upcoming Events";
             // 
             // upcomingEventFlowLayoutPanel
             // 
@@ -194,7 +194,7 @@
             myPastEventTitleLabel.Name = "myPastEventTitleLabel";
             myPastEventTitleLabel.Size = new Size(215, 38);
             myPastEventTitleLabel.TabIndex = 0;
-            myPastEventTitleLabel.Text = "My Past Event";
+            myPastEventTitleLabel.Text = "My Past Events";
             // 
             // myPastEventFlowLayoutPanel
             // 

@@ -269,6 +269,17 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        private void titleTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the length will exceed 15 characters after the keypress
+            if (titleTextBox.Text.Length >= 15 && e.KeyChar != '\b') // '\b' is the backspace character
+            {
+                // Cancel the keypress
+                e.Handled = true;
+            }
+        }
+
+
         private void capacityTextBox_Validating(object sender, CancelEventArgs e)
         {
             int capacity;

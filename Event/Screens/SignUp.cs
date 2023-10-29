@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Text.RegularExpressions;
+using EventManagementSystem.Repository;
 
 namespace EventManagementSystem.Screens
 {
@@ -164,6 +165,8 @@ namespace EventManagementSystem.Screens
                 return; // Exit the event handler to prevent the form submission
             }
 
+            
+
             try
             {
                 string firstName = firstNameTextBox.Text;
@@ -185,20 +188,31 @@ namespace EventManagementSystem.Screens
                         location = location
                     };
 
-                    context.Users.Add(newUser);
-                    context.SaveChanges();
+                    UserRepo userRepo = new UserRepo();
+
+                    if (!userRepo.userExists(emailTextBox.Text, context))
+                    {
+                        MessageBox.Show("User already exists. Please use a different email address", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+
+                        context.Users.Add(newUser);
+                        context.SaveChanges();
+
+                        this.Close();
+
+                        // Initialize the EmailSender with your SMTP server details and credentials
+                        EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+
+                        // Get email body
+                        string emailBody = emailSender.getBodyEmailSignup(firstName);
+
+                        // Send an email
+                        emailSender.SendEmail(email, "Welcome to EventHub", emailBody);
+                    }
                 }
-
-                this.Close();
-
-                // Initialize the EmailSender with your SMTP server details and credentials
-                EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
-
-                // Get email body
-                string emailBody = emailSender.getBodyEmailSignup(firstName);
-
-                // Send an email
-                emailSender.SendEmail(email, "Welcome to EventHub", emailBody);
+                
             }
 
             catch (Exception ex)

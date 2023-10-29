@@ -35,13 +35,23 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        public bool userExists(string email, ConnectionFactory context) 
+        {
+            User user = Users.FirstOrDefault(u => u.email == email);
+            if (user == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public User getUserByEmail(string email)
         {
             try
             {
                 using (var context = new ConnectionFactory())
                 {
-                    User user = Users.Find(u => u.email == email);
+                    User user = Users.FirstOrDefault(u => u.email == email);
                     return user;
                 }
             }
@@ -59,7 +69,7 @@ namespace EventManagementSystem.Repository
                 using (var context = new ConnectionFactory())
                 {
 
-                    User existingUser = Users.Find(u => u.email == updatedUser.email);
+                    User existingUser = Users.FirstOrDefault(u => u.email == updatedUser.email);
 
                     if (existingUser != null)
                     {
@@ -90,7 +100,7 @@ namespace EventManagementSystem.Repository
             {
                 using (var context = new ConnectionFactory())
                 {
-                    User userToDelete = Users.Find(u => u.email == email);
+                    User userToDelete = Users.FirstOrDefault(u => u.email == email);
 
                     if (userToDelete != null)
                     {
