@@ -37,12 +37,15 @@ namespace EventManagementSystem.Repository
 
         public bool userExists(string email, ConnectionFactory context) 
         {
-            User user = Users.FirstOrDefault(u => u.email == email);
-            if (user == null)
+            User user = context.Users.FirstOrDefault(u => u.email == email);
+            if (user != null)
+            {
+                return true;
+            }
+            else
             {
                 return false;
             }
-            return true;
         }
 
         public User getUserByEmail(string email)

@@ -190,7 +190,7 @@ namespace EventManagementSystem.Screens
 
                     UserRepo userRepo = new UserRepo();
 
-                    if (!userRepo.userExists(emailTextBox.Text, context))
+                    if (userRepo.userExists(email, context))
                     {
                         MessageBox.Show("User already exists. Please use a different email address", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
