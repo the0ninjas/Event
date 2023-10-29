@@ -83,9 +83,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_calendar_check {
+        internal static System.Drawing.Bitmap icon_calendar_pen35 {
             get {
-                object obj = ResourceManager.GetObject("icon_calendar-check", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_calendar-pen35", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_calendar_pen {
+        internal static System.Drawing.Bitmap icon_home35 {
             get {
-                object obj = ResourceManager.GetObject("icon_calendar-pen", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_home35", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,29 +103,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_calendar_plus {
+        internal static System.Drawing.Bitmap icon_menu_burger35 {
             get {
-                object obj = ResourceManager.GetObject("icon_calendar-plus", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_home {
-            get {
-                object obj = ResourceManager.GetObject("icon_home", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_menu_burger {
-            get {
-                object obj = ResourceManager.GetObject("icon_menu-burger", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_menu-burger35", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +123,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_search {
+        internal static System.Drawing.Bitmap icon_sign_out_alt35 {
             get {
-                object obj = ResourceManager.GetObject("icon_search", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_sign-out-alt35", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,19 +133,9 @@ namespace EventManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_search35 {
+        internal static System.Drawing.Bitmap icon_user35 {
             get {
-                object obj = ResourceManager.GetObject("icon_search35", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_user {
-            get {
-                object obj = ResourceManager.GetObject("icon_user", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_user35", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
