@@ -56,9 +56,6 @@ namespace EventManagementSystem.Screens
 
                         joinedEventFlowLayoutPanel.Controls.Add(eventCard);
 
-
-                        eventCard.cardJoinButton.Click += CardJoinButton_Click;
-
                     }
                 }
             }
@@ -89,6 +86,7 @@ namespace EventManagementSystem.Screens
                     foreach (var userEvent in createdEvents)
                     {
                         EventCard eventCard = new EventCard();
+                        eventCard.EventId = userEvent.eventId;
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                         eventCard.EventTitle = userEvent.title;
                         eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
@@ -106,7 +104,7 @@ namespace EventManagementSystem.Screens
             } 
         }
 
-        //Populate my joined event EventCard
+        //Populate my upcoming event EventCard
         private void populateUpcomingEventCard()
         {
             try
@@ -122,6 +120,7 @@ namespace EventManagementSystem.Screens
                     foreach (var userEvent in createdEvents)
                     {
                         EventCard eventCard = new EventCard();
+                        eventCard.EventId = userEvent.eventId;
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                         eventCard.EventTitle = userEvent.title;
                         eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
@@ -153,6 +152,7 @@ namespace EventManagementSystem.Screens
                     foreach (var userEvent in joinedPastEvents)
                     {
                         EventCard eventCard = new EventCard();
+                        eventCard.EventId = userEvent.eventId;
                         eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                         eventCard.EventTitle = userEvent.title;
                         eventCard.EventCapacity = Convert.ToString(userEvent.capacity);
@@ -160,7 +160,7 @@ namespace EventManagementSystem.Screens
                         eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                         eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                        joinedEventFlowLayoutPanel.Controls.Add(eventCard);
+                        //...EventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                 }
             }

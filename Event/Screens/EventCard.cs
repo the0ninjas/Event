@@ -114,13 +114,26 @@ namespace EventManagementSystem.Screens
             {
                 using (var context = new ConnectionFactory())
                 {
-                    EventCard clickedCard = (EventCard)((Button)sender).Parent;
-                    int eventIdToJoin = this.EventId;
+                    // Retrieve the EventCard by navigating up the parent hierarchy
+                    Control parent = ((Button)sender).Parent;
+                    while (!(parent is EventCard) && parent != null)
+                    {
+                        parent = parent.Parent;
+                    }
 
-                    User authenticateUser = UserSession.AuthenticatedUser;
+                    if (parent is EventCard clickedCard)
+                    {
+                        int eventIdToJoin = clickedCard.EventId;
 
-                    JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
-                    joinedEventsRepo.joinEvent(eventIdToJoin, authenticateUser.email, context);
+                        User authenticateUser = UserSession.AuthenticatedUser;
+
+                        JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
+                        joinedEventsRepo.joinEvent(eventIdToJoin, authenticateUser.email, context);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to find the EventCard associated with the clicked button.");
+                    }
                 }
             }
             catch (Exception ex)
