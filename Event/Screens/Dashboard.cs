@@ -44,7 +44,7 @@ namespace EventManagementSystem.Screens
                     if (joinedEvents == null)
                     {
                         // display an empty eventCard
-                        
+
                         {
                             EventCard eventCard = new EventCard();
                             eventCard.EventTitle = "No joined event";
@@ -72,11 +72,13 @@ namespace EventManagementSystem.Screens
                             joinedEventFlowLayoutPanel.Controls.Add(eventCard);
 
 
-                        eventCard.cardJoinButton.Click += CardJoinButton_Click;
+                            eventCard.cardJoinButton.Click += CardJoinButton_Click;
 
+                        }
                     }
                 }
             }
+
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
@@ -124,7 +126,7 @@ namespace EventManagementSystem.Screens
                             createdEventFlowLayoutPanel.Controls.Add(eventCard);
                         }
                     }
-                }
+                
             }
             catch (Exception ex)
             {
@@ -169,7 +171,7 @@ namespace EventManagementSystem.Screens
                             upcomingEventFlowLayoutPanel.Controls.Add(eventCard);
                         }
                     }
-                }
+                
             }
             catch (Exception ex)
             {
