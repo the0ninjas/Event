@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace EventManagementSystem.Screens
 {
@@ -129,6 +130,18 @@ namespace EventManagementSystem.Screens
 
                         JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
                         joinedEventsRepo.joinEvent(eventIdToJoin, authenticateUser.email, context);
+
+                        EventRepo eventRepo = new EventRepo();
+                        Event joinedEvent = eventRepo.getEventById(eventIdToJoin, context);
+
+                        // Initialize the EmailSender with your SMTP server details and credentials
+                        EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+
+                        // Get email body
+                        string emailBody = emailSender.getBodyEmailEventJoined(authenticateUser.firstName, joinedEvent);
+
+                        // Send an email
+                        emailSender.SendEmail(authenticateUser.email, "Event Successfully Joined!", emailBody);
                     }
                     else
                     {

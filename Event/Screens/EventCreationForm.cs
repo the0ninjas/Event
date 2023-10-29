@@ -172,7 +172,7 @@ namespace EventManagementSystem.Screens
                     // Get the object of the user that is currently logged in
                     User authenticatedUser = UserSession.AuthenticatedUser;
 
-                    if (createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context).Count < 10)
+                    if (createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context) == null || createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context).Count < 10)
                     {
                         string title = titleTextBox.Text;
                         DateTime date = datePicker.Value;
