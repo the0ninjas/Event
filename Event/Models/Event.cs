@@ -15,20 +15,18 @@ namespace EventManagementSystem.Models
         public string location { get; set; }
         public int registrations { get; set; }
         public int capacity { get; set; }
-        public string description { get; set; }
         public bool isVisible { get; set; }
         //public List<User> Attendees { get; set; }
         public string imageName { get; set; }
 
 
-        public Event(string title, DateTime time, string location, int capacity, string description, string imageName)
+        public Event(string title, DateTime time, string location, int capacity, string imageName)
         {
             this.title = title;
             this.time = time;
             this.location = location;
             this.capacity = capacity;
             this.registrations = 0;
-            this.description = description;
             this.isVisible = true;
             this.imageName = imageName;
             //Attendees = new List<User>();

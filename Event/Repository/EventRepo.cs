@@ -88,7 +88,6 @@ namespace EventManagementSystem.Repository
                         existingEvent.location = updatedEvent.location;
                         existingEvent.capacity = updatedEvent.capacity;
                         existingEvent.registrations = updatedEvent.registrations;
-                        existingEvent.description = updatedEvent.description;
                         
                         context.SaveChanges();
                         return existingEvent;
