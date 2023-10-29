@@ -184,8 +184,9 @@ namespace EventManagementSystem.Screens
                     if (createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context) == null || createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context).Count < 10)
                     {
                         string title = titleTextBox.Text;
-                        DateTime date = datePicker.Value;
-                        DateTime time = timePicker.Value;
+                        DateTime selectedDate = datePicker.Value;
+                        TimeSpan selectedTime = timePicker.Value.TimeOfDay;
+                        DateTime combinedDateTime = selectedDate.Date + selectedTime;
                         string location = locationComboBox.Text;
                         int capacity = int.Parse(capacityTextBox.Text);
                         string description = descriptionTextBox.Text;
@@ -198,7 +199,7 @@ namespace EventManagementSystem.Screens
                         //}
 
                         // Create a new event object that stores the details entered by the user
-                        Event newEvent = new Event(title, date, time, location, capacity, description, imageName);
+                        Event newEvent = new Event(title, combinedDateTime, location, capacity, description, imageName);
 
                         // Create an instance of EventRepo
                         EventRepo eventRepo = new EventRepo();
@@ -216,31 +217,31 @@ namespace EventManagementSystem.Screens
 
                             if (eventAdminCreated)
                             {
-                                bool eventJoined = joinedEventsRepo.joinEvent(eventId, authenticatedUser.email, context);
+                                //bool eventJoined = joinedEventsRepo.joinEvent(eventId, authenticatedUser.email, context);
 
-                                if (eventJoined)
-                                {
+                                //if (eventJoined)
+                                //{
 
-                                    MessageBox.Show("Event created successfully.");
-                                    this.Close();
+                                MessageBox.Show("Event created successfully.");
+                                this.Close();
 
-                                    // Initialize the EmailSender with your SMTP server details and credentials
-                                    EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+                                // Initialize the EmailSender with your SMTP server details and credentials
+                                EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
 
-                                    // Get email body
-                                    string emailBody = emailSender.getBodyEmailEventCreated(authenticatedUser.firstName, newEvent);
+                                // Get email body
+                                string emailBody = emailSender.getBodyEmailEventCreated(authenticatedUser.firstName, newEvent);
 
-                                    // Send an email
-                                    emailSender.SendEmail(authenticatedUser.email, "Event Successfully Created!", emailBody);
-                                }
-                                else
-                                {
-                                    createdEventRepo.deleteEventAdmin(eventId, context);
-                                    eventRepo.deleteEvent(newEvent.eventId, context);
-                                    MessageBox.Show("Failed to create the event admin. The event has been deleted.");
-                                    this.Close();
-                                }
+                                // Send an email
+                                emailSender.SendEmail(authenticatedUser.email, "Event Successfully Created!", emailBody);
                             }
+                            //else
+                            //{
+                              //  createdEventRepo.deleteEventAdmin(eventId, context);
+                                //eventRepo.deleteEvent(newEvent.eventId, context);
+                                //MessageBox.Show("Failed to create the event admin. The event has been deleted.");
+                                //this.Close();
+                            //}
+                            //}
                             else
                             {
                                 eventRepo.deleteEvent(newEvent.eventId, context);

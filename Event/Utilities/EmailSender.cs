@@ -58,7 +58,7 @@ public class EmailSender
         string body = string.Empty;
 
         body = "Dear " + firstName + ",\n\nYou have successfully joined the event. We look forward to seeing you there!\n\n" +
-                "Event Details:\n\nName: " + eventJoined.title + "\nDate: " + eventJoined.date + "\nTime: " + eventJoined.time + "\nLocation: " + eventJoined.location + "\n\n" +
+                "Event Details:\n\nName: " + eventJoined.title + "\nDate: " + eventJoined.time.ToShortDateString() + "\nTime: " + eventJoined.time.ToString("hh:mm tt") + "\nLocation: " + eventJoined.location + "\n\n" +
                 "If you have any further questions, feel free to contact us.\n\n" +
                 "Best regards,\nYour EventHub Team";
 
@@ -70,7 +70,7 @@ public class EmailSender
         string body = string.Empty;
 
         body = "Dear " + firstName + ",\n\nYou have successfully created the event with the following details:\n\n" +
-                "Name: " + eventCreated.title + "\nDate: " + eventCreated.date + "\nTime: " + eventCreated.time + "\nLocation: " + eventCreated.location + "\n\n" +
+                "Name: " + eventCreated.title + "\nDate: " + eventCreated.time.ToShortDateString() + "\nTime: " + eventCreated.time.ToString("hh:mm tt") + "\nLocation: " + eventCreated.location + "\n\n" +
                 "If you have any further questions, feel free to contact us.\n\n" +
                 "Best regards,\nYour EventHub Team";
 

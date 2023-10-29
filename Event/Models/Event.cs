@@ -11,7 +11,6 @@ namespace EventManagementSystem.Models
     {
         public int eventId { get; set; }
         public string title { get; set; }
-        public DateTime date { get; set; }
         public DateTime time { get; set; }
         public string location { get; set; }
         public int registrations { get; set; }
@@ -22,10 +21,9 @@ namespace EventManagementSystem.Models
         public string imageName { get; set; }
 
 
-        public Event(string title, DateTime date, DateTime time, string location, int capacity, string description, string imageName)
+        public Event(string title, DateTime time, string location, int capacity, string description, string imageName)
         {
             this.title = title;
-            this.date = date;
             this.time = time;
             this.location = location;
             this.capacity = capacity;
