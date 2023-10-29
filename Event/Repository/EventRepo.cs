@@ -34,7 +34,7 @@ namespace EventManagementSystem.Repository
         {
             try
             {
-                    Event foundEvent = Events.Find(u => u.eventId == eventId);
+                    Event foundEvent = context.Events.FirstOrDefault(u => u.eventId == eventId);
                     return foundEvent;
             }
             catch (Exception ex)
@@ -79,7 +79,7 @@ namespace EventManagementSystem.Repository
                 using (var context = new ConnectionFactory())
                 {
 
-                    Event existingEvent = Events.Find(u => u.eventId == updatedEvent.eventId);
+                    Event existingEvent = context.Events.FirstOrDefault(u => u.eventId == updatedEvent.eventId);
 
                     if (existingEvent != null)
                     {
@@ -111,7 +111,7 @@ namespace EventManagementSystem.Repository
         {
             try
             {
-                Event existingEvent = Events.Find(u => u.eventId == eventId);
+                Event existingEvent = context.Events.FirstOrDefault(u => u.eventId == eventId);
 
                 if (existingEvent != null)
                 {
