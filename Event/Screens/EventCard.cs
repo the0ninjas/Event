@@ -143,7 +143,7 @@ namespace EventManagementSystem.Screens
                         Event joinedEvent = eventRepo.getEventById(eventIdToJoin, context);
 
                         // Initialize the EmailSender with your SMTP server details and credentials
-                        EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+                        EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "xduw ibjk vxyw jgey");
 
                         // Get email body
                         string emailBody = emailSender.getBodyEmailEventJoined(authenticateUser.firstName, joinedEvent);
@@ -225,7 +225,7 @@ namespace EventManagementSystem.Screens
                             Event leftEvent = eventRepo.getEventById(eventIdToLeave, context);
 
                             // Initialize the EmailSender with your SMTP server details and credentials
-                            EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+                            EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "xduw ibjk vxyw jgey");
 
                             // Get email body
                             string emailBody = emailSender.getBodyEmailEventLeft(authenticateUser.firstName, leftEvent);
@@ -314,7 +314,7 @@ namespace EventManagementSystem.Screens
 
 
                             // Initialize the EmailSender with your SMTP server details and credentials
-                            EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+                            EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "xduw ibjk vxyw jgey");
 
                             // Get email body
                             string emailBody = emailSender.getBodyEmailEventLeft(authenticateUser.firstName, deletedEvent);
