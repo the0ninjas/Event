@@ -303,6 +303,6 @@ namespace EventManagementSystem.Screens
         private Panel headingPanel;
         private TextBox searchBarTextBox;
         private Label headerTitleLabel;
-        private Panel topPagePane;
+        public Panel topPagePane;
     }
 }

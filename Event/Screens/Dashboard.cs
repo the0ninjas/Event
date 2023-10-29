@@ -22,7 +22,7 @@ namespace EventManagementSystem.Screens
 
 
 
-        private void Dashboard_Load(object sender, EventArgs e)
+        public void Dashboard_Load(object sender, EventArgs e)
         {
             populateMyJoinedEventCard();
             populateMyCreatedEventCard();
