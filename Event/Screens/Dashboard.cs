@@ -207,7 +207,7 @@ namespace EventManagementSystem.Screens
                         eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                         eventCard.EventLocation = Convert.ToString(userEvent.location);
 
-                        //..EventFlowLayoutPanel.Controls.Add(eventCard);
+                        //....EventFlowLayoutPanel.Controls.Add(eventCard);
                     }
                 }
             }
