@@ -114,29 +114,56 @@ namespace EventManagementSystem.Repository
             }
         }
 
-
-        public bool leaveEvent(int eventId)
+        public bool removeAllUserfromEvent(int eventId, ConnectionFactory context)
         {
             try
             {
-                using (var context = new ConnectionFactory())
+                var entriesToDelete = context.JoinedEvents
+                    .Where(e => e.eventId == eventId)
+                    .ToList();
+
+                if (entriesToDelete.Any())
                 {
-                    var eventToLeave = context.JoinedEvents
-                        .FirstOrDefault(ea => ea.eventId == eventId);
+                    // Remove all found entries
+                    context.JoinedEvents.RemoveRange(entriesToDelete);
+                    context.SaveChanges();
 
-                    if (eventToLeave != null)
-                    {
-                        context.JoinedEvents.Remove(eventToLeave);
-                        context.SaveChanges();
+                    return true;
 
-                        return true;
-                    }
-                    else
-                    {
-                        // No UserEvent found with the specified eventId
-                        return false;
-                    }
                 }
+
+                // No entries found with the specified eventId
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool leaveEvent(int eventId, string email, ConnectionFactory context)
+        {
+            try
+            {
+                var eventToLeave = context.JoinedEvents
+                    .FirstOrDefault(ea => ea.eventId == eventId && ea.userEmail == email);
+
+                if (eventToLeave != null)
+                {
+                    context.JoinedEvents.Remove(eventToLeave);
+                    EventRepo eventRepo = new EventRepo();
+                    eventRepo.eventDeRegistration(eventId, context);
+                    context.SaveChanges();
+
+                    return true;
+                }
+                else
+                {
+                    // No UserEvent found with the specified eventId
+                    return false;
+                }
+
             }
             catch (Exception ex)
             {

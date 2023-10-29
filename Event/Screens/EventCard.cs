@@ -166,11 +166,112 @@ namespace EventManagementSystem.Screens
 
         public void cardLeaveButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (var context = new ConnectionFactory())
+                {
+                    // Retrieve the EventCard by navigating up the parent hierarchy
+                    Control parent = ((Button)sender).Parent;
+                    while (!(parent is EventCard) && parent != null)
+                    {
+                        parent = parent.Parent;
+                    }
+
+                    if (parent is EventCard clickedCard)
+                    {
+                        int eventIdToLeave = clickedCard.EventId;
+
+                        User authenticateUser = UserSession.AuthenticatedUser;
+
+                        JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
+                        bool success = joinedEventsRepo.leaveEvent(eventIdToLeave, authenticateUser.email, context);
+
+                        if (success)
+                        {
+
+                            EventRepo eventRepo = new EventRepo();
+                            Event leftEvent = eventRepo.getEventById(eventIdToLeave, context);
+
+                            // Initialize the EmailSender with your SMTP server details and credentials
+                            EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+
+                            // Get email body
+                            string emailBody = emailSender.getBodyEmailEventLeft(authenticateUser.firstName, leftEvent);
+
+                            // Send an email
+                            emailSender.SendEmail(authenticateUser.email, "Event Successfully Left!", emailBody);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to leave event. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to find the EventCard associated with the clicked button.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
             Console.WriteLine("Leave button pressed");
         }
 
-        public void button1_Click(object sender, EventArgs e)
+        public void cardDeleteButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (var context = new ConnectionFactory())
+                {
+                    // Retrieve the EventCard by navigating up the parent hierarchy
+                    Control parent = ((Button)sender).Parent;
+                    while (!(parent is EventCard) && parent != null)
+                    {
+                        parent = parent.Parent;
+                    }
+
+                    if (parent is EventCard clickedCard)
+                    {
+                        int eventIdToDelete = clickedCard.EventId;
+
+                        User authenticateUser = UserSession.AuthenticatedUser;
+
+                        EventRepo eventRepo = new EventRepo();
+                        Event deletedEvent = eventRepo.getEventById(eventIdToDelete, context);
+
+                        
+                        bool success = eventRepo.deleteEvent(eventIdToDelete, context);
+
+                        if (success)
+                        {
+                                                      
+
+                            // Initialize the EmailSender with your SMTP server details and credentials
+                            EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
+
+                            // Get email body
+                            string emailBody = emailSender.getBodyEmailEventLeft(authenticateUser.firstName, deletedEvent);
+
+                            // Send an email
+                            emailSender.SendEmail(authenticateUser.email, "Event Successfully Deleted!", emailBody);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete the event. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to find the EventCard associated with the clicked button.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
             Console.WriteLine("Delete button pressed");
         }
     }

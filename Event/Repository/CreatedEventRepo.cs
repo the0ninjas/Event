@@ -80,7 +80,7 @@ namespace EventManagementSystem.Repository
         }
 
 
-        public bool deleteEventAdmin(int eventId, ConnectionFactory context)
+        public bool deleteEvent(int eventId, ConnectionFactory context)
         {
             try
             {
@@ -91,6 +91,7 @@ namespace EventManagementSystem.Repository
                 if (createdEventToDelete != null)
                 {
                     context.CreatedEvents.Remove(createdEventToDelete);
+
                     context.SaveChanges();
 
                     return true;

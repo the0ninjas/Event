@@ -88,7 +88,7 @@ namespace EventManagementSystem.Repository
                         existingEvent.location = updatedEvent.location;
                         existingEvent.capacity = updatedEvent.capacity;
                         existingEvent.registrations = updatedEvent.registrations;
-                        existingEvent.description = updatedEvent.description;
+                        
                         
                         context.SaveChanges();
                         return existingEvent;
@@ -131,16 +131,46 @@ namespace EventManagementSystem.Repository
             }
         }
 
+        public bool eventDeRegistration(int eventId, ConnectionFactory context)
+        {
+            try
+            {
+                Event existingEvent = context.Events.FirstOrDefault(u => u.eventId == eventId);
+
+                if (existingEvent != null)
+                {
+                    existingEvent.registrations -= 1;
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                return false;
+
+            }
+        }
+
         public bool deleteEvent(int eventId, ConnectionFactory context)
         {
             try
             {
                 
-                    Event eventToDelete = Events.Find(u => u.eventId == eventId);
+                    Event eventToDelete = context.Events.FirstOrDefault(u => u.eventId == eventId);
 
                     if (eventToDelete != null)
                     {
                         context.Events.Remove(eventToDelete);
+                        JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
+                        joinedEventsRepo.removeAllUserfromEvent(eventId, context);
+                        CreatedEventRepo createdEventRepo = new CreatedEventRepo();
+                        createdEventRepo.deleteEvent(eventId, context);
+                        
                         context.SaveChanges();
 
                         return true;

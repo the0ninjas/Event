@@ -199,7 +199,7 @@ namespace EventManagementSystem.Screens
                         //}
 
                         // Create a new event object that stores the details entered by the user
-                        Event newEvent = new Event(title, combinedDateTime, location, capacity, description, imageName);
+                        Event newEvent = new Event(title, combinedDateTime, location, capacity, imageName);
 
                         // Create an instance of EventRepo
                         EventRepo eventRepo = new EventRepo();
