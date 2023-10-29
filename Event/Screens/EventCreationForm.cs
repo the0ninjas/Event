@@ -176,7 +176,7 @@ namespace EventManagementSystem.Screens
 
                     if (createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context) == null || createdEventRepo.GetEventsOfAdmin(authenticatedUser.email, context).Count < 10)
                     {
-                        string title = titleTextBox.Text;   
+                        string title = titleTextBox.Text;
                         DateTime date = datePicker.Value;
                         DateTime time = timePicker.Value;
                         string location = locationComboBox.Text;
@@ -258,6 +258,27 @@ namespace EventManagementSystem.Screens
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
                 MessageBox.Show("An error occurred. Please try again.");
+            }
+        }
+
+        private void capacityTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            int capacity;
+
+            if (!int.TryParse(capacityTextBox.Text, out capacity))
+            {
+                errorProvider1.SetError(capacityTextBox, "Please enter a valid number.");
+            }
+            else
+            {
+                if (capacity <= 0 || capacity >= 100)
+                {
+                    errorProvider1.SetError(capacityTextBox, "Capacity must be greater than 0 and less than 100.");
+                }
+                else
+                {
+                    errorProvider1.SetError(capacityTextBox, ""); // Clear the error message.
+                }
             }
         }
     }
