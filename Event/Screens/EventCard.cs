@@ -87,7 +87,13 @@ namespace EventManagementSystem.Screens
         }
 
         private Image _picture;
+        public Image Picture
+        {
+            get { return _picture; }
+            set { _picture = value; cardPictureBox.Image = value; }
+        }
 
+        // Directly draw title, capacity, date, time, and location on the pictureBox
         private void cardPictureBox_Paint(object sender, PaintEventArgs e)
         {
             Font font = new Font("Segoe UI", 10, FontStyle.Bold);
@@ -108,14 +114,7 @@ namespace EventManagementSystem.Screens
             e.Graphics.DrawString(EventTime, font, textBrush, new PointF(117, 162));
             e.Graphics.DrawString(EventLocation, font, textBrush, new PointF(12, 132));
 
-
             textBrush.Dispose();
-        }
-
-        public Image Picture
-        {
-            get { return _picture; }
-            set { _picture = value; cardPictureBox.Image = value; }
         }
 
         public void cardJoinButton_Click(object sender, EventArgs e)
