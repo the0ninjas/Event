@@ -25,6 +25,7 @@ namespace EventManagementSystem.Screens
         public EventCreationForm()
         {
             InitializeComponent();
+            datePicker.MinDate = DateTime.Today;
         }
 
         private void titleTextBox_Enter(object sender, EventArgs e)
@@ -166,6 +167,13 @@ namespace EventManagementSystem.Screens
             CreatedEventRepo createdEventRepo = new CreatedEventRepo();
             JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
 
+            if (titleTextBox.Text == "Enter event title" || locationComboBox.Text == "Select the location" || capacityTextBox.Text == "Enter max capacity" 
+                || descriptionTextBox.Text == "Enter description" || imageComboBox.Text == "Select the image")
+            {
+                MessageBox.Show("Please provide all required information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the event handler to prevent the form submission
+            }
+
             try
             {
                 using (var context = new ConnectionFactory())
@@ -257,6 +265,27 @@ namespace EventManagementSystem.Screens
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
                 MessageBox.Show("An error occurred. Please try again.");
+            }
+        }
+
+        private void capacityTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            int capacity;
+
+            if (!int.TryParse(capacityTextBox.Text, out capacity))
+            {
+                errorProvider1.SetError(capacityTextBox, "Please enter a valid number.");
+            }
+            else
+            {
+                if (capacity <= 0 || capacity >= 100)
+                {
+                    errorProvider1.SetError(capacityTextBox, "Capacity must be greater than 0 and less than 100.");
+                }
+                else
+                {
+                    errorProvider1.SetError(capacityTextBox, ""); // Clear the error message.
+                }
             }
         }
     }

@@ -145,10 +145,22 @@ namespace EventManagementSystem.Screens
         private void signUpButton_Click(object sender, EventArgs e)
         {
             // Check if the ErrorProvider has any error messages displayed
-            if (errorProvider1.GetError(emailTextBox) != "" || errorProvider2.GetError(phoneNumberTextBox) != "")
+            if (errorProvider3.GetError(locationComboBox) != "" ||errorProvider1.GetError(emailTextBox) != "" || errorProvider2.GetError(phoneNumberTextBox) != "")
             {
                 // Display an error message to the user
                 MessageBox.Show("Please correct the errors before signing up.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the event handler to prevent the form submission
+            }
+
+            if (locationComboBox.SelectedItem == null)
+            {
+                errorProvider3.SetError(locationComboBox, "Please select a location.");
+                return; // Exit the event handler to prevent the form submission
+            }
+
+            if ( firstNameTextBox.Text == "Enter your first name" || lastNameTextBox.Text == "Enter your last name" || passwordTextBox.Text == "Enter your password" || emailTextBox.Text == "Enter your email address")
+            {
+                MessageBox.Show("Please provide all required information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Exit the event handler to prevent the form submission
             }
 
@@ -158,15 +170,8 @@ namespace EventManagementSystem.Screens
                 string lastName = lastNameTextBox.Text;
                 string password = passwordTextBox.Text;
                 string email = emailTextBox.Text;
-                int phoneNumber = int.Parse(phoneNumberTextBox.Text);
+                string phoneNumber = phoneNumberTextBox.Text;
                 string location = locationComboBox.SelectedItem.ToString();
-
-                if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
-                    string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(email) ||
-                    string.IsNullOrWhiteSpace(location))
-                {
-                    throw new Exception("Please provide all required information.");
-                }
 
                 using (var context = new ConnectionFactory())
                 {
@@ -229,12 +234,25 @@ namespace EventManagementSystem.Screens
 
             if (!Regex.IsMatch(phoneNumberTextBox.Text, phonePattern))
             {
-                errorProvider2.SetError(phoneNumberTextBox, "Invalid format. Phone number should start with 0");
+                errorProvider2.SetError(phoneNumberTextBox, "Invalid format. Phone number should start with '0' and consist of only numeric digits.");
                 // e.Cancel = true; // Remove or comment out this line to allow moving to other textboxes.
             }
             else
             {
                 errorProvider2.SetError(phoneNumberTextBox, ""); // Clear the error message.
+            }
+        }
+
+        private void locationComboBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (locationComboBox.SelectedItem == null)
+            {
+                errorProvider3.SetError(locationComboBox, "Please select a location.");
+                //e.Cancel = true; // Prevent focus from leaving the ComboBox.
+            }
+            else
+            {
+                errorProvider3.SetError(locationComboBox, ""); // Clear the error message.
             }
         }
     }
