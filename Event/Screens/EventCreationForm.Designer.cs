@@ -57,10 +57,9 @@
             // 
             headingLabel.AutoSize = true;
             headingLabel.Font = new Font("Segoe UI Black", 15.000001F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            headingLabel.Location = new Point(112, 38);
-            headingLabel.Margin = new Padding(2, 0, 2, 0);
+            headingLabel.Location = new Point(168, 57);
             headingLabel.Name = "headingLabel";
-            headingLabel.Size = new Size(174, 36);
+            headingLabel.Size = new Size(246, 48);
             headingLabel.TabIndex = 0;
             headingLabel.Text = "Create Event";
             // 
@@ -68,10 +67,9 @@
             // 
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            titleLabel.Location = new Point(112, 105);
-            titleLabel.Margin = new Padding(2, 0, 2, 0);
+            titleLabel.Location = new Point(168, 158);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(42, 23);
+            titleLabel.Size = new Size(61, 32);
             titleLabel.TabIndex = 1;
             titleLabel.Text = "Title";
             // 
@@ -79,10 +77,9 @@
             // 
             dateLabel.AutoSize = true;
             dateLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            dateLabel.Location = new Point(112, 172);
-            dateLabel.Margin = new Padding(2, 0, 2, 0);
+            dateLabel.Location = new Point(168, 258);
             dateLabel.Name = "dateLabel";
-            dateLabel.Size = new Size(46, 23);
+            dateLabel.Size = new Size(66, 32);
             dateLabel.TabIndex = 2;
             dateLabel.Text = "Date";
             // 
@@ -90,10 +87,9 @@
             // 
             timeLabel.AutoSize = true;
             timeLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            timeLabel.Location = new Point(112, 239);
-            timeLabel.Margin = new Padding(2, 0, 2, 0);
+            timeLabel.Location = new Point(168, 358);
             timeLabel.Name = "timeLabel";
-            timeLabel.Size = new Size(47, 23);
+            timeLabel.Size = new Size(67, 32);
             timeLabel.TabIndex = 3;
             timeLabel.Text = "Time";
             // 
@@ -101,10 +97,9 @@
             // 
             locationLabel.AutoSize = true;
             locationLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            locationLabel.Location = new Point(112, 305);
-            locationLabel.Margin = new Padding(2, 0, 2, 0);
+            locationLabel.Location = new Point(168, 458);
             locationLabel.Name = "locationLabel";
-            locationLabel.Size = new Size(75, 23);
+            locationLabel.Size = new Size(107, 32);
             locationLabel.TabIndex = 4;
             locationLabel.Text = "Location";
             // 
@@ -112,10 +107,9 @@
             // 
             descriptionLabel.AutoSize = true;
             descriptionLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            descriptionLabel.Location = new Point(112, 439);
-            descriptionLabel.Margin = new Padding(2, 0, 2, 0);
+            descriptionLabel.Location = new Point(168, 658);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(96, 23);
+            descriptionLabel.Size = new Size(137, 32);
             descriptionLabel.TabIndex = 5;
             descriptionLabel.Text = "Description";
             // 
@@ -123,20 +117,18 @@
             // 
             capacityLabel.AutoSize = true;
             capacityLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            capacityLabel.Location = new Point(112, 372);
-            capacityLabel.Margin = new Padding(2, 0, 2, 0);
+            capacityLabel.Location = new Point(168, 558);
             capacityLabel.Name = "capacityLabel";
-            capacityLabel.Size = new Size(115, 23);
+            capacityLabel.Size = new Size(161, 32);
             capacityLabel.TabIndex = 6;
             capacityLabel.Text = "Max Capacity";
             // 
             // titleTextBox
             // 
             titleTextBox.ForeColor = SystemColors.ScrollBar;
-            titleTextBox.Location = new Point(270, 105);
-            titleTextBox.Margin = new Padding(2, 2, 2, 2);
+            titleTextBox.Location = new Point(405, 158);
             titleTextBox.Name = "titleTextBox";
-            titleTextBox.Size = new Size(235, 27);
+            titleTextBox.Size = new Size(350, 35);
             titleTextBox.TabIndex = 7;
             titleTextBox.Text = "Enter event title";
             titleTextBox.Enter += titleTextBox_Enter;
@@ -145,21 +137,19 @@
             // datePicker
             // 
             datePicker.Format = DateTimePickerFormat.Short;
-            datePicker.Location = new Point(270, 172);
-            datePicker.Margin = new Padding(2, 2, 2, 2);
+            datePicker.Location = new Point(405, 258);
             datePicker.Name = "datePicker";
-            datePicker.Size = new Size(235, 27);
+            datePicker.Size = new Size(350, 35);
             datePicker.TabIndex = 8;
             // 
             // timePicker
             // 
             timePicker.CustomFormat = "hh:mm tt";
             timePicker.Format = DateTimePickerFormat.Custom;
-            timePicker.Location = new Point(270, 239);
-            timePicker.Margin = new Padding(2, 2, 2, 2);
+            timePicker.Location = new Point(405, 358);
             timePicker.Name = "timePicker";
             timePicker.ShowUpDown = true;
-            timePicker.Size = new Size(235, 27);
+            timePicker.Size = new Size(350, 35);
             timePicker.TabIndex = 9;
             // 
             // locationComboBox
@@ -167,10 +157,9 @@
             locationComboBox.ForeColor = SystemColors.ScrollBar;
             locationComboBox.FormattingEnabled = true;
             locationComboBox.Items.AddRange(new object[] { "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin" });
-            locationComboBox.Location = new Point(270, 305);
-            locationComboBox.Margin = new Padding(2, 2, 2, 2);
+            locationComboBox.Location = new Point(405, 458);
             locationComboBox.Name = "locationComboBox";
-            locationComboBox.Size = new Size(235, 28);
+            locationComboBox.Size = new Size(350, 38);
             locationComboBox.TabIndex = 10;
             locationComboBox.Text = "Select the location";
             locationComboBox.SelectedIndexChanged += locationComboBox_SelectedIndexChanged;
@@ -180,10 +169,9 @@
             // capacityTextBox
             // 
             capacityTextBox.ForeColor = SystemColors.ScrollBar;
-            capacityTextBox.Location = new Point(270, 372);
-            capacityTextBox.Margin = new Padding(2, 2, 2, 2);
+            capacityTextBox.Location = new Point(405, 558);
             capacityTextBox.Name = "capacityTextBox";
-            capacityTextBox.Size = new Size(235, 27);
+            capacityTextBox.Size = new Size(350, 35);
             capacityTextBox.TabIndex = 11;
             capacityTextBox.Text = "Enter max capacity";
             capacityTextBox.Enter += capacityTextBox_Enter;
@@ -193,11 +181,10 @@
             // descriptionTextBox
             // 
             descriptionTextBox.ForeColor = SystemColors.ScrollBar;
-            descriptionTextBox.Location = new Point(270, 439);
-            descriptionTextBox.Margin = new Padding(2, 2, 2, 2);
+            descriptionTextBox.Location = new Point(405, 658);
             descriptionTextBox.Multiline = true;
             descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(235, 80);
+            descriptionTextBox.Size = new Size(350, 118);
             descriptionTextBox.TabIndex = 12;
             descriptionTextBox.Text = "Enter event description";
             descriptionTextBox.Enter += descriptionTextBox_Enter;
@@ -205,7 +192,6 @@
             // 
             // createEventPanel
             // 
-            createEventPanel.Controls.Add(pictureBox);
             createEventPanel.Controls.Add(imageComboBox);
             createEventPanel.Controls.Add(imageLabel);
             createEventPanel.Controls.Add(submitButton);
@@ -222,30 +208,28 @@
             createEventPanel.Controls.Add(titleTextBox);
             createEventPanel.Controls.Add(descriptionLabel);
             createEventPanel.Controls.Add(capacityLabel);
-            createEventPanel.Location = new Point(250, 51);
-            createEventPanel.Margin = new Padding(2, 2, 2, 2);
+            createEventPanel.Location = new Point(375, 76);
             createEventPanel.Name = "createEventPanel";
-            createEventPanel.Size = new Size(611, 823);
+            createEventPanel.Size = new Size(916, 1059);
             createEventPanel.TabIndex = 13;
             // 
             // pictureBox
             // 
-            pictureBox.Location = new Point(270, 588);
-            pictureBox.Margin = new Padding(2, 2, 2, 2);
+            pictureBox.Location = new Point(12, 566);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(233, 133);
+            pictureBox.Size = new Size(350, 200);
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.TabIndex = 16;
             pictureBox.TabStop = false;
+            pictureBox.Visible = false;
             // 
             // imageComboBox
             // 
             imageComboBox.ForeColor = SystemColors.ScrollBar;
             imageComboBox.FormattingEnabled = true;
-            imageComboBox.Location = new Point(270, 559);
-            imageComboBox.Margin = new Padding(2, 2, 2, 2);
+            imageComboBox.Location = new Point(405, 838);
             imageComboBox.Name = "imageComboBox";
-            imageComboBox.Size = new Size(235, 28);
+            imageComboBox.Size = new Size(350, 38);
             imageComboBox.TabIndex = 15;
             imageComboBox.Text = "Select the image";
             imageComboBox.SelectedIndexChanged += imageComboBox_SelectedIndexChanged;
@@ -256,10 +240,9 @@
             // 
             imageLabel.AutoSize = true;
             imageLabel.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            imageLabel.Location = new Point(112, 559);
-            imageLabel.Margin = new Padding(2, 0, 2, 0);
+            imageLabel.Location = new Point(168, 838);
             imageLabel.Name = "imageLabel";
-            imageLabel.Size = new Size(58, 23);
+            imageLabel.Size = new Size(82, 32);
             imageLabel.TabIndex = 14;
             imageLabel.Text = "Image";
             // 
@@ -268,10 +251,9 @@
             submitButton.BackColor = Color.DarkSeaGreen;
             submitButton.FlatStyle = FlatStyle.Popup;
             submitButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            submitButton.Location = new Point(270, 761);
-            submitButton.Margin = new Padding(2, 2, 2, 2);
+            submitButton.Location = new Point(405, 941);
             submitButton.Name = "submitButton";
-            submitButton.Size = new Size(87, 27);
+            submitButton.Size = new Size(130, 40);
             submitButton.TabIndex = 13;
             submitButton.Text = "Submit";
             submitButton.UseVisualStyleBackColor = false;
@@ -283,12 +265,12 @@
             // 
             // EventCreationForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
-            ClientSize = new Size(1084, 924);
+            ClientSize = new Size(1626, 1386);
+            Controls.Add(pictureBox);
             Controls.Add(createEventPanel);
-            Margin = new Padding(2, 2, 2, 2);
             Name = "EventCreationForm";
             Text = "Event Creation Form";
             Load += EventCreationForm_Load;

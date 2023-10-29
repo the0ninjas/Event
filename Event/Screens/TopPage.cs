@@ -98,7 +98,7 @@ namespace EventManagementSystem.Screens
             if (result == DialogResult.OK)
             {
                 // Clear the user session or authentication information.
-                UserSession.ClearAuthentication(); 
+                UserSession.ClearAuthentication();
 
                 // Close the current form
                 this.Close();

@@ -45,8 +45,6 @@ namespace EventManagementSystem.Screens
             eventCreationButton = new Button();
             panel6 = new Panel();
             logoutButton = new Button();
-            panel7 = new Panel();
-            subButton2 = new Button();
             timerForSidebar = new System.Windows.Forms.Timer(components);
             headingPanel = new Panel();
             searchBarTextBox = new TextBox();
@@ -59,7 +57,6 @@ namespace EventManagementSystem.Screens
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel6.SuspendLayout();
-            panel7.SuspendLayout();
             headingPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,7 +68,6 @@ namespace EventManagementSystem.Screens
             sideBarFlowLayoutPanel.Controls.Add(panel3);
             sideBarFlowLayoutPanel.Controls.Add(panel4);
             sideBarFlowLayoutPanel.Controls.Add(panel6);
-            sideBarFlowLayoutPanel.Controls.Add(panel7);
             sideBarFlowLayoutPanel.Dock = DockStyle.Left;
             sideBarFlowLayoutPanel.Location = new Point(0, 0);
             sideBarFlowLayoutPanel.MaximumSize = new Size(330, 1574);
@@ -203,27 +199,6 @@ namespace EventManagementSystem.Screens
             logoutButton.UseVisualStyleBackColor = true;
             logoutButton.Click += logoutButton_Click;
             // 
-            // panel7
-            // 
-            panel7.Controls.Add(subButton2);
-            panel7.Location = new Point(3, 411);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(350, 66);
-            panel7.TabIndex = 6;
-            // 
-            // subButton2
-            // 
-            subButton2.FlatStyle = FlatStyle.Flat;
-            subButton2.Font = new Font("Segoe UI Semibold", 9.857143F, FontStyle.Bold, GraphicsUnit.Point);
-            subButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            subButton2.Location = new Point(-11, -12);
-            subButton2.Name = "subButton2";
-            subButton2.Padding = new Padding(20, 0, 0, 0);
-            subButton2.Size = new Size(376, 91);
-            subButton2.TabIndex = 1;
-            subButton2.Text = "(Sub)";
-            subButton2.UseVisualStyleBackColor = true;
-            // 
             // timerForSidebar
             // 
             timerForSidebar.Interval = 7;
@@ -248,16 +223,7 @@ namespace EventManagementSystem.Screens
             searchBarTextBox.Size = new Size(394, 35);
             searchBarTextBox.TabIndex = 1;
             searchBarTextBox.Text = "Search";
-            //searchBarTextBox.TextChanged += (sender, e) =>
-            //{
-            //    // Get the current text from the search bar
-            //    string searchString = searchBarTextBox.Text.Trim();
-
-            //    // Perform the search and update the UI with the results
-            //    EventRepo eventRepo = new EventRepo();
-            //    ConnectionFactory context = new ConnectionFactory();
-            //    eventRepo.UpdateSearchResults(searchString, context);
-            //};
+            searchBarTextBox.Visible = false;
             // 
             // headerTitleLabel
             // 
@@ -296,7 +262,6 @@ namespace EventManagementSystem.Screens
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            panel7.ResumeLayout(false);
             headingPanel.ResumeLayout(false);
             headingPanel.PerformLayout();
             ResumeLayout(false);
@@ -315,8 +280,6 @@ namespace EventManagementSystem.Screens
         private Button myCreatedEventButton;
         private Panel panel6;
         private Button logoutButton;
-        private Panel panel7;
-        private Button subButton2;
         private Label menuLabel;
         private PictureBox menuButton;
         private System.Windows.Forms.Timer timerForSidebar;

@@ -167,7 +167,7 @@ namespace EventManagementSystem.Screens
             CreatedEventRepo createdEventRepo = new CreatedEventRepo();
             JoinedEventsRepo joinedEventsRepo = new JoinedEventsRepo();
 
-            if (titleTextBox.Text == "Enter event title" || locationComboBox.Text == "Select the location" || capacityTextBox.Text == "Enter max capacity" 
+            if (titleTextBox.Text == "Enter event title" || locationComboBox.Text == "Select the location" || capacityTextBox.Text == "Enter max capacity"
                 || descriptionTextBox.Text == "Enter description" || imageComboBox.Text == "Select the image")
             {
                 MessageBox.Show("Please provide all required information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -236,10 +236,10 @@ namespace EventManagementSystem.Screens
                             }
                             //else
                             //{
-                              //  createdEventRepo.deleteEventAdmin(eventId, context);
-                                //eventRepo.deleteEvent(newEvent.eventId, context);
-                                //MessageBox.Show("Failed to create the event admin. The event has been deleted.");
-                                //this.Close();
+                            //  createdEventRepo.deleteEventAdmin(eventId, context);
+                            //eventRepo.deleteEvent(newEvent.eventId, context);
+                            //MessageBox.Show("Failed to create the event admin. The event has been deleted.");
+                            //this.Close();
                             //}
                             //}
                             else

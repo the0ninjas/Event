@@ -66,7 +66,7 @@ namespace EventManagementSystem.Screens
                             eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                             eventCard.EventTitle = userEvent.title;
                             eventCard.EventCapacity = Convert.ToString(userEvent.registrations + " / " + userEvent.capacity);
-                            eventCard.EventDate = userEvent.date.ToShortDateString();
+                            eventCard.EventDate = userEvent.time.ToShortDateString();
                             eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                             eventCard.EventLocation = Convert.ToString(userEvent.location);
                             eventCard.cardJoinButton.Visible = false;
@@ -115,7 +115,7 @@ namespace EventManagementSystem.Screens
                             eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                             eventCard.EventTitle = userEvent.title;
                             eventCard.EventCapacity = Convert.ToString(userEvent.registrations + " / " + userEvent.capacity);
-                            eventCard.EventDate = userEvent.date.ToShortDateString();
+                            eventCard.EventDate = userEvent.time.ToShortDateString();
                             eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                             eventCard.EventLocation = Convert.ToString(userEvent.location);
                             eventCard.cardJoinButton.Visible = false;
@@ -163,7 +163,7 @@ namespace EventManagementSystem.Screens
                             eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                             eventCard.EventTitle = userEvent.title;
                             eventCard.EventCapacity = Convert.ToString(userEvent.registrations + " / " + userEvent.capacity);
-                            eventCard.EventDate = userEvent.date.ToShortDateString();
+                            eventCard.EventDate = userEvent.time.ToShortDateString();
                             eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                             eventCard.EventLocation = Convert.ToString(userEvent.location);
                             eventCard.cardLeaveButton.Visible = false;
@@ -209,7 +209,7 @@ namespace EventManagementSystem.Screens
                             eventCard.Picture = (Bitmap)Properties.Resources.ResourceManager.GetObject(userEvent.imageName);
                             eventCard.EventTitle = userEvent.title;
                             eventCard.EventCapacity = Convert.ToString(userEvent.registrations + " / " + userEvent.capacity);
-                            eventCard.EventDate = userEvent.date.ToShortDateString();
+                            eventCard.EventDate = userEvent.time.ToShortDateString();
                             eventCard.EventTime = userEvent.time.ToString("hh:mm tt");
                             eventCard.EventLocation = Convert.ToString(userEvent.location);
                             eventCard.cardJoinButton.Visible = false;
