@@ -151,6 +151,39 @@ namespace EventManagementSystem.Screens
 
                         // Send an email
                         emailSender.SendEmail(authenticateUser.email, "Event Successfully Joined!", emailBody);
+
+                        // Refreshing the dashboard 
+                        // Find the TopPage instance
+                        Control currentControl = ((Button)sender).Parent;
+                        while (!(currentControl is TopPage) && currentControl != null)
+                        {
+                            currentControl = currentControl.Parent;
+                        }
+
+                        if (currentControl is TopPage topPage)
+                        {
+                            // Remove the existing Dashboard from topPagePane
+                            foreach (Control ctrl in topPage.topPagePane.Controls)
+                            {
+                                if (ctrl is Dashboard)
+                                {
+                                    ctrl.Dispose();
+                                    break;
+                                }
+                            }
+
+                            // Create and show a new Dashboard
+                            Dashboard dashboardForm = new Dashboard
+                            {
+                                TopLevel = false,
+                                FormBorderStyle = FormBorderStyle.None,
+                                Dock = DockStyle.Fill
+                            };
+
+                            topPage.topPagePane.Controls.Add(dashboardForm);
+                            dashboardForm.BringToFront();
+                            dashboardForm.Show();
+                        }
                     }
                     else
                     {
@@ -200,6 +233,39 @@ namespace EventManagementSystem.Screens
 
                             // Send an email
                             emailSender.SendEmail(authenticateUser.email, "Event Successfully Left!", emailBody);
+
+                            // Refreshing the dashboard 
+                            // Find the TopPage instance
+                            Control currentControl = ((Button)sender).Parent;
+                            while (!(currentControl is TopPage) && currentControl != null)
+                            {
+                                currentControl = currentControl.Parent;
+                            }
+
+                            if (currentControl is TopPage topPage)
+                            {
+                                // Remove the existing Dashboard from topPagePane
+                                foreach (Control ctrl in topPage.topPagePane.Controls)
+                                {
+                                    if (ctrl is Dashboard)
+                                    {
+                                        ctrl.Dispose();
+                                        break;
+                                    }
+                                }
+
+                                // Create and show a new Dashboard
+                                Dashboard dashboardForm = new Dashboard
+                                {
+                                    TopLevel = false,
+                                    FormBorderStyle = FormBorderStyle.None,
+                                    Dock = DockStyle.Fill
+                                };
+
+                                topPage.topPagePane.Controls.Add(dashboardForm);
+                                dashboardForm.BringToFront();
+                                dashboardForm.Show();
+                            }
                         }
                         else
                         {
@@ -246,7 +312,7 @@ namespace EventManagementSystem.Screens
 
                         if (success)
                         {
-                                                      
+
 
                             // Initialize the EmailSender with your SMTP server details and credentials
                             EmailSender emailSender = new EmailSender("smtp.gmail.com", 587, "eventhubforyou@gmail.com", "oajb cbpz cflk oyly");
@@ -256,6 +322,38 @@ namespace EventManagementSystem.Screens
 
                             // Send an email
                             emailSender.SendEmail(authenticateUser.email, "Event Successfully Deleted!", emailBody);
+                            // Refreshing the dashboard 
+                            // Find the TopPage instance
+                            Control currentControl = ((Button)sender).Parent;
+                            while (!(currentControl is TopPage) && currentControl != null)
+                            {
+                                currentControl = currentControl.Parent;
+                            }
+
+                            if (currentControl is TopPage topPage)
+                            {
+                                // Remove the existing Dashboard from topPagePane
+                                foreach (Control ctrl in topPage.topPagePane.Controls)
+                                {
+                                    if (ctrl is Dashboard)
+                                    {
+                                        ctrl.Dispose();
+                                        break;
+                                    }
+                                }
+
+                                // Create and show a new Dashboard
+                                Dashboard dashboardForm = new Dashboard
+                                {
+                                    TopLevel = false,
+                                    FormBorderStyle = FormBorderStyle.None,
+                                    Dock = DockStyle.Fill
+                                };
+
+                                topPage.topPagePane.Controls.Add(dashboardForm);
+                                dashboardForm.BringToFront();
+                                dashboardForm.Show();
+                            }
                         }
                         else
                         {

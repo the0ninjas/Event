@@ -20,6 +20,10 @@ namespace EventManagementSystem.Screens
             InitializeComponent();
         }
 
+        // emailTextBox format change
+
+        // Check if the text in the textbox is the default placeholder text
+        // When entering the textbox, clear the textbox and set the font color to black
         private void emailTextBox_Enter(object sender, EventArgs e)
         {
             if (emailTextBox.Text == "Enter your email address")
@@ -29,6 +33,8 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // Check if the text in the textbox is empty
+        // When leaving the textbox, set the textbox to display the default placeholder text and change the font color to a grey color
         private void emailTextBox_Leave(object sender, EventArgs e)
         {
             if (emailTextBox.Text == "")
@@ -38,6 +44,10 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // passwordTextBox format change
+
+        // Check if the text in the textbox is the default placeholder text
+        // When entering the textbox, clear the textbox and set the passwordChar and font color to black
         private void passwordTextBox_Enter(object sender, EventArgs e)
         {
             if (passwordTextBox.Text == "Enter your password")
@@ -48,6 +58,8 @@ namespace EventManagementSystem.Screens
             }
         }
 
+        // Check if the text in the textbox is empty
+        // When leaving the textbox, set the textbox to display the default placeholder text without passwordChar and change the font color to a grey color
         private void passwordTextBox_Leave(object sender, EventArgs e)
         {
             if (passwordTextBox.Text == "")
@@ -90,6 +102,7 @@ namespace EventManagementSystem.Screens
             SignUp signUp = new SignUp();
 
             signUp.Show();
+            this.Hide();
         }
     }
 }
